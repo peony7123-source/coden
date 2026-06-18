@@ -6,8 +6,8 @@
 
 // ↓↓ 아래 두 줄만 본인 것으로 바꾸세요 ↓↓
 
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwkshNiO9_8gCVPww6FitphHoOtEWEtcjEIW3zFKh5YJ3-SsA44JxaFO_728uJ8-OeF/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyy0RdwtgbRB1Pk3DTVROxqTdiWIvaOmNy5IgsAWqDnLeQ5ls-ofqO1dKw1RGZJcUOs/exec';
 //  예시) const APPS_SCRIPT_URL = '본인_앱스스크립트_URL';
 
-const GITHUB_BASE     = 'https://kssim00.github.io/web_book/';
+const GITHUB_BASE     = 'https://peony7123-source.github.io/coden/';
 //  예시) const GITHUB_BASE     = 'https://본인아이디.github.io/레포이름/';
