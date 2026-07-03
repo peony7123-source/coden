@@ -91,10 +91,10 @@
     box-shadow:0 2px 10px rgba(0,0,0,0.12);
   }
   .cover-section .cover-text{flex:1;min-width:220px;}
-  .cover-section h2{margin-top:0;font-size:24px;}
-  .cover-section p{line-height:1.7;font-size:15px;margin:8px 0 12px;}
+  .cover-section h2{margin-top:0;font-size:27px;font-weight:800;}
+  .cover-section p{line-height:1.75;font-size:16px;margin:8px 0 12px;}
   .cover-section ol{margin:0;padding-left:20px;}
-  .cover-section ol li{font-size:14px;line-height:1.6;margin-bottom:4px;}
+  .cover-section ol li{font-size:15px;line-height:1.65;margin-bottom:5px;}
   .cover-section p strong, .cover-section li strong{color:var(--primary-dark);}
 
   .step-card{
@@ -102,7 +102,7 @@
     margin-bottom:24px;overflow:hidden;
   }
   .step-head{
-    background:var(--accent);padding:15px 22px;font-weight:bold;font-size:17px;
+    background:var(--accent);padding:16px 22px;font-weight:800;font-size:19px;
     display:flex;align-items:center;gap:12px;color:var(--text);
   }
   .step-head strong{color:var(--primary-dark);}
@@ -131,18 +131,76 @@
   .zoom-btn:hover{background:rgba(30,40,30,0.85);}
 
   .points-card{background:#f3fbf6;border-radius:14px;padding:16px 20px;}
-  .points-card .points-label{color:var(--primary-dark);font-weight:bold;margin-bottom:10px;font-size:14.5px;}
+  .points-card .points-label{color:var(--primary-dark);font-weight:800;margin-bottom:10px;font-size:15.5px;}
   .points-card ol{margin:0;padding-left:22px;}
-  .points-card li{margin-bottom:9px;line-height:1.55;font-size:14.5px;}
+  .points-card li{margin-bottom:9px;line-height:1.65;font-size:15.5px;}
   .points-card li:last-child{margin-bottom:0;}
   .points-card li strong{color:var(--primary-dark);}
 
   .func-card{background:#eef6fb;border-radius:14px;padding:14px 20px;}
   .func-card .func-label{color:#2b6cb0;font-weight:bold;margin-bottom:10px;font-size:14.5px;}
   .func-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
-  .func-item{display:flex;align-items:baseline;gap:10px;background:#fff;border-radius:10px;padding:8px 12px;border:1px solid #d7e6f5;}
+  .func-item{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;background:#fff;border-radius:10px;padding:8px 12px;border:1px solid #d7e6f5;}
   .func-name{font-family:Consolas,"Courier New",monospace;font-weight:bold;color:#1a73a8;font-size:13px;white-space:nowrap;background:#e3f0fa;padding:2px 8px;border-radius:6px;flex-shrink:0;}
   .func-desc{font-size:13.5px;color:var(--text);line-height:1.5;}
+  .func-usage{font-family:Consolas,"Courier New",monospace;font-size:12px;color:#6a7d74;margin-left:auto;white-space:nowrap;}
+
+  /* 알아보기(설명) 카드 - STEP 도입부 설명 */
+  .explain-card{background:#eef6fb;border-radius:14px;padding:18px 20px;}
+  .explain-card .explain-label{color:#2b6cb0;font-weight:800;margin-bottom:9px;font-size:15.5px;}
+  .explain-card p{margin:0 0 8px;font-size:15.5px;line-height:1.75;color:var(--text);}
+  .explain-card p:last-child{margin-bottom:0;}
+  .explain-card strong{color:#1a5490;}
+
+  /* 알아보기 카드 안 세부 라벨(새로운 함수 / 이번 단계 목표 / 코드 추가 위치) */
+  .explain-card .explain-sublabel{color:#2b6cb0;font-weight:800;font-size:14.5px;margin:14px 0 6px;}
+  .explain-card .explain-sublabel:first-child{margin-top:0;}
+  .explain-card .explain-group{margin-bottom:10px;}
+  .explain-card .explain-group:last-child{margin-bottom:0;}
+  .explain-card .explain-group p{margin:0 0 4px;}
+  .explain-card .explain-group p:last-child{margin-bottom:0;}
+
+  /* 실행결과/미션결과 이미지 자리표시 (이미지 준비 전) */
+  .shot-placeholder{background:#f4f6f5;border:1.5px dashed #b9c6c0;border-radius:14px;padding:16px 18px;text-align:center;color:#5c6f66;font-size:14px;line-height:1.6;}
+  .shot-placeholder .shot-tag{display:inline-block;background:var(--accent);color:var(--primary-dark);font-weight:bold;font-size:12px;padding:3px 10px;border-radius:20px;margin-bottom:8px;}
+
+  /* 실제 이미지가 준비된 경우 */
+  .shot-img-box{background:#fff;border-radius:14px;padding:12px;text-align:center;box-shadow:var(--shadow);max-width:300px;margin:0 auto;}
+  .shot-img-box-lg{max-width:480px;}
+  .shot-img-box-xl{max-width:760px;}
+  .shot-img-frame{width:100%;aspect-ratio:8/5;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .shot-img-frame-lg{aspect-ratio:1/1;}
+  .shot-img-frame-xl{aspect-ratio:900/760;}
+  .shot-img-frame img{max-width:100%;max-height:100%;border-radius:8px;cursor:zoom-in;}
+  .shot-img-frame svg{width:100%;height:100%;border-radius:8px;}
+  .shot-img-box .shot-caption{margin-top:10px;font-size:13.5px;color:#5c6f66;line-height:1.55;}
+
+  /* 개념 설명(좌표/각도 등, STEP 이전) */
+  .concept-card{background:#fff9e6;border:1px dashed #e0b400;border-radius:16px;padding:18px 20px;margin-bottom:24px;}
+  .concept-card .concept-label{color:#a07800;font-weight:800;margin-bottom:8px;font-size:16px;}
+  .concept-card p{margin:4px 0;font-size:15px;line-height:1.65;color:var(--text);}
+
+  /* 지난 시간 복습 */
+  .prev-review{background:rgba(255,255,255,0.6);border-radius:10px;padding:9px 14px;margin:10px 0;font-size:14.5px;color:var(--text);}
+  .prev-review .prev-label{font-weight:800;color:var(--primary-dark);margin-right:6px;}
+
+  /* 다음 시간 예고 */
+  .next-card{background:linear-gradient(135deg,#eafaf1,#fff);border-radius:16px;padding:16px 22px;margin-top:24px;box-shadow:var(--shadow);}
+  .next-card .next-label{font-weight:800;color:var(--primary-dark);margin-bottom:8px;font-size:15.5px;}
+  .next-card ul{margin:0;padding-left:20px;}
+  .next-card li{font-size:15px;line-height:1.65;margin-bottom:4px;}
+
+  /* 스텝 안의 미니 미션 카드 (본 미션 카드보다 작게) */
+  .mini-card{background:linear-gradient(135deg,#fff8f0,#fff);border:2px dashed #ff9f68;border-radius:16px;padding:18px;}
+  .mini-card h4{margin:0 0 9px;color:#c1501f;font-size:16.5px;}
+  .mini-card .mini-desc{font-size:15px;line-height:1.75;margin-bottom:8px;}
+  .mini-card .mini-desc strong{color:#c1501f;}
+
+  /* 인라인 코드 강조 (백틱 `code`) */
+  .inline-code{
+    font-family:Consolas,"Courier New",monospace;background:#e9f2ee;color:#1a7a4c;font-weight:700;
+    font-size:0.92em;padding:1px 6px;border-radius:5px;border:1px solid #d3e6dc;white-space:nowrap;
+  }
 
   .predict-card{background:#fff9e6;border-radius:14px;padding:14px 20px;border:1px dashed #e0b400;}
   .predict-card .predict-label{color:#a07800;font-weight:bold;margin-bottom:8px;font-size:14.5px;}
@@ -180,12 +238,12 @@
   .quiz-q-text{font-weight:bold;font-size:14.5px;margin-bottom:10px;}
   .quiz-choices{display:flex;flex-direction:column;gap:8px;}
   .quiz-choice{
-    text-align:left;background:#f3fbf6;border:1.5px solid var(--accent);border-radius:10px;
-    padding:10px 14px;font-size:14px;cursor:pointer;color:var(--text);
+    text-align:left;background:#f3fbf6;border:none;border-radius:10px;
+    padding:10px 14px;font-size:14.5px;font-weight:700;cursor:pointer;color:var(--text);
   }
   .quiz-choice:hover{background:var(--accent);}
-  .quiz-choice.correct{background:#dff5e3;border-color:var(--primary);color:var(--primary-dark);font-weight:bold;}
-  .quiz-choice.wrong{background:#fde7e7;border-color:#e57373;color:#c0392b;}
+  .quiz-choice.correct{background:#dff5e3;color:var(--primary-dark);}
+  .quiz-choice.wrong{background:#fde7e7;color:#c0392b;}
   .quiz-choice[disabled]{cursor:default;}
   .quiz-feedback{margin-top:8px;font-size:13.5px;padding:8px 12px;border-radius:8px;}
   .quiz-feedback.ok{background:#dff5e3;color:var(--primary-dark);}
@@ -207,8 +265,8 @@
     background:linear-gradient(135deg,#fff8f0,#fff);border:2px dashed #ff7043;border-radius:20px;
     padding:22px;margin-bottom:24px;
   }
-  .mission-card h3{margin:0 0 10px;color:#c1501f;font-size:18px;}
-  .mission-desc{font-size:14.5px;line-height:1.7;margin-bottom:12px;}
+  .mission-card h3{margin:0 0 10px;color:#c1501f;font-size:19px;}
+  .mission-desc{font-size:15.5px;line-height:1.8;margin-bottom:12px;}
   .mission-desc strong{color:#c1501f;}
   .hint-btn{
     background:#ff7043;color:#fff;border:none;padding:8px 16px;border-radius:20px;
@@ -228,7 +286,7 @@
     flex-shrink:0;background:#ff7043;color:#fff;font-weight:bold;font-size:13px;
     width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   }
-  .mission-task-text{font-size:14.5px;line-height:1.7;padding-top:2px;}
+  .mission-task-text{font-size:15.5px;line-height:1.8;padding-top:2px;}
   .mission-task-text strong{color:#c1501f;}
   .mission-task-hint-btn{
     margin-top:8px;margin-left:36px;background:#ff7043;color:#fff;border:none;padding:6px 14px;
@@ -240,6 +298,16 @@
     padding:8px 12px;border-radius:8px;font-size:13px;color:#8a5536;
   }
   .mission-task-hint.show{display:block;}
+  .mission-task-bonus-btn{
+    margin-top:8px;margin-left:36px;background:#2f9e6e;color:#fff;border:none;padding:6px 14px;
+    border-radius:16px;font-size:12.5px;font-weight:bold;cursor:pointer;
+  }
+  .mission-task-bonus-btn:hover{background:#21794f;}
+  .mission-task-bonus{
+    display:none;margin-top:8px;margin-left:36px;background:#f3fbf6;border-left:4px solid #2f9e6e;
+    padding:8px 12px;border-radius:8px;font-size:13px;color:#21794f;
+  }
+  .mission-task-bonus.show{display:block;}
 
   .intro-banner{font-size:14px;color:var(--muted);margin-bottom:6px;}
 
@@ -280,13 +348,1367 @@
 
 <script>
 const SESSION_LABELS = {
-  0:"0차시 · 오리엔테이션",
-  1:"1차시", 2:"2차시", 3:"3차시", 4:"4차시",
-  5:"5차시", 6:"6차시", 7:"7차시",
-  8:"8~10차시 · 미니 프로젝트"
+  1:"1차시", 2:"2차시", 3:"3차시", 4:"4차시", 5:"5차시",
+  6:"6차시", 7:"7차시", 8:"8차시", 9:"9차시", 10:"10차시"
 };
 
 const UNITS = [
+{
+  slug:"01-turtle-start", session:1, icon:"🐢",
+  title:"터틀 시작하기",
+  note:["파이썬 파일을 새로 만들어요.","파일 이름은 `turtle_01-1.py`로 정해요.","코드를 한 줄씩 입력해요."],
+  learn:["그림 그릴 화면 만들기","거북이를 처음 자리로 보내기","거북이 모양 바꾸기"],
+  steps:[
+    { title:"setup() - 화면 만들기",
+      explain:["`setup()`은 그림 그릴 창의 **크기를 정하는** 함수예요.","가로 크기, 세로 크기 순서로 숫자를 넣어요.","`import turtle as t`로 터틀 기능을 불러오고, 맨 마지막 줄엔 `t.mainloop()`을 써서 창이 계속 떠 있게 해요."],
+      shot:"가로 800, 세로 600 크기의 창.",
+      img: turtleScene({ lines:[
+        {x1:-200,y1:-150,x2:200,y2:-150,color:"#2f9e6e",width:2,dash:"6,4"},
+        {x1:200,y1:-150,x2:200,y2:150,color:"#2f9e6e",width:2,dash:"6,4"},
+        {x1:200,y1:150,x2:-200,y2:150,color:"#2f9e6e",width:2,dash:"6,4"},
+        {x1:-200,y1:150,x2:-200,y2:-150,color:"#2f9e6e",width:2,dash:"6,4"}
+      ], texts:[{x:0,y:0,text:"800 × 600",size:18,color:"#21794f",bold:true}] }),
+      code:`import turtle as t
+
+# 창 크기 설정
+t.setup(800, 600)
+
+t.mainloop()`,
+      tryit:["창 크기를 `400, 300`으로 바꿔보세요.","내가 원하는 크기로 창을 만들어보세요."]
+    },
+    { title:"home() - 처음 자리로 가기",
+      explain:["`home()`은 거북이를 **화면 가운데로 보내는** 함수예요.","거북이가 화면 밖으로 나갔을 때 쓰면 편해요.","`home()`은 거북이만 처음 자리로 보내고, 그림은 그대로 남아요.","`clear()`는 그림만 지우고 거북이는 그 자리에 있어요.","`reset()`은 그림도 지우고 거북이도 처음 자리로 보내며, 펜 색과 굵기도 처음으로 되돌려요."],
+      shot:"거북이가 가운데로 돌아와요.",
+      img: turtleScene({ lines:[{x1:150,y1:90,x2:0,y2:0,color:"#b9c6c0",width:2,dash:"5,4"}], dots:[{x:150,y:90,r:5,color:"#cfd8d4"}], turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.home()
+
+t.mainloop()`
+    },
+    { title:"shape() - 모양 바꾸기",
+      explain:["`shape()`는 거북이 **모양을 바꾸는** 함수예요.","괄호 안에 모양 이름을 따옴표와 함께 적어요. (꼭 소문자로 써요!)","모양 이름: \"turtle\", \"classic\", \"triangle\", \"arrow\", \"square\", \"circle\""],
+      shot:"거북이 모양이 나타나요.",
+      img: turtleScene({ turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+
+t.mainloop()`,
+      tryit:["\"turtle\"을 \"circle\"로 바꿔보세요.","\"square\", \"triangle\", \"arrow\"도 넣어보고 내가 좋아하는 모양을 찾아보세요."]
+    }
+  ],
+  funcTable:[
+    {name:"setup(가로, 세로)", desc:"창 크기 정하기", usage:"t.setup(800, 600)"},
+    {name:"home()", desc:"거북이를 처음 자리로 보내기", usage:"t.home()"},
+    {name:"shape(\"이름\")", desc:"거북이 모양 바꾸기", usage:"t.shape(\"turtle\")"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**나만의 시작 화면 만들기**
+- 창 크기: 가로 600, 세로 600
+- 거북이 모양: "circle"`, shot:"600×600 창에 원 모양 거북이.",
+        img: turtleScene({ lines:[
+          {x1:-180,y1:-180,x2:180,y2:-180,color:"#2f9e6e",width:2,dash:"6,4"},
+          {x1:180,y1:-180,x2:180,y2:180,color:"#2f9e6e",width:2,dash:"6,4"},
+          {x1:180,y1:180,x2:-180,y2:180,color:"#2f9e6e",width:2,dash:"6,4"},
+          {x1:-180,y1:180,x2:-180,y2:-180,color:"#2f9e6e",width:2,dash:"6,4"}
+        ], texts:[{x:0,y:150,text:"600 × 600",size:14,color:"#21794f",bold:true}], turtles:[{x:0,y:-20,heading:0,shape:"circle",scale:1.4}] }) }
+    ]
+  },
+  quiz:[
+    { q:"그림 그릴 창의 크기를 정하는 함수는?", choices:["`setup()`","`home()`","`shape()`","`forward()`"], answer:0 },
+    { q:"그림은 그대로 두고 거북이만 처음 자리로 보내는 함수는?", choices:["`clear()`","`home()`","`reset()`","`penup()`"], answer:1 },
+    { q:"거북이 모양을 바꾸는 함수는?", choices:["`color()`","`bgcolor()`","`shape()`","`pensize()`"], answer:2 }
+  ],
+  next:["거북이 크기를 키우고 줄이는 법을 배워요.","거북이 색깔과 배경 색깔을 바꾸는 법을 배워요."]
+},
+{
+  slug:"02-size-color", session:2, icon:"🎨",
+  title:"거북이 크기와 색 정하기",
+  prevReview:["`setup()`으로 창 크기를 정했어요.","`home()`으로 거북이를 처음 자리로 보냈어요.","`shape()`으로 거북이 모양을 바꿨어요."],
+  learn:["거북이 크기 키우고 줄이기","거북이 색깔 바꾸기","배경 색깔 바꾸기"],
+  steps:[
+    { title:"shapesize() - 크기 바꾸기",
+      explain:["`shapesize()`는 거북이 **크기를 바꾸는** 함수예요.","숫자가 클수록 거북이가 커져요."],
+      shot:"거북이가 아주 크게 보여요.",
+      img: turtleScene({ turtles:[{x:0,y:0,heading:0,scale:10}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.shapesize(10)
+
+t.mainloop()`,
+      tryit:["숫자를 `3`으로 바꿔서 거북이가 작아지는지 확인해보세요.","숫자를 `1`로 바꾸면 원래 크기로 돌아와요. 내가 원하는 크기도 만들어보세요."]
+    },
+    { title:"color() - 거북이 색깔 바꾸기",
+      explain:["`color()`는 거북이와 선의 **색을 바꾸는** 함수예요.","괄호 안에 색 이름을 적어요."],
+      shot:"거북이가 분홍색으로 보여요.",
+      img: turtleScene({ turtles:[{x:0,y:0,heading:0,color:"#ff6fb0",scale:2}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.shapesize(2, 2)
+t.color("pink")
+
+t.mainloop()`,
+      tryit:["\"pink\"를 \"red\"로 바꿔보세요.","\"blue\", \"green\", \"purple\"도 넣어보고 내가 원하는 색으로 바꿔보세요."]
+    },
+    { title:"bgcolor() - 배경 색깔 바꾸기",
+      explain:["`bgcolor()`는 화면 **배경 색을 바꾸는** 함수예요.","괄호 안에 색 이름을 적으면 배경이 그 색으로 바뀌어요."],
+      shot:"검은 배경에 흰색 거북이.",
+      img: turtleScene({ bgFill:"#000000", turtles:[{x:0,y:0,heading:0,color:"#ffffff"}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.bgcolor("black")
+t.color("white")
+
+t.mainloop()`,
+      tryit:["배경색을 \"skyblue\", 터틀색을 \"orange\"로 바꿔보세요.","내가 원하는 배경색과 터틀색으로 바꿔보세요. (색이 너무 비슷하면 거북이가 잘 안 보여요!)"]
+    }
+  ],
+  funcTable:[
+    {name:"shapesize(크기)", desc:"거북이 크기 바꾸기", usage:"t.shapesize(2, 2)"},
+    {name:"color(\"색\")", desc:"거북이(선) 색 바꾸기", usage:"t.color(\"pink\")"},
+    {name:"bgcolor(\"색\")", desc:"배경 색 바꾸기", usage:"t.bgcolor(\"black\")"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**나만의 거북이 만들기**
+- 거북이 모양: "turtle"
+- 크기: 5배
+- 거북이 색: "green"
+- 배경 색: "skyblue"`, shot:"하늘색 배경에 커진 초록 거북이.",
+        img: turtleScene({ bgFill:"#87ceeb", turtles:[{x:0,y:0,heading:0,color:"#2f9e6e",scale:5}] }) }
+    ]
+  },
+  quiz:[
+    { q:"거북이 크기를 바꾸는 함수는?", choices:["`shapesize()`","`color()`","`bgcolor()`","`pensize()`"], answer:0 },
+    { q:"화면 배경색을 바꾸는 함수는?", choices:["`color()`","`bgcolor()`","`fillcolor()`","`shape()`"], answer:1 },
+    { q:"거북이(선) 색을 바꾸는 함수는?", choices:["`bgcolor()`","`color()`","`shapesize()`","`write()`"], answer:1 }
+  ],
+  next:["거북이를 앞뒤로 움직이는 법을 배워요.","선 굵기를 바꾸는 법을 배워요."]
+},
+{
+  slug:"03-forward-back", session:3, icon:"➡️",
+  title:"앞으로 뒤로 이동하기",
+  prevReview:["`shapesize()`로 거북이 크기를 바꿨어요.","`color()`, `bgcolor()`로 색을 바꿨어요."],
+  learn:["거북이를 앞으로 움직이기","거북이를 뒤로 움직이기","선 굵기 바꾸기"],
+  steps:[
+    { title:"forward() / fd() - 앞으로 가기",
+      explain:["`forward()`는 거북이를 **앞으로 움직이는** 함수예요.","`fd()`는 줄인 이름이고 똑같이 동작해요.","괄호 안 숫자만큼 픽셀을 움직여요."],
+      shot:"빨간 선이 앞으로 그려져요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#e5383b",width:5}], turtles:[{x:100,y:0,heading:0,color:"#e5383b"}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.pensize(5)
+
+t.color("red")
+t.forward(100)
+
+t.mainloop()`,
+      tryit:["`100`을 `300`으로 바꿔서 선이 길어지는지 확인해보세요.","`t.forward(100)`을 `t.fd(100)`으로 바꿔보세요. 결과는 똑같아요."],
+      minis:[
+        { title:"색깔 선 잇기", desc:"빨간색 선 100, 파란색 선 150을 이어서 그리도록 코딩해보세요.", shot:"빨간 선 뒤에 파란 선이 이어져요.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#e5383b",width:3},{x1:100,y1:0,x2:250,y2:0,color:"#1d63d1",width:3}], turtles:[{x:250,y:0,heading:0,color:"#1d63d1"}] }) }
+      ]
+    },
+    { title:"backward() / back() / bk() - 뒤로 가기",
+      explain:["`backward()`는 거북이를 **뒤로 움직이는** 함수예요.","`back()`, `bk()`도 같은 함수예요. 이름만 짧아요."],
+      shot:"거북이가 뒤로 움직여요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:-100,y2:0,color:"#ff6fb0",width:3}], turtles:[{x:-100,y:0,heading:0,color:"#ff6fb0"}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.color("pink")
+
+t.backward(100)
+
+t.mainloop()`,
+      tryit:["`100`을 `200`으로 바꿔서 뒤로 더 긴 선이 생기는지 확인해보세요."],
+      minis:[
+        { title:"색깔 바꾸며 앞뒤로 움직이기", desc:"빨강 300 앞으로 → 주황 200 뒤로 → 노랑 100 앞으로 → 초록 50 뒤로, 색과 방향을 바꿔가며 움직이도록 코딩해보세요.", shot:"색이 바뀌며 겹쳐진 선.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:300,y2:0,color:"#e5383b",width:3},{x1:300,y1:0,x2:100,y2:0,color:"#ff8c1a",width:3},{x1:100,y1:0,x2:200,y2:0,color:"#ffd400",width:3},{x1:200,y1:0,x2:150,y2:0,color:"#2f9e6e",width:3}], turtles:[{x:150,y:0,heading:0,color:"#2f9e6e"}] }) }
+      ]
+    },
+    { title:"pensize() - 선 굵기 바꾸기",
+      explain:["`pensize()`는 선의 **두께를 정하는** 함수예요.","숫자가 클수록 선이 두꺼워져요."],
+      shot:"두꺼운 주황색 선이 보여요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#ff8c1a",width:5}], turtles:[{x:100,y:0,heading:0,color:"#ff8c1a"}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+t.color("orange")
+
+t.pensize(5)
+t.fd(100)
+
+t.mainloop()`,
+      tryit:["굵기와 색을 바꿔가며 여러 번 실행해보고 마음에 드는 조합을 찾아보세요."],
+      minis:[
+        { title:"점점 두꺼워지는 선 그리기", desc:"빨강 굵기2·20, 주황 굵기4·40, 노랑 굵기6·60, 초록 굵기8·80, 파랑 굵기10·100 순서로 점점 두꺼워지는 선을 그리도록 코딩해보세요.", shot:"점점 두꺼워지는 색색의 선.",
+          img: turtleScene({ bgFill:"#000000", lines:[{x1:0,y1:0,x2:20,y2:0,color:"#e5383b",width:2},{x1:20,y1:0,x2:60,y2:0,color:"#ff8c1a",width:4},{x1:60,y1:0,x2:120,y2:0,color:"#ffd400",width:6},{x1:120,y1:0,x2:200,y2:0,color:"#2f9e6e",width:8},{x1:200,y1:0,x2:300,y2:0,color:"#1d63d1",width:10}], turtles:[{x:300,y:0,heading:0,color:"#1d63d1"}] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"forward(숫자) / fd(숫자)", desc:"앞으로 이동", usage:"t.fd(100)"},
+    {name:"backward(숫자) / bk(숫자)", desc:"뒤로 이동", usage:"t.bk(100)"},
+    {name:"pensize(숫자)", desc:"선 굵기 정하기", usage:"t.pensize(5)"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**나만의 눈금자 만들기**
+- 두꺼운 선(굵기 8)과 얇은 선(굵기 2)을 번갈아가며 5번 반복해서 눈금자 모양을 만들어요.
+- 두꺼운 선은 20, 얇은 선은 10만큼 이동해요.
+- 색은 자유롭게 정해요. (아직 반복문을 배우지 않았으니, 같은 코드를 5번 그대로 써요)`, shot:"두껍고 얇은 선이 번갈아 이어진 눈금자 모양.",
+        img: turtleScene({ lines:[{x1:0,y1:0,x2:20,y2:0,color:"#1d63d1",width:8},{x1:20,y1:0,x2:30,y2:0,color:"#1d63d1",width:2},{x1:30,y1:0,x2:50,y2:0,color:"#1d63d1",width:8},{x1:50,y1:0,x2:60,y2:0,color:"#1d63d1",width:2},{x1:60,y1:0,x2:80,y2:0,color:"#1d63d1",width:8},{x1:80,y1:0,x2:90,y2:0,color:"#1d63d1",width:2},{x1:90,y1:0,x2:110,y2:0,color:"#1d63d1",width:8},{x1:110,y1:0,x2:120,y2:0,color:"#1d63d1",width:2},{x1:120,y1:0,x2:140,y2:0,color:"#1d63d1",width:8},{x1:140,y1:0,x2:150,y2:0,color:"#1d63d1",width:2}], turtles:[{x:150,y:0,heading:0,color:"#1d63d1"}] }) }
+    ]
+  },
+  quiz:[
+    { q:"거북이를 앞으로 움직이는 함수의 줄인 이름은?", choices:["`bk()`","`fd()`","`lt()`","`rt()`"], answer:1 },
+    { q:"선의 두께를 정하는 함수는?", choices:["`pensize()`","`color()`","`goto()`","`circle()`"], answer:0 },
+    { q:"다음 중 뒤로 움직이는 함수가 아닌 것은?", choices:["`backward()`","`bk()`","`back()`","`fd()`"], answer:3 }
+  ],
+  next:["좌표를 이용해 원하는 곳으로 한 번에 이동하는 법을 배워요.","펜을 들고 내리는 법을 배워요."]
+},
+{
+  slug:"04-coord-pen", session:4, icon:"📍",
+  title:"좌표로 이동하기, 펜 들고 내리기",
+  prevReview:["`forward()`, `backward()`로 앞뒤로 움직였어요.","`pensize()`로 선 굵기를 바꿨어요."],
+  learn:["좌표를 이용해 원하는 위치로 한 번에 이동하기","펜을 들고 내리기 (선이 안 보이게, 보이게)"],
+  concept:{ title:"좌표 알아보기",
+    explain:["터틀 화면은 **가로(x), 세로(y)** 숫자로 위치를 나타내요.","화면 **가운데가 (0, 0)**이에요.","오른쪽·위쪽으로 갈수록 커지고, 왼쪽·아래쪽은 **음수**가 돼요."],
+    shot:"오른쪽으로 갈수록 x가, 위쪽으로 갈수록 y가 커져요.",
+    img: turtleScene({ w:340, h:340, fixedWorld:[-210,-210,210,210], lines:[
+      {x1:-180,y1:-180,x2:-180,y2:180,color:"#eef3f0",width:1},{x1:-135,y1:-180,x2:-135,y2:180,color:"#eef3f0",width:1},
+      {x1:-90,y1:-180,x2:-90,y2:180,color:"#eef3f0",width:1},{x1:-45,y1:-180,x2:-45,y2:180,color:"#eef3f0",width:1},
+      {x1:45,y1:-180,x2:45,y2:180,color:"#eef3f0",width:1},{x1:90,y1:-180,x2:90,y2:180,color:"#eef3f0",width:1},
+      {x1:135,y1:-180,x2:135,y2:180,color:"#eef3f0",width:1},{x1:180,y1:-180,x2:180,y2:180,color:"#eef3f0",width:1},
+      {x1:-180,y1:-180,x2:180,y2:-180,color:"#eef3f0",width:1},{x1:-180,y1:-135,x2:180,y2:-135,color:"#eef3f0",width:1},
+      {x1:-180,y1:-90,x2:180,y2:-90,color:"#eef3f0",width:1},{x1:-180,y1:-45,x2:180,y2:-45,color:"#eef3f0",width:1},
+      {x1:-180,y1:45,x2:180,y2:45,color:"#eef3f0",width:1},{x1:-180,y1:90,x2:180,y2:90,color:"#eef3f0",width:1},
+      {x1:-180,y1:135,x2:180,y2:135,color:"#eef3f0",width:1},{x1:-180,y1:180,x2:180,y2:180,color:"#eef3f0",width:1},
+      {x1:-185,y1:0,x2:180,y2:0,color:"#21794f",width:3},
+      {x1:0,y1:-185,x2:0,y2:180,color:"#21794f",width:3},
+      {x1:0,y1:0,x2:100,y2:100,color:"#ff8c1a",width:2,dash:"5,4"}
+    ], fills:[
+      {points:[[195,0],[180,7],[180,-7]],color:"#21794f"},
+      {points:[[0,195],[-7,180],[7,180]],color:"#21794f"}
+    ], turtles:[{x:0,y:0,heading:0}], texts:[
+      {x:204,y:0,text:"+x",size:15,color:"#21794f",anchor:"middle",bold:true},
+      {x:-190,y:-14,text:"-x",size:14,color:"#7c8c83",anchor:"middle"},
+      {x:0,y:206,text:"+y",size:15,color:"#21794f",anchor:"middle",bold:true},
+      {x:20,y:-190,text:"-y",size:14,color:"#7c8c83",anchor:"middle"},
+      {x:-14,y:-22,text:"(0,0) 시작점",size:12,color:"#21794f",anchor:"end",bold:true},
+      {x:110,y:112,text:"(100,100)",size:12,color:"#e0731a",anchor:"start",bold:true}
+    ], dots:[
+      {x:100,y:100,r:6,color:"#ff8c1a"}
+    ] })
+  },
+  steps:[
+    { title:"goto(x, y) - 좌표로 이동하기",
+      explain:["`goto(x, y)`는 그 좌표로 거북이를 **한 번에 이동시키는** 함수예요.","이동해도 거북이 머리 방향은 바뀌지 않아요."],
+      shot:"(100, 100)으로 한 번에 이동해요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:100,color:"#27392f",width:3}], turtles:[{x:100,y:100,heading:0}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+t.goto(100, 100)
+
+t.mainloop()`,
+      tryit:["`100, 100`을 `-150, 50`으로 바꿔보세요. (x가 음수면 왼쪽, y가 음수면 아래쪽이에요)","내가 원하는 좌표로 옮겨보세요."],
+      minis:[
+        { title:"지그재그 선 그리기", desc:"`goto()`를 여러 번 써서 지그재그 모양을 그리도록 코딩해보세요.", shot:"좌우로 꺾이는 지그재그 선.",
+          img: turtleScene({ bgFill:"#d3d3d3", lines:[{x1:0,y1:0,x2:0,y2:50,color:"#27392f",width:3},{x1:0,y1:50,x2:50,y2:50,color:"#27392f",width:3},{x1:50,y1:50,x2:50,y2:0,color:"#27392f",width:3},{x1:50,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:50,color:"#27392f",width:3},{x1:100,y1:50,x2:150,y2:50,color:"#27392f",width:3},{x1:150,y1:50,x2:150,y2:0,color:"#27392f",width:3}], turtles:[{x:150,y:0,heading:0}] }) },
+        { title:"직각삼각형 그리기", desc:"`goto()`만 사용해서 직각삼각형을 그리도록 코딩해보세요.", shot:"세 점을 잇는 직각삼각형.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:150,y2:0,color:"#27392f",width:3},{x1:150,y1:0,x2:150,y2:100,color:"#27392f",width:3},{x1:150,y1:100,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }) },
+        { title:"스프링(용수철) 모양 그리기", desc:"`goto()`를 여러 번 반복해서, 오른쪽으로 갈수록 촘촘하게 이어지는 용수철 모양을 그리도록 코딩해보세요.", shot:"촘촘해지는 용수철 모양.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:20,y2:30,color:"#27392f",width:3},{x1:20,y1:30,x2:40,y2:0,color:"#27392f",width:3},{x1:40,y1:0,x2:60,y2:30,color:"#27392f",width:3},{x1:60,y1:30,x2:80,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:100,y2:30,color:"#27392f",width:3},{x1:100,y1:30,x2:120,y2:0,color:"#27392f",width:3},{x1:120,y1:0,x2:140,y2:30,color:"#27392f",width:3}], turtles:[{x:140,y:30,heading:0}] }) },
+        { title:"위쪽 화살표 그리기", desc:"`goto()`로 위쪽을 가리키는 화살표 모양을 그리도록 코딩해보세요.", shot:"위를 향한 화살표 모양.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:-15,y2:0,color:"#27392f",width:3},{x1:-15,y1:0,x2:-15,y2:80,color:"#27392f",width:3},{x1:-15,y1:80,x2:-40,y2:80,color:"#27392f",width:3},{x1:-40,y1:80,x2:0,y2:150,color:"#27392f",width:3},{x1:0,y1:150,x2:40,y2:80,color:"#27392f",width:3},{x1:40,y1:80,x2:15,y2:80,color:"#27392f",width:3},{x1:15,y1:80,x2:15,y2:0,color:"#27392f",width:3},{x1:15,y1:0,x2:-15,y2:0,color:"#27392f",width:3}], turtles:[{x:-15,y:0,heading:0}] }) }
+      ]
+    },
+    { title:"penup() / pendown() - 펜 들고 내리기",
+      explain:["`penup()`(`pu()`, `up()`)은 펜을 들어서 **선이 안 보이게** 해요.","`pendown()`(`pd()`, `down()`)은 펜을 내려서 **선이 다시 보이게** 해요."],
+      shot:"처음 100은 선이 보이고, 다음 100은 안 보여요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3}], turtles:[{x:200,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+t.forward(100)
+t.penup()
+t.forward(100)
+
+t.mainloop()`,
+      tryit:["`penup()` 다음에 `pendown()`을 추가해서 다시 선이 하나 더 보이게 만들어보세요."],
+      minis:[
+        { title:"점선 그리기", desc:"펜을 들었다 내렸다 반복하면서 점선처럼 보이는 선을 그리도록 코딩해보세요.", shot:"짧게 끊어진 점선.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:50,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:150,y2:0,color:"#27392f",width:3},{x1:200,y1:0,x2:250,y2:0,color:"#27392f",width:3}], turtles:[{x:250,y:0,heading:0}] }) },
+        { title:"X자 표시 그리기", desc:"`goto()`와 `penup()`/`pendown()`을 함께 써서 X 모양을 그리도록 코딩해보세요.", shot:"가운데서 교차하는 X자 모양. 터틀은 중심에 위치해요.",
+          img: turtleScene({ lines:[{x1:-50,y1:50,x2:50,y2:-50,color:"#27392f",width:3},{x1:-50,y1:-50,x2:50,y2:50,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"goto(x, y)", desc:"좌표로 한 번에 이동", usage:"t.goto(100, 100)"},
+    {name:"penup() / pu()", desc:"펜 들기 (선 안 보임)", usage:"t.penup()"},
+    {name:"pendown() / pd()", desc:"펜 내리기 (선 보임)", usage:"t.pendown()"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**계단 모양 만들기**
+- \`forward()\`와 \`goto()\`를 섞어서 계단 모양을 만들어요.
+- 계단 한 칸마다 펜을 들고, 다음 칸에서 다시 내려요.`, shot:"오른쪽 위로 올라가는 계단 모양.",
+        img: turtleScene({ bgFill:"#000000", lines:[{x1:0,y1:0,x2:50,y2:0,color:"#e5383b",width:7},{x1:50,y1:-20,x2:100,y2:-20,color:"#ffffff",width:7},{x1:100,y1:-40,x2:150,y2:-40,color:"#ffd400",width:7},{x1:150,y1:-60,x2:200,y2:-60,color:"#ffffff",width:7},{x1:200,y1:-80,x2:250,y2:-80,color:"#2f9e6e",width:7},{x1:250,y1:-100,x2:300,y2:-100,color:"#ffffff",width:7},{x1:300,y1:-120,x2:350,y2:-120,color:"#1d63d1",width:7}], turtles:[{x:350,y:-120,heading:0,color:"#1d63d1"}] }) },
+      { task:`**점 잇기 그림 그리기**
+- \`goto()\`로 좌표 3개 이상을 이어서 나만의 그림을 그려요.
+- 최소 한 번은 펜을 들고 이동해서, 떨어진 부분도 그려보세요.`, shot:"직선으로 그린 간단한 집 모양 예시.",
+        img: turtleScene({ lines:[{x1:0,y1:0,x2:-100,y2:0,color:"#27392f",width:3},{x1:-100,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:80,color:"#27392f",width:3},{x1:100,y1:80,x2:-100,y2:80,color:"#27392f",width:3},{x1:-100,y1:80,x2:-100,y2:0,color:"#27392f",width:3},{x1:-40,y1:30,x2:40,y2:30,color:"#27392f",width:3},{x1:40,y1:30,x2:40,y2:60,color:"#27392f",width:3},{x1:40,y1:60,x2:-40,y2:60,color:"#27392f",width:3},{x1:-40,y1:60,x2:-40,y2:30,color:"#27392f",width:3}], turtles:[{x:-40,y:30,heading:0}] }) }
+    ]
+  },
+  quiz:[
+    { q:"좌표로 한 번에 이동하는 함수는?", choices:["`forward()`","`goto()`","`left()`","`circle()`"], answer:1 },
+    { q:"화면 가운데의 좌표는?", choices:["(0, 0)","(100, 100)","(1, 1)","(500, 500)"], answer:0 },
+    { q:"펜을 들어서 선이 안 보이게 하는 함수는?", choices:["`pendown()`","`pd()`","`penup()`","`write()`"], answer:2 }
+  ],
+  next:["거북이 방향을 왼쪽, 오른쪽으로 돌리는 법을 배워요.","정사각형, 정삼각형을 직접 그려봐요."]
+},
+{
+  slug:"05-turn", session:5, icon:"🔄",
+  title:"방향 바꾸기",
+  prevReview:["`goto(x, y)`로 좌표 이동을 했어요.","`penup()`, `pendown()`으로 펜을 들고 내렸어요."],
+  learn:["거북이를 왼쪽으로 돌리기","거북이를 오른쪽으로 돌리기","도형 그리기 (정사각형, 정삼각형)"],
+  concept:{ title:"각도 알아보기",
+    explain:["거북이의 처음 방향은 **오른쪽**(0도)이에요.","**왼쪽**(반시계) 방향으로 돌수록 각도가 커져요."],
+    shot:"오른쪽 0도에서 반시계 방향으로 커지는 각도.",
+    img: turtleScene({ w:340, h:340, fixedWorld:[-165,-165,165,165], arcs:[
+      {cx:0,cy:0,r:130,color:"#21794f",width:6}
+    ], lines:[
+      {x1:0,y1:0,x2:0,y2:130,color:"#c9d6cf",width:1.5},
+      {x1:0,y1:0,x2:-130,y2:0,color:"#c9d6cf",width:1.5},
+      {x1:0,y1:0,x2:0,y2:-130,color:"#c9d6cf",width:1.5},
+      {x1:0,y1:0,x2:118,y2:0,color:"#21794f",width:6}
+    ], fills:[
+      {points:[[133,0],[112,10],[112,-10]],color:"#21794f"}
+    ], turtles:[{x:0,y:0,heading:0,scale:1.3}], texts:[
+      {x:150,y:0,text:"0°",size:20,color:"#21794f",bold:true},
+      {x:0,y:150,text:"90°",size:20,color:"#21794f",bold:true},
+      {x:-150,y:0,text:"180°",size:20,color:"#21794f",bold:true},
+      {x:0,y:-150,text:"270°",size:20,color:"#21794f",bold:true}
+    ] })
+  },
+  steps:[
+    { title:"left() / lt() - 왼쪽으로 돌기",
+      explain:["`left()`는 거북이를 **왼쪽으로** 돌리는 함수예요.","`lt()`는 줄인 이름이에요.","괄호 안 숫자는 도는 각도예요. (90이면 직각으로 돌아요)"],
+      shot:"왼쪽으로 90도 돌아 꺾여요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:100,color:"#27392f",width:3}], turtles:[{x:100,y:100,heading:90}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+
+t.forward(100)
+t.left(90)
+t.forward(100)
+
+t.mainloop()`,
+      tryit:["`90`을 `45`로 바꿔서 꺾이는 각도가 달라지는지 확인해보세요.","`270`으로 바꿔서 각도를 확인해보세요."]
+    },
+    { title:"right() / rt() - 오른쪽으로 돌기",
+      explain:["`right()`는 거북이를 **오른쪽으로** 돌리는 함수예요.","`rt()`는 줄인 이름이에요."],
+      shot:"오른쪽으로 90도 돌아 꺾여요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:-100,color:"#27392f",width:3}], turtles:[{x:100,y:-100,heading:270}] }),
+      code:`import turtle as t
+
+t.home()
+t.shape("turtle")
+
+t.forward(100)
+t.right(90)
+t.forward(100)
+
+t.mainloop()`,
+      tryit:["`left()` 코드와 비교해서 어느 방향으로 도는지 차이를 확인해보세요."],
+      minis:[
+        { title:"정사각형 그리기", desc:"90도씩 4번 돌면서 정사각형을 그리도록 코딩해보세요.", shot:"정사각형이 그려져요.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:100,color:"#27392f",width:3},{x1:100,y1:100,x2:0,y2:100,color:"#27392f",width:3},{x1:0,y1:100,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }) }
+      ]
+    },
+    { title:"도형 그리기 - 정삼각형 (왜 120도 돌까요?)",
+      explain:["거북이가 꺾는 각도는 안쪽(내각)이 아니라 바깥쪽(외각)이에요.","어떤 정다각형이든 **360 ÷ 변의 수**를 하면 꺾어야 할 각도가 나와요.","정삼각형(변 3개)은? **360 ÷ 3 = 120도**씩 회전!"],
+      shot:"바깥쪽(외각)은 120도, 안쪽(내각)은 60도예요.",
+      img: turtleScene({ lines:[
+        {x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:4},
+        {x1:100,y1:0,x2:50,y2:86.6,color:"#27392f",width:4},
+        {x1:50,y1:86.6,x2:0,y2:0,color:"#27392f",width:4},
+        {x1:100,y1:0,x2:160,y2:0,color:"#b9c6c0",width:1.5,dash:"4,3"},
+        {x1:87.5,y1:21.65,x2:83.93,y2:19.15,color:"#1d63d1",width:4},{x1:83.93,y1:19.15,x2:80.85,y2:16.07,color:"#1d63d1",width:4},{x1:80.85,y1:16.07,x2:78.35,y2:12.5,color:"#1d63d1",width:4},{x1:78.35,y1:12.5,x2:76.51,y2:8.55,color:"#1d63d1",width:4},{x1:76.51,y1:8.55,x2:75.38,y2:4.34,color:"#1d63d1",width:4},{x1:75.38,y1:4.34,x2:75.0,y2:0.0,color:"#1d63d1",width:4},
+        {x1:148.0,y1:0.0,x2:147.27,y2:8.34,color:"#e5383b",width:4},{x1:147.27,y1:8.34,x2:145.11,y2:16.42,color:"#e5383b",width:4},{x1:145.11,y1:16.42,x2:141.57,y2:24.0,color:"#e5383b",width:4},{x1:141.57,y1:24.0,x2:136.77,y2:30.85,color:"#e5383b",width:4},{x1:136.77,y1:30.85,x2:130.85,y2:36.77,color:"#e5383b",width:4},{x1:130.85,y1:36.77,x2:124.0,y2:41.57,color:"#e5383b",width:4},{x1:124.0,y1:41.57,x2:116.42,y2:45.11,color:"#e5383b",width:4},{x1:116.42,y1:45.11,x2:108.34,y2:47.27,color:"#e5383b",width:4},{x1:108.34,y1:47.27,x2:100.0,y2:48.0,color:"#e5383b",width:4},{x1:100.0,y1:48.0,x2:91.66,y2:47.27,color:"#e5383b",width:4},{x1:91.66,y1:47.27,x2:83.58,y2:45.11,color:"#e5383b",width:4},{x1:83.58,y1:45.11,x2:76.0,y2:41.57,color:"#e5383b",width:4}
+      ], texts:[
+        {x:66,y:16,text:"내각 60°",size:11,color:"#1d63d1",bold:true},
+        {x:132,y:56,text:"외각 120°",size:12,color:"#e5383b",bold:true}
+      ], turtles:[{x:100,y:0,heading:120,scale:0.8}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+t.fd(100)
+t.lt(120)
+t.fd(100)
+t.lt(120)
+t.fd(100)
+t.lt(120)
+
+t.mainloop()`,
+      tryit:["각도 `120`을 `100`으로 바꿔서 도형이 어떻게 달라지는지 확인해보세요. (삼각형이 안 닫힐 수도 있어요)"],
+      minis:[
+        { title:"정오각형 그리기", desc:"오각형은 몇 도씩 돌아야 할까요? 앞에서 배운 계산법으로 각도를 직접 구해서 정오각형을 그려보세요.", shot:"변 5개의 정오각형.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:80,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:104.7,y2:76.1,color:"#27392f",width:3},{x1:104.7,y1:76.1,x2:40,y2:123.1,color:"#27392f",width:3},{x1:40,y1:123.1,x2:-24.7,y2:76.1,color:"#27392f",width:3},{x1:-24.7,y1:76.1,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"left(각도) / lt(각도)", desc:"왼쪽으로 돌기", usage:"t.lt(90)"},
+    {name:"right(각도) / rt(각도)", desc:"오른쪽으로 돌기", usage:"t.rt(90)"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**정육각형 그리기**
+- 한 변의 길이는 80으로 해요.
+- 몇 도씩 회전해야 할지, 삼각형 그리기를 참고해서 구해보세요.`, shot:"변 6개의 정육각형.",
+        img: turtleScene({ lines:[{x1:0,y1:0,x2:80,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:120,y2:69.3,color:"#27392f",width:3},{x1:120,y1:69.3,x2:80,y2:138.6,color:"#27392f",width:3},{x1:80,y1:138.6,x2:0,y2:138.6,color:"#27392f",width:3},{x1:0,y1:138.6,x2:-40,y2:69.3,color:"#27392f",width:3},{x1:-40,y1:69.3,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }), bonus:"`rt(144)` 대신 다른 각도를 넣어서 모양이 어떻게 바뀌는지 실험해보고 가장 예쁜 각도를 찾아보세요." },
+      { task:`**별 모양 그리기**
+- 144도씩 5번 돌면서 노란 별 모양을 그려요.
+- 배경은 검은색, 선 굵기는 5로 해요.`, shot:"검은 배경에 노란 별 모양.",
+        img: turtleScene({ bgFill:"#000000", lines:[{x1:0,y1:0,x2:100,y2:0,color:"#ffd400",width:5},{x1:100,y1:0,x2:19.1,y2:-58.8,color:"#ffd400",width:5},{x1:19.1,y1:-58.8,x2:50,y2:36.3,color:"#ffd400",width:5},{x1:50,y1:36.3,x2:80.9,y2:-58.8,color:"#ffd400",width:5},{x1:80.9,y1:-58.8,x2:0,y2:0,color:"#ffd400",width:5}], turtles:[{x:0,y:0,heading:0,color:"#ffd400"}] }) }
+    ]
+  },
+  quiz:[
+    { q:"오른쪽으로 도는 함수의 줄인 이름은?", choices:["`lt()`","`rt()`","`fd()`","`bk()`"], answer:1 },
+    { q:"정삼각형을 그릴 때 한 번에 꺾어야 하는 각도는?", choices:["60도","90도","120도","180도"], answer:2 },
+    { q:"거북이가 처음 바라보는 방향(오른쪽)은 몇 도인가요?", choices:["0도","90도","180도","270도"], answer:0 }
+  ],
+  next:["원을 그리는 법을 배워요.","도형을 색으로 채우는 법을 배워요."]
+},
+{
+  slug:"06-circle-fill", session:6, icon:"⭕",
+  title:"원 그리기, 색 채우기, 도장, 글씨 쓰기",
+  prevReview:["`left()`, `right()`로 방향을 바꿨어요.","정사각형, 정삼각형, 별 모양을 그렸어요."],
+  learn:["원 그리기, 반원(호) 그리기","도형 안을 색으로 채우기, 도장 찍기","거북이 숨기기/보이기, 화면에 글씨 쓰기"],
+  steps:[
+    { title:"circle() - 원 그리기",
+      explain:["`circle(숫자)`는 **원을 그리는** 함수예요.","숫자는 원의 크기(반지름)를 나타내요.","숫자가 양수면 왼쪽(위쪽)에 원 중심이 생기고 반시계 방향으로, 음수면 오른쪽(아래쪽)에 중심이 생기고 시계 방향으로 그려져요."],
+      shot:"왼쪽 위 방향으로 그려진 원.",
+      img: turtleScene({ arcs:[{cx:0,cy:100,r:100,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.circle(100)
+
+t.mainloop()`,
+      tryit:["`100`을 `-100`으로 바꿔서 원이 반대 방향(오른쪽 아래)으로 그려지는지 확인해보세요.","숫자를 바꿔 원의 크기를 바꿔보세요."]
+    },
+    { title:"circle(숫자, 각도) - 반원(호) 그리기",
+      explain:["`circle(숫자, 각도)`처럼 두 번째 숫자(각도)를 넣으면 **원의 일부(호)만** 그려져요.","각도가 180이면 반원이 돼요.","반지름이 **양수면 중심이 왼쪽**, **음수면 오른쪽**에 생겨요. 각도가 **양수면 앞으로**, **음수면 뒤로** 그려져요."],
+      shot:"반지름·각도의 부호 4가지 조합에 따라 중심 위치와 그려지는 방향이 달라져요.",
+      imgSize:'xl',
+      img: turtleScene({ fills:[{points:[[130, 412], [470, 412], [470, 766], [130, 766]],color:"#f6f8f7",stroke:"#d7ecdf",strokeWidth:1.5},{points:[[530, 412], [870, 412], [870, 766], [530, 766]],color:"#f6f8f7",stroke:"#d7ecdf",strokeWidth:1.5},{points:[[130, -12], [470, -12], [470, 342], [130, 342]],color:"#f6f8f7",stroke:"#d7ecdf",strokeWidth:1.5},{points:[[530, -12], [870, -12], [870, 342], [530, 342]],color:"#f6f8f7",stroke:"#d7ecdf",strokeWidth:1.5}], lines:[{x1:300,y1:524,x2:306.5,y2:524.2,color:"#27392f",width:5},{x1:306.5,y1:524.2,x2:313.1,y2:524.9,color:"#27392f",width:5},{x1:313.1,y1:524.9,x2:319.5,y2:525.9,color:"#27392f",width:5},{x1:319.5,y1:525.9,x2:325.9,y2:527.4,color:"#27392f",width:5},{x1:325.9,y1:527.4,x2:332.1,y2:529.3,color:"#27392f",width:5},{x1:332.1,y1:529.3,x2:338.3,y2:531.6,color:"#27392f",width:5},{x1:338.3,y1:531.6,x2:344.2,y2:534.3,color:"#27392f",width:5},{x1:344.2,y1:534.3,x2:350,y2:537.4,color:"#27392f",width:5},{x1:350,y1:537.4,x2:355.6,y2:540.9,color:"#27392f",width:5},{x1:355.6,y1:540.9,x2:360.9,y2:544.7,color:"#27392f",width:5},{x1:360.9,y1:544.7,x2:365.9,y2:548.8,color:"#27392f",width:5},{x1:365.9,y1:548.8,x2:370.7,y2:553.3,color:"#27392f",width:5},{x1:370.7,y1:553.3,x2:375.2,y2:558.1,color:"#27392f",width:5},{x1:375.2,y1:558.1,x2:379.3,y2:563.1,color:"#27392f",width:5},{x1:379.3,y1:563.1,x2:383.1,y2:568.4,color:"#27392f",width:5},{x1:383.1,y1:568.4,x2:386.6,y2:574,color:"#27392f",width:5},{x1:386.6,y1:574,x2:389.7,y2:579.8,color:"#27392f",width:5},{x1:389.7,y1:579.8,x2:392.4,y2:585.7,color:"#27392f",width:5},{x1:392.4,y1:585.7,x2:394.7,y2:591.9,color:"#27392f",width:5},{x1:394.7,y1:591.9,x2:396.6,y2:598.1,color:"#27392f",width:5},{x1:396.6,y1:598.1,x2:398.1,y2:604.5,color:"#27392f",width:5},{x1:398.1,y1:604.5,x2:399.1,y2:610.9,color:"#27392f",width:5},{x1:399.1,y1:610.9,x2:399.8,y2:617.5,color:"#27392f",width:5},{x1:399.8,y1:617.5,x2:400,y2:624,color:"#27392f",width:5},{x1:400,y1:624,x2:399.8,y2:630.5,color:"#27392f",width:5},{x1:399.8,y1:630.5,x2:399.1,y2:637.1,color:"#27392f",width:5},{x1:399.1,y1:637.1,x2:398.1,y2:643.5,color:"#27392f",width:5},{x1:398.1,y1:643.5,x2:396.6,y2:649.9,color:"#27392f",width:5},{x1:396.6,y1:649.9,x2:394.7,y2:656.1,color:"#27392f",width:5},{x1:394.7,y1:656.1,x2:392.4,y2:662.3,color:"#27392f",width:5},{x1:392.4,y1:662.3,x2:389.7,y2:668.2,color:"#27392f",width:5},{x1:389.7,y1:668.2,x2:386.6,y2:674,color:"#27392f",width:5},{x1:386.6,y1:674,x2:383.1,y2:679.6,color:"#27392f",width:5},{x1:383.1,y1:679.6,x2:379.3,y2:684.9,color:"#27392f",width:5},{x1:379.3,y1:684.9,x2:375.2,y2:689.9,color:"#27392f",width:5},{x1:375.2,y1:689.9,x2:370.7,y2:694.7,color:"#27392f",width:5},{x1:370.7,y1:694.7,x2:365.9,y2:699.2,color:"#27392f",width:5},{x1:365.9,y1:699.2,x2:360.9,y2:703.3,color:"#27392f",width:5},{x1:360.9,y1:703.3,x2:355.6,y2:707.1,color:"#27392f",width:5},{x1:355.6,y1:707.1,x2:350,y2:710.6,color:"#27392f",width:5},{x1:350,y1:710.6,x2:344.2,y2:713.7,color:"#27392f",width:5},{x1:344.2,y1:713.7,x2:338.3,y2:716.4,color:"#27392f",width:5},{x1:338.3,y1:716.4,x2:332.1,y2:718.7,color:"#27392f",width:5},{x1:332.1,y1:718.7,x2:325.9,y2:720.6,color:"#27392f",width:5},{x1:325.9,y1:720.6,x2:319.5,y2:722.1,color:"#27392f",width:5},{x1:319.5,y1:722.1,x2:313.1,y2:723.1,color:"#27392f",width:5},{x1:313.1,y1:723.1,x2:306.5,y2:723.8,color:"#27392f",width:5},{x1:306.5,y1:723.8,x2:300,y2:724,color:"#27392f",width:5},{x1:150,y1:524,x2:450,y2:524,color:"#b9c6c0",width:1.5,dash:"4,3"},{x1:700,y1:524,x2:693.5,y2:524.2,color:"#27392f",width:5},{x1:693.5,y1:524.2,x2:686.9,y2:524.9,color:"#27392f",width:5},{x1:686.9,y1:524.9,x2:680.5,y2:525.9,color:"#27392f",width:5},{x1:680.5,y1:525.9,x2:674.1,y2:527.4,color:"#27392f",width:5},{x1:674.1,y1:527.4,x2:667.9,y2:529.3,color:"#27392f",width:5},{x1:667.9,y1:529.3,x2:661.7,y2:531.6,color:"#27392f",width:5},{x1:661.7,y1:531.6,x2:655.8,y2:534.3,color:"#27392f",width:5},{x1:655.8,y1:534.3,x2:650,y2:537.4,color:"#27392f",width:5},{x1:650,y1:537.4,x2:644.4,y2:540.9,color:"#27392f",width:5},{x1:644.4,y1:540.9,x2:639.1,y2:544.7,color:"#27392f",width:5},{x1:639.1,y1:544.7,x2:634.1,y2:548.8,color:"#27392f",width:5},{x1:634.1,y1:548.8,x2:629.3,y2:553.3,color:"#27392f",width:5},{x1:629.3,y1:553.3,x2:624.8,y2:558.1,color:"#27392f",width:5},{x1:624.8,y1:558.1,x2:620.7,y2:563.1,color:"#27392f",width:5},{x1:620.7,y1:563.1,x2:616.9,y2:568.4,color:"#27392f",width:5},{x1:616.9,y1:568.4,x2:613.4,y2:574,color:"#27392f",width:5},{x1:613.4,y1:574,x2:610.3,y2:579.8,color:"#27392f",width:5},{x1:610.3,y1:579.8,x2:607.6,y2:585.7,color:"#27392f",width:5},{x1:607.6,y1:585.7,x2:605.3,y2:591.9,color:"#27392f",width:5},{x1:605.3,y1:591.9,x2:603.4,y2:598.1,color:"#27392f",width:5},{x1:603.4,y1:598.1,x2:601.9,y2:604.5,color:"#27392f",width:5},{x1:601.9,y1:604.5,x2:600.9,y2:610.9,color:"#27392f",width:5},{x1:600.9,y1:610.9,x2:600.2,y2:617.5,color:"#27392f",width:5},{x1:600.2,y1:617.5,x2:600,y2:624,color:"#27392f",width:5},{x1:600,y1:624,x2:600.2,y2:630.5,color:"#27392f",width:5},{x1:600.2,y1:630.5,x2:600.9,y2:637.1,color:"#27392f",width:5},{x1:600.9,y1:637.1,x2:601.9,y2:643.5,color:"#27392f",width:5},{x1:601.9,y1:643.5,x2:603.4,y2:649.9,color:"#27392f",width:5},{x1:603.4,y1:649.9,x2:605.3,y2:656.1,color:"#27392f",width:5},{x1:605.3,y1:656.1,x2:607.6,y2:662.3,color:"#27392f",width:5},{x1:607.6,y1:662.3,x2:610.3,y2:668.2,color:"#27392f",width:5},{x1:610.3,y1:668.2,x2:613.4,y2:674,color:"#27392f",width:5},{x1:613.4,y1:674,x2:616.9,y2:679.6,color:"#27392f",width:5},{x1:616.9,y1:679.6,x2:620.7,y2:684.9,color:"#27392f",width:5},{x1:620.7,y1:684.9,x2:624.8,y2:689.9,color:"#27392f",width:5},{x1:624.8,y1:689.9,x2:629.3,y2:694.7,color:"#27392f",width:5},{x1:629.3,y1:694.7,x2:634.1,y2:699.2,color:"#27392f",width:5},{x1:634.1,y1:699.2,x2:639.1,y2:703.3,color:"#27392f",width:5},{x1:639.1,y1:703.3,x2:644.4,y2:707.1,color:"#27392f",width:5},{x1:644.4,y1:707.1,x2:650,y2:710.6,color:"#27392f",width:5},{x1:650,y1:710.6,x2:655.8,y2:713.7,color:"#27392f",width:5},{x1:655.8,y1:713.7,x2:661.7,y2:716.4,color:"#27392f",width:5},{x1:661.7,y1:716.4,x2:667.9,y2:718.7,color:"#27392f",width:5},{x1:667.9,y1:718.7,x2:674.1,y2:720.6,color:"#27392f",width:5},{x1:674.1,y1:720.6,x2:680.5,y2:722.1,color:"#27392f",width:5},{x1:680.5,y1:722.1,x2:686.9,y2:723.1,color:"#27392f",width:5},{x1:686.9,y1:723.1,x2:693.5,y2:723.8,color:"#27392f",width:5},{x1:693.5,y1:723.8,x2:700,y2:724,color:"#27392f",width:5},{x1:550,y1:524,x2:850,y2:524,color:"#b9c6c0",width:1.5,dash:"4,3"},{x1:300,y1:300,x2:306.5,y2:299.8,color:"#27392f",width:5},{x1:306.5,y1:299.8,x2:313.1,y2:299.1,color:"#27392f",width:5},{x1:313.1,y1:299.1,x2:319.5,y2:298.1,color:"#27392f",width:5},{x1:319.5,y1:298.1,x2:325.9,y2:296.6,color:"#27392f",width:5},{x1:325.9,y1:296.6,x2:332.1,y2:294.7,color:"#27392f",width:5},{x1:332.1,y1:294.7,x2:338.3,y2:292.4,color:"#27392f",width:5},{x1:338.3,y1:292.4,x2:344.2,y2:289.7,color:"#27392f",width:5},{x1:344.2,y1:289.7,x2:350,y2:286.6,color:"#27392f",width:5},{x1:350,y1:286.6,x2:355.6,y2:283.1,color:"#27392f",width:5},{x1:355.6,y1:283.1,x2:360.9,y2:279.3,color:"#27392f",width:5},{x1:360.9,y1:279.3,x2:365.9,y2:275.2,color:"#27392f",width:5},{x1:365.9,y1:275.2,x2:370.7,y2:270.7,color:"#27392f",width:5},{x1:370.7,y1:270.7,x2:375.2,y2:265.9,color:"#27392f",width:5},{x1:375.2,y1:265.9,x2:379.3,y2:260.9,color:"#27392f",width:5},{x1:379.3,y1:260.9,x2:383.1,y2:255.6,color:"#27392f",width:5},{x1:383.1,y1:255.6,x2:386.6,y2:250,color:"#27392f",width:5},{x1:386.6,y1:250,x2:389.7,y2:244.2,color:"#27392f",width:5},{x1:389.7,y1:244.2,x2:392.4,y2:238.3,color:"#27392f",width:5},{x1:392.4,y1:238.3,x2:394.7,y2:232.1,color:"#27392f",width:5},{x1:394.7,y1:232.1,x2:396.6,y2:225.9,color:"#27392f",width:5},{x1:396.6,y1:225.9,x2:398.1,y2:219.5,color:"#27392f",width:5},{x1:398.1,y1:219.5,x2:399.1,y2:213.1,color:"#27392f",width:5},{x1:399.1,y1:213.1,x2:399.8,y2:206.5,color:"#27392f",width:5},{x1:399.8,y1:206.5,x2:400,y2:200,color:"#27392f",width:5},{x1:400,y1:200,x2:399.8,y2:193.5,color:"#27392f",width:5},{x1:399.8,y1:193.5,x2:399.1,y2:186.9,color:"#27392f",width:5},{x1:399.1,y1:186.9,x2:398.1,y2:180.5,color:"#27392f",width:5},{x1:398.1,y1:180.5,x2:396.6,y2:174.1,color:"#27392f",width:5},{x1:396.6,y1:174.1,x2:394.7,y2:167.9,color:"#27392f",width:5},{x1:394.7,y1:167.9,x2:392.4,y2:161.7,color:"#27392f",width:5},{x1:392.4,y1:161.7,x2:389.7,y2:155.8,color:"#27392f",width:5},{x1:389.7,y1:155.8,x2:386.6,y2:150,color:"#27392f",width:5},{x1:386.6,y1:150,x2:383.1,y2:144.4,color:"#27392f",width:5},{x1:383.1,y1:144.4,x2:379.3,y2:139.1,color:"#27392f",width:5},{x1:379.3,y1:139.1,x2:375.2,y2:134.1,color:"#27392f",width:5},{x1:375.2,y1:134.1,x2:370.7,y2:129.3,color:"#27392f",width:5},{x1:370.7,y1:129.3,x2:365.9,y2:124.8,color:"#27392f",width:5},{x1:365.9,y1:124.8,x2:360.9,y2:120.7,color:"#27392f",width:5},{x1:360.9,y1:120.7,x2:355.6,y2:116.9,color:"#27392f",width:5},{x1:355.6,y1:116.9,x2:350,y2:113.4,color:"#27392f",width:5},{x1:350,y1:113.4,x2:344.2,y2:110.3,color:"#27392f",width:5},{x1:344.2,y1:110.3,x2:338.3,y2:107.6,color:"#27392f",width:5},{x1:338.3,y1:107.6,x2:332.1,y2:105.3,color:"#27392f",width:5},{x1:332.1,y1:105.3,x2:325.9,y2:103.4,color:"#27392f",width:5},{x1:325.9,y1:103.4,x2:319.5,y2:101.9,color:"#27392f",width:5},{x1:319.5,y1:101.9,x2:313.1,y2:100.9,color:"#27392f",width:5},{x1:313.1,y1:100.9,x2:306.5,y2:100.2,color:"#27392f",width:5},{x1:306.5,y1:100.2,x2:300,y2:100,color:"#27392f",width:5},{x1:150,y1:300,x2:450,y2:300,color:"#b9c6c0",width:1.5,dash:"4,3"},{x1:700,y1:300,x2:693.5,y2:299.8,color:"#27392f",width:5},{x1:693.5,y1:299.8,x2:686.9,y2:299.1,color:"#27392f",width:5},{x1:686.9,y1:299.1,x2:680.5,y2:298.1,color:"#27392f",width:5},{x1:680.5,y1:298.1,x2:674.1,y2:296.6,color:"#27392f",width:5},{x1:674.1,y1:296.6,x2:667.9,y2:294.7,color:"#27392f",width:5},{x1:667.9,y1:294.7,x2:661.7,y2:292.4,color:"#27392f",width:5},{x1:661.7,y1:292.4,x2:655.8,y2:289.7,color:"#27392f",width:5},{x1:655.8,y1:289.7,x2:650,y2:286.6,color:"#27392f",width:5},{x1:650,y1:286.6,x2:644.4,y2:283.1,color:"#27392f",width:5},{x1:644.4,y1:283.1,x2:639.1,y2:279.3,color:"#27392f",width:5},{x1:639.1,y1:279.3,x2:634.1,y2:275.2,color:"#27392f",width:5},{x1:634.1,y1:275.2,x2:629.3,y2:270.7,color:"#27392f",width:5},{x1:629.3,y1:270.7,x2:624.8,y2:265.9,color:"#27392f",width:5},{x1:624.8,y1:265.9,x2:620.7,y2:260.9,color:"#27392f",width:5},{x1:620.7,y1:260.9,x2:616.9,y2:255.6,color:"#27392f",width:5},{x1:616.9,y1:255.6,x2:613.4,y2:250,color:"#27392f",width:5},{x1:613.4,y1:250,x2:610.3,y2:244.2,color:"#27392f",width:5},{x1:610.3,y1:244.2,x2:607.6,y2:238.3,color:"#27392f",width:5},{x1:607.6,y1:238.3,x2:605.3,y2:232.1,color:"#27392f",width:5},{x1:605.3,y1:232.1,x2:603.4,y2:225.9,color:"#27392f",width:5},{x1:603.4,y1:225.9,x2:601.9,y2:219.5,color:"#27392f",width:5},{x1:601.9,y1:219.5,x2:600.9,y2:213.1,color:"#27392f",width:5},{x1:600.9,y1:213.1,x2:600.2,y2:206.5,color:"#27392f",width:5},{x1:600.2,y1:206.5,x2:600,y2:200,color:"#27392f",width:5},{x1:600,y1:200,x2:600.2,y2:193.5,color:"#27392f",width:5},{x1:600.2,y1:193.5,x2:600.9,y2:186.9,color:"#27392f",width:5},{x1:600.9,y1:186.9,x2:601.9,y2:180.5,color:"#27392f",width:5},{x1:601.9,y1:180.5,x2:603.4,y2:174.1,color:"#27392f",width:5},{x1:603.4,y1:174.1,x2:605.3,y2:167.9,color:"#27392f",width:5},{x1:605.3,y1:167.9,x2:607.6,y2:161.7,color:"#27392f",width:5},{x1:607.6,y1:161.7,x2:610.3,y2:155.8,color:"#27392f",width:5},{x1:610.3,y1:155.8,x2:613.4,y2:150,color:"#27392f",width:5},{x1:613.4,y1:150,x2:616.9,y2:144.4,color:"#27392f",width:5},{x1:616.9,y1:144.4,x2:620.7,y2:139.1,color:"#27392f",width:5},{x1:620.7,y1:139.1,x2:624.8,y2:134.1,color:"#27392f",width:5},{x1:624.8,y1:134.1,x2:629.3,y2:129.3,color:"#27392f",width:5},{x1:629.3,y1:129.3,x2:634.1,y2:124.8,color:"#27392f",width:5},{x1:634.1,y1:124.8,x2:639.1,y2:120.7,color:"#27392f",width:5},{x1:639.1,y1:120.7,x2:644.4,y2:116.9,color:"#27392f",width:5},{x1:644.4,y1:116.9,x2:650,y2:113.4,color:"#27392f",width:5},{x1:650,y1:113.4,x2:655.8,y2:110.3,color:"#27392f",width:5},{x1:655.8,y1:110.3,x2:661.7,y2:107.6,color:"#27392f",width:5},{x1:661.7,y1:107.6,x2:667.9,y2:105.3,color:"#27392f",width:5},{x1:667.9,y1:105.3,x2:674.1,y2:103.4,color:"#27392f",width:5},{x1:674.1,y1:103.4,x2:680.5,y2:101.9,color:"#27392f",width:5},{x1:680.5,y1:101.9,x2:686.9,y2:100.9,color:"#27392f",width:5},{x1:686.9,y1:100.9,x2:693.5,y2:100.2,color:"#27392f",width:5},{x1:693.5,y1:100.2,x2:700,y2:100,color:"#27392f",width:5},{x1:550,y1:300,x2:850,y2:300,color:"#b9c6c0",width:1.5,dash:"4,3"}], dots:[{x:300,y:624,r:4,color:"#1d63d1"},{x:700,y:624,r:4,color:"#1d63d1"},{x:300,y:200,r:4,color:"#1d63d1"},{x:700,y:200,r:4,color:"#1d63d1"}], texts:[{x:314,y:624,text:"중심",size:11,color:"#1d63d1",bold:true,anchor:"start"},{x:300,y:474,text:"circle(100, 180)",size:17,color:"#27392f",bold:true,anchor:"middle"},{x:300,y:449,text:"중심 왼쪽 · 앞으로 그려짐",size:12,color:"#5b6b62",bold:false,anchor:"middle"},{x:714,y:624,text:"중심",size:11,color:"#1d63d1",bold:true,anchor:"start"},{x:700,y:474,text:"circle(100, -180)",size:17,color:"#27392f",bold:true,anchor:"middle"},{x:700,y:449,text:"중심 왼쪽 · 뒤로 그려짐",size:12,color:"#5b6b62",bold:false,anchor:"middle"},{x:314,y:200,text:"중심",size:11,color:"#1d63d1",bold:true,anchor:"start"},{x:300,y:50,text:"circle(-100, 180)",size:17,color:"#27392f",bold:true,anchor:"middle"},{x:300,y:25,text:"중심 오른쪽 · 앞으로 그려짐",size:12,color:"#5b6b62",bold:false,anchor:"middle"},{x:714,y:200,text:"중심",size:11,color:"#1d63d1",bold:true,anchor:"start"},{x:700,y:50,text:"circle(-100, -180)",size:17,color:"#27392f",bold:true,anchor:"middle"},{x:700,y:25,text:"중심 오른쪽 · 뒤로 그려짐",size:12,color:"#5b6b62",bold:false,anchor:"middle"},{x:300,y:796,text:"각도 양수(+)",size:17,color:"#1d63d1",bold:true,anchor:"middle"},{x:700,y:796,text:"각도 음수(-)",size:17,color:"#e5383b",bold:true,anchor:"middle"},{x:65,y:599,text:"반지름",size:14,color:"#27392f",bold:true,anchor:"middle"},{x:65,y:579,text:"양수(+)",size:14,color:"#27392f",bold:true,anchor:"middle"},{x:65,y:175,text:"반지름",size:14,color:"#27392f",bold:true,anchor:"middle"},{x:65,y:155,text:"음수(-)",size:14,color:"#27392f",bold:true,anchor:"middle"}], turtles:[{x:300,y:524,heading:0,scale:1,color:"#2f9e6e",opacity:0.35},{x:300,y:724,heading:180,scale:1.1,color:"#2f9e6e",opacity:1},{x:700,y:524,heading:0,scale:1,color:"#2f9e6e",opacity:0.35},{x:700,y:724,heading:180,scale:1.1,color:"#2f9e6e",opacity:1},{x:300,y:300,heading:0,scale:1,color:"#2f9e6e",opacity:0.35},{x:300,y:100,heading:180,scale:1.1,color:"#2f9e6e",opacity:1},{x:700,y:300,heading:0,scale:1,color:"#2f9e6e",opacity:0.35},{x:700,y:100,heading:180,scale:1.1,color:"#2f9e6e",opacity:1}], w:900, h:760, pad:24 }),
+      code:`import turtle as t
+
+t.circle(100, 180)
+
+t.mainloop()`,
+      tryit:["위 그림과 비교하면서, 반지름과 각도의 부호를 하나씩 바꿔가며 실행해보세요."],
+      minis:[
+        { title:"무지개 원 만들기", desc:"색을 바꿔가며 호를 그려 알록달록한 원 테두리를 만들도록 코딩해보세요. 빨강·주황·노랑·초록·파랑·보라 또는 내가 원하는 색상을 사용해요.", shot:"6가지 색 구간의 무지개색 원.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:2.62,y2:0.06,color:"#e5383b",width:30},{x1:2.62,y1:0.06,x2:5.23,y2:0.23,color:"#e5383b",width:30},{x1:5.23,y1:0.23,x2:7.83,y2:0.51,color:"#e5383b",width:30},{x1:7.83,y1:0.51,x2:10.42,y2:0.91,color:"#e5383b",width:30},{x1:10.42,y1:0.91,x2:12.99,y2:1.42,color:"#e5383b",width:30},{x1:12.99,y1:1.42,x2:15.53,y2:2.04,color:"#e5383b",width:30},{x1:15.53,y1:2.04,x2:18.04,y2:2.78,color:"#e5383b",width:30},{x1:18.04,y1:2.78,x2:20.52,y2:3.62,color:"#e5383b",width:30},{x1:20.52,y1:3.62,x2:22.96,y2:4.57,color:"#e5383b",width:30},{x1:22.96,y1:4.57,x2:25.36,y2:5.62,color:"#e5383b",width:30},{x1:25.36,y1:5.62,x2:27.7,y2:6.78,color:"#e5383b",width:30},{x1:27.7,y1:6.78,x2:30,y2:8.04,color:"#e5383b",width:30},{x1:30,y1:8.04,x2:32.24,y2:9.4,color:"#e5383b",width:30},{x1:32.24,y1:9.4,x2:34.41,y2:10.85,color:"#e5383b",width:30},{x1:34.41,y1:10.85,x2:36.53,y2:12.4,color:"#e5383b",width:30},{x1:36.53,y1:12.4,x2:38.57,y2:14.04,color:"#e5383b",width:30},{x1:38.57,y1:14.04,x2:40.54,y2:15.76,color:"#e5383b",width:30},{x1:40.54,y1:15.76,x2:42.43,y2:17.57,color:"#e5383b",width:30},{x1:42.43,y1:17.57,x2:44.24,y2:19.46,color:"#e5383b",width:30},{x1:44.24,y1:19.46,x2:45.96,y2:21.43,color:"#e5383b",width:30},{x1:45.96,y1:21.43,x2:47.6,y2:23.47,color:"#e5383b",width:30},{x1:47.6,y1:23.47,x2:49.15,y2:25.59,color:"#e5383b",width:30},{x1:49.15,y1:25.59,x2:50.6,y2:27.76,color:"#e5383b",width:30},{x1:50.6,y1:27.76,x2:51.96,y2:30,color:"#e5383b",width:30},{x1:51.96,y1:30,x2:53.22,y2:32.3,color:"#ff8c1a",width:30},{x1:53.22,y1:32.3,x2:54.38,y2:34.64,color:"#ff8c1a",width:30},{x1:54.38,y1:34.64,x2:55.43,y2:37.04,color:"#ff8c1a",width:30},{x1:55.43,y1:37.04,x2:56.38,y2:39.48,color:"#ff8c1a",width:30},{x1:56.38,y1:39.48,x2:57.22,y2:41.96,color:"#ff8c1a",width:30},{x1:57.22,y1:41.96,x2:57.96,y2:44.47,color:"#ff8c1a",width:30},{x1:57.96,y1:44.47,x2:58.58,y2:47.01,color:"#ff8c1a",width:30},{x1:58.58,y1:47.01,x2:59.09,y2:49.58,color:"#ff8c1a",width:30},{x1:59.09,y1:49.58,x2:59.49,y2:52.17,color:"#ff8c1a",width:30},{x1:59.49,y1:52.17,x2:59.77,y2:54.77,color:"#ff8c1a",width:30},{x1:59.77,y1:54.77,x2:59.94,y2:57.38,color:"#ff8c1a",width:30},{x1:59.94,y1:57.38,x2:60,y2:60,color:"#ff8c1a",width:30},{x1:60,y1:60,x2:59.94,y2:62.62,color:"#ff8c1a",width:30},{x1:59.94,y1:62.62,x2:59.77,y2:65.23,color:"#ff8c1a",width:30},{x1:59.77,y1:65.23,x2:59.49,y2:67.83,color:"#ff8c1a",width:30},{x1:59.49,y1:67.83,x2:59.09,y2:70.42,color:"#ff8c1a",width:30},{x1:59.09,y1:70.42,x2:58.58,y2:72.99,color:"#ff8c1a",width:30},{x1:58.58,y1:72.99,x2:57.96,y2:75.53,color:"#ff8c1a",width:30},{x1:57.96,y1:75.53,x2:57.22,y2:78.04,color:"#ff8c1a",width:30},{x1:57.22,y1:78.04,x2:56.38,y2:80.52,color:"#ff8c1a",width:30},{x1:56.38,y1:80.52,x2:55.43,y2:82.96,color:"#ff8c1a",width:30},{x1:55.43,y1:82.96,x2:54.38,y2:85.36,color:"#ff8c1a",width:30},{x1:54.38,y1:85.36,x2:53.22,y2:87.7,color:"#ff8c1a",width:30},{x1:53.22,y1:87.7,x2:51.96,y2:90,color:"#ff8c1a",width:30},{x1:51.96,y1:90,x2:50.6,y2:92.24,color:"#ffd400",width:30},{x1:50.6,y1:92.24,x2:49.15,y2:94.41,color:"#ffd400",width:30},{x1:49.15,y1:94.41,x2:47.6,y2:96.53,color:"#ffd400",width:30},{x1:47.6,y1:96.53,x2:45.96,y2:98.57,color:"#ffd400",width:30},{x1:45.96,y1:98.57,x2:44.24,y2:100.54,color:"#ffd400",width:30},{x1:44.24,y1:100.54,x2:42.43,y2:102.43,color:"#ffd400",width:30},{x1:42.43,y1:102.43,x2:40.54,y2:104.24,color:"#ffd400",width:30},{x1:40.54,y1:104.24,x2:38.57,y2:105.96,color:"#ffd400",width:30},{x1:38.57,y1:105.96,x2:36.53,y2:107.6,color:"#ffd400",width:30},{x1:36.53,y1:107.6,x2:34.41,y2:109.15,color:"#ffd400",width:30},{x1:34.41,y1:109.15,x2:32.24,y2:110.6,color:"#ffd400",width:30},{x1:32.24,y1:110.6,x2:30,y2:111.96,color:"#ffd400",width:30},{x1:30,y1:111.96,x2:27.7,y2:113.22,color:"#ffd400",width:30},{x1:27.7,y1:113.22,x2:25.36,y2:114.38,color:"#ffd400",width:30},{x1:25.36,y1:114.38,x2:22.96,y2:115.43,color:"#ffd400",width:30},{x1:22.96,y1:115.43,x2:20.52,y2:116.38,color:"#ffd400",width:30},{x1:20.52,y1:116.38,x2:18.04,y2:117.22,color:"#ffd400",width:30},{x1:18.04,y1:117.22,x2:15.53,y2:117.96,color:"#ffd400",width:30},{x1:15.53,y1:117.96,x2:12.99,y2:118.58,color:"#ffd400",width:30},{x1:12.99,y1:118.58,x2:10.42,y2:119.09,color:"#ffd400",width:30},{x1:10.42,y1:119.09,x2:7.83,y2:119.49,color:"#ffd400",width:30},{x1:7.83,y1:119.49,x2:5.23,y2:119.77,color:"#ffd400",width:30},{x1:5.23,y1:119.77,x2:2.62,y2:119.94,color:"#ffd400",width:30},{x1:2.62,y1:119.94,x2:0,y2:120,color:"#ffd400",width:30},{x1:0,y1:120,x2:-2.62,y2:119.94,color:"#2f9e6e",width:30},{x1:-2.62,y1:119.94,x2:-5.23,y2:119.77,color:"#2f9e6e",width:30},{x1:-5.23,y1:119.77,x2:-7.83,y2:119.49,color:"#2f9e6e",width:30},{x1:-7.83,y1:119.49,x2:-10.42,y2:119.09,color:"#2f9e6e",width:30},{x1:-10.42,y1:119.09,x2:-12.99,y2:118.58,color:"#2f9e6e",width:30},{x1:-12.99,y1:118.58,x2:-15.53,y2:117.96,color:"#2f9e6e",width:30},{x1:-15.53,y1:117.96,x2:-18.04,y2:117.22,color:"#2f9e6e",width:30},{x1:-18.04,y1:117.22,x2:-20.52,y2:116.38,color:"#2f9e6e",width:30},{x1:-20.52,y1:116.38,x2:-22.96,y2:115.43,color:"#2f9e6e",width:30},{x1:-22.96,y1:115.43,x2:-25.36,y2:114.38,color:"#2f9e6e",width:30},{x1:-25.36,y1:114.38,x2:-27.7,y2:113.22,color:"#2f9e6e",width:30},{x1:-27.7,y1:113.22,x2:-30,y2:111.96,color:"#2f9e6e",width:30},{x1:-30,y1:111.96,x2:-32.24,y2:110.6,color:"#2f9e6e",width:30},{x1:-32.24,y1:110.6,x2:-34.41,y2:109.15,color:"#2f9e6e",width:30},{x1:-34.41,y1:109.15,x2:-36.53,y2:107.6,color:"#2f9e6e",width:30},{x1:-36.53,y1:107.6,x2:-38.57,y2:105.96,color:"#2f9e6e",width:30},{x1:-38.57,y1:105.96,x2:-40.54,y2:104.24,color:"#2f9e6e",width:30},{x1:-40.54,y1:104.24,x2:-42.43,y2:102.43,color:"#2f9e6e",width:30},{x1:-42.43,y1:102.43,x2:-44.24,y2:100.54,color:"#2f9e6e",width:30},{x1:-44.24,y1:100.54,x2:-45.96,y2:98.57,color:"#2f9e6e",width:30},{x1:-45.96,y1:98.57,x2:-47.6,y2:96.53,color:"#2f9e6e",width:30},{x1:-47.6,y1:96.53,x2:-49.15,y2:94.41,color:"#2f9e6e",width:30},{x1:-49.15,y1:94.41,x2:-50.6,y2:92.24,color:"#2f9e6e",width:30},{x1:-50.6,y1:92.24,x2:-51.96,y2:90,color:"#2f9e6e",width:30},{x1:-51.96,y1:90,x2:-53.22,y2:87.7,color:"#1d63d1",width:30},{x1:-53.22,y1:87.7,x2:-54.38,y2:85.36,color:"#1d63d1",width:30},{x1:-54.38,y1:85.36,x2:-55.43,y2:82.96,color:"#1d63d1",width:30},{x1:-55.43,y1:82.96,x2:-56.38,y2:80.52,color:"#1d63d1",width:30},{x1:-56.38,y1:80.52,x2:-57.22,y2:78.04,color:"#1d63d1",width:30},{x1:-57.22,y1:78.04,x2:-57.96,y2:75.53,color:"#1d63d1",width:30},{x1:-57.96,y1:75.53,x2:-58.58,y2:72.99,color:"#1d63d1",width:30},{x1:-58.58,y1:72.99,x2:-59.09,y2:70.42,color:"#1d63d1",width:30},{x1:-59.09,y1:70.42,x2:-59.49,y2:67.83,color:"#1d63d1",width:30},{x1:-59.49,y1:67.83,x2:-59.77,y2:65.23,color:"#1d63d1",width:30},{x1:-59.77,y1:65.23,x2:-59.94,y2:62.62,color:"#1d63d1",width:30},{x1:-59.94,y1:62.62,x2:-60,y2:60,color:"#1d63d1",width:30},{x1:-60,y1:60,x2:-59.94,y2:57.38,color:"#1d63d1",width:30},{x1:-59.94,y1:57.38,x2:-59.77,y2:54.77,color:"#1d63d1",width:30},{x1:-59.77,y1:54.77,x2:-59.49,y2:52.17,color:"#1d63d1",width:30},{x1:-59.49,y1:52.17,x2:-59.09,y2:49.58,color:"#1d63d1",width:30},{x1:-59.09,y1:49.58,x2:-58.58,y2:47.01,color:"#1d63d1",width:30},{x1:-58.58,y1:47.01,x2:-57.96,y2:44.47,color:"#1d63d1",width:30},{x1:-57.96,y1:44.47,x2:-57.22,y2:41.96,color:"#1d63d1",width:30},{x1:-57.22,y1:41.96,x2:-56.38,y2:39.48,color:"#1d63d1",width:30},{x1:-56.38,y1:39.48,x2:-55.43,y2:37.04,color:"#1d63d1",width:30},{x1:-55.43,y1:37.04,x2:-54.38,y2:34.64,color:"#1d63d1",width:30},{x1:-54.38,y1:34.64,x2:-53.22,y2:32.3,color:"#1d63d1",width:30},{x1:-53.22,y1:32.3,x2:-51.96,y2:30,color:"#1d63d1",width:30},{x1:-51.96,y1:30,x2:-50.6,y2:27.76,color:"#8b5cf6",width:30},{x1:-50.6,y1:27.76,x2:-49.15,y2:25.59,color:"#8b5cf6",width:30},{x1:-49.15,y1:25.59,x2:-47.6,y2:23.47,color:"#8b5cf6",width:30},{x1:-47.6,y1:23.47,x2:-45.96,y2:21.43,color:"#8b5cf6",width:30},{x1:-45.96,y1:21.43,x2:-44.24,y2:19.46,color:"#8b5cf6",width:30},{x1:-44.24,y1:19.46,x2:-42.43,y2:17.57,color:"#8b5cf6",width:30},{x1:-42.43,y1:17.57,x2:-40.54,y2:15.76,color:"#8b5cf6",width:30},{x1:-40.54,y1:15.76,x2:-38.57,y2:14.04,color:"#8b5cf6",width:30},{x1:-38.57,y1:14.04,x2:-36.53,y2:12.4,color:"#8b5cf6",width:30},{x1:-36.53,y1:12.4,x2:-34.41,y2:10.85,color:"#8b5cf6",width:30},{x1:-34.41,y1:10.85,x2:-32.24,y2:9.4,color:"#8b5cf6",width:30},{x1:-32.24,y1:9.4,x2:-30,y2:8.04,color:"#8b5cf6",width:30},{x1:-30,y1:8.04,x2:-27.7,y2:6.78,color:"#8b5cf6",width:30},{x1:-27.7,y1:6.78,x2:-25.36,y2:5.62,color:"#8b5cf6",width:30},{x1:-25.36,y1:5.62,x2:-22.96,y2:4.57,color:"#8b5cf6",width:30},{x1:-22.96,y1:4.57,x2:-20.52,y2:3.62,color:"#8b5cf6",width:30},{x1:-20.52,y1:3.62,x2:-18.04,y2:2.78,color:"#8b5cf6",width:30},{x1:-18.04,y1:2.78,x2:-15.53,y2:2.04,color:"#8b5cf6",width:30},{x1:-15.53,y1:2.04,x2:-12.99,y2:1.42,color:"#8b5cf6",width:30},{x1:-12.99,y1:1.42,x2:-10.42,y2:0.91,color:"#8b5cf6",width:30},{x1:-10.42,y1:0.91,x2:-7.83,y2:0.51,color:"#8b5cf6",width:30},{x1:-7.83,y1:0.51,x2:-5.23,y2:0.23,color:"#8b5cf6",width:30},{x1:-5.23,y1:0.23,x2:-2.62,y2:0.06,color:"#8b5cf6",width:30},{x1:-2.62,y1:0.06,x2:-0,y2:0,color:"#8b5cf6",width:30}] }) }
+      ]
+    },
+    { title:"fillcolor(), begin_fill(), end_fill() - 색 채우기",
+      explain:["`fillcolor(\"색\")`은 도형 안을 **채울 색을 정해요**.","`begin_fill()`과 `end_fill()` 사이에 그린 도형 안쪽이 색으로 채워져요."],
+      shot:"검은 배경, 빨간 원.",
+      img: turtleScene({ bgFill:"#000000", fills:[{cx:0,cy:80,r:80,color:"#e5383b",stroke:"#ffffff",strokeWidth:3}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+t.bgcolor("black")
+
+t.color("white")       # 선 색
+t.fillcolor("red")     # 채우기 색
+
+t.begin_fill()
+t.circle(80)
+t.end_fill()
+
+t.mainloop()`,
+      tryit:["채우기 색상을 `\"orange\"`로 바꿔보세요.","`t.begin_fill()`을 지우고 실행해보세요. 색이 채워지지 않아요. (`begin_fill()`이 꼭 있어야 채워져요)"],
+      minis:[
+        { title:"사각형 색칠하기", desc:"정사각형을 그리고, 그 안을 초록색으로 채우도록 코딩해보세요.", shot:"초록색으로 채운 정사각형.",
+          img: turtleScene({ bgFill:"#000000", fills:[{points:[[0,0],[100,0],[100,-100],[0,-100],[0,0]],color:"#2f9e6e",stroke:"#ffffff",strokeWidth:3}] }) },
+        { title:"팩맨 만들기", desc:"원(`circle`)과 채우기를 이용해서 팩맨을 만들어보세요. 채우기 색은 \"gold\"로 해요.", shot:"입이 벌어진 노란 팩맨.", hint:"입을 다물 때는 `home()`을 사용하면 편해요.",
+          img: turtleScene({ fills:[{points:[[0,0],[-10.4,-0.6],[-20.8,-2.2],[-30.9,-4.9],[-40.7,-8.7],[-50,-13.4],[-58.8,-19.1],[-66.9,-25.7],[-74.3,-33.1],[-80.9,-41.2],[-86.6,-50],[-91.3,-59.3],[-95.1,-69.1],[-97.8,-79.2],[-99.5,-89.5],[-100,-100],[-99.5,-110.5],[-97.8,-120.8],[-95.1,-130.9],[-91.3,-140.7],[-86.6,-150],[-80.9,-158.8],[-74.3,-166.9],[-66.9,-174.3],[-58.8,-180.9],[-50,-186.6],[-40.7,-191.3],[-30.9,-195.1],[-20.8,-197.8],[-10.4,-199.4],[0,-200],[10.4,-199.4],[20.8,-197.8],[30.9,-195.1],[40.7,-191.3],[50,-186.6],[58.8,-180.9],[66.9,-174.3],[74.3,-166.9],[80.9,-158.8],[86.6,-150],[91.3,-140.7],[95.1,-130.9],[97.8,-120.8],[99.5,-110.5],[100,-100],[0,-100],[0,0]],color:"#ffd400",stroke:"#ffd400",strokeWidth:3}] }) }
+      ]
+    },
+    { title:"stamp() - 도장 찍기",
+      explain:["`stamp()`는 지금 거북이 모양을 화면에 **도장처럼 찍는** 함수예요.","찍힌 도장은 거북이가 움직여도 그대로 남아요."],
+      shot:"도장 3개가 일정 간격으로 찍혀요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:200,y2:0,color:"#27392f",width:3}], fills:[{points:[[16,0],[14,2],[10,1],[7,4],[9,7],[8,9],[5,6],[1,7],[-3,5],[-6,8],[-8,6],[-5,4],[-7,0],[-5,-4],[-8,-6],[-6,-8],[-3,-5],[1,-7],[5,-6],[8,-9],[9,-7],[7,-4],[10,-1],[14,-2]],color:"#27392f",strokeWidth:0},{points:[[116,0],[114,2],[110,1],[107,4],[109,7],[108,9],[105,6],[101,7],[97,5],[94,8],[92,6],[95,4],[93,0],[95,-4],[92,-6],[94,-8],[97,-5],[101,-7],[105,-6],[108,-9],[109,-7],[107,-4],[110,-1],[114,-2]],color:"#27392f",strokeWidth:0},{points:[[216,0],[214,2],[210,1],[207,4],[209,7],[208,9],[205,6],[201,7],[197,5],[194,8],[192,6],[195,4],[193,0],[195,-4],[192,-6],[194,-8],[197,-5],[201,-7],[205,-6],[208,-9],[209,-7],[207,-4],[210,-1],[214,-2]],color:"#27392f",strokeWidth:0}], turtles:[{x:200,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+t.stamp()
+t.fd(100)
+t.stamp()
+t.fd(100)
+t.stamp()
+
+t.mainloop()`,
+      tryit:["`t.fd(100)`을 `t.fd(50)`으로 바꿔서 도장 사이 거리가 줄었는지 확인해보세요."],
+      minis:[
+        { title:"선 없이 도장 5개 찍기", desc:"선 없이 거북이 도장 5개를 나란히 찍도록 코딩해보세요.", shot:"선 없이 나란히 찍힌 도장 5개.",
+          img: turtleScene({ fills:[{points:[[16,0],[14,2],[10,1],[7,4],[9,7],[8,9],[5,6],[1,7],[-3,5],[-6,8],[-8,6],[-5,4],[-7,0],[-5,-4],[-8,-6],[-6,-8],[-3,-5],[1,-7],[5,-6],[8,-9],[9,-7],[7,-4],[10,-1],[14,-2]],color:"#27392f",strokeWidth:0},{points:[[76,0],[74,2],[70,1],[67,4],[69,7],[68,9],[65,6],[61,7],[57,5],[54,8],[52,6],[55,4],[53,0],[55,-4],[52,-6],[54,-8],[57,-5],[61,-7],[65,-6],[68,-9],[69,-7],[67,-4],[70,-1],[74,-2]],color:"#27392f",strokeWidth:0},{points:[[136,0],[134,2],[130,1],[127,4],[129,7],[128,9],[125,6],[121,7],[117,5],[114,8],[112,6],[115,4],[113,0],[115,-4],[112,-6],[114,-8],[117,-5],[121,-7],[125,-6],[128,-9],[129,-7],[127,-4],[130,-1],[134,-2]],color:"#27392f",strokeWidth:0},{points:[[196,0],[194,2],[190,1],[187,4],[189,7],[188,9],[185,6],[181,7],[177,5],[174,8],[172,6],[175,4],[173,0],[175,-4],[172,-6],[174,-8],[177,-5],[181,-7],[185,-6],[188,-9],[189,-7],[187,-4],[190,-1],[194,-2]],color:"#27392f",strokeWidth:0},{points:[[256,0],[254,2],[250,1],[247,4],[249,7],[248,9],[245,6],[241,7],[237,5],[234,8],[232,6],[235,4],[233,0],[235,-4],[232,-6],[234,-8],[237,-5],[241,-7],[245,-6],[248,-9],[249,-7],[247,-4],[250,-1],[254,-2]],color:"#27392f",strokeWidth:0}] }) },
+        { title:"도장으로 눈송이 그리기", desc:"`stamp()`로 도장을 찍고 `rt()`로 조금씩 돌면서, 같은 동작을 여러 번 반복하면 눈송이 모양을 만들 수 있어요. 도장 크기를 키우면(`shapesize()`) 더 예쁜 눈송이가 돼요.", shot:"원 모양으로 겹쳐 찍힌 눈송이 도장.",
+          img: turtleScene({ bgFill:"#87ceeb", fills:[
+            {points:[[160.0,0.0],[140.0,20.0],[100.0,10.0],[70.0,40.0],[90.0,70.0],[80.0,90.0],[50.0,60.0],[10.0,70.0],[-30.0,50.0],[-60.0,80.0],[-80.0,60.0],[-50.0,40.0],[-70.0,0.0],[-50.0,-40.0],[-80.0,-60.0],[-60.0,-80.0],[-30.0,-50.0],[10.0,-70.0],[50.0,-60.0],[80.0,-90.0],[90.0,-70.0],[70.0,-40.0],[100.0,-10.0],[140.0,-20.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[138.6,80.0],[111.2,87.3],[81.6,58.7],[40.6,69.6],[42.9,105.6],[24.3,117.9],[13.3,77.0],[-26.3,65.6],[-51.0,28.3],[-92.0,39.3],[-99.3,12.0],[-63.3,9.6],[-60.6,-35.0],[-23.3,-59.6],[-39.3,-92.0],[-12.0,-99.3],[-1.0,-58.3],[43.7,-55.6],[73.3,-27.0],[114.3,-37.9],[112.9,-15.6],[80.6,0.4],[91.6,41.3],[131.2,52.7]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[80.0,138.6],[52.7,131.2],[41.3,91.6],[0.4,80.6],[-15.6,112.9],[-37.9,114.3],[-27.0,73.3],[-55.6,43.7],[-58.3,-1.0],[-99.3,-12.0],[-92.0,-39.3],[-59.6,-23.3],[-35.0,-60.6],[9.6,-63.3],[12.0,-99.3],[39.3,-92.0],[28.3,-51.0],[65.6,-26.3],[77.0,13.3],[117.9,24.3],[105.6,42.9],[69.6,40.6],[58.7,81.6],[87.3,111.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[0.0,160.0],[-20.0,140.0],[-10.0,100.0],[-40.0,70.0],[-70.0,90.0],[-90.0,80.0],[-60.0,50.0],[-70.0,10.0],[-50.0,-30.0],[-80.0,-60.0],[-60.0,-80.0],[-40.0,-50.0],[-0.0,-70.0],[40.0,-50.0],[60.0,-80.0],[80.0,-60.0],[50.0,-30.0],[70.0,10.0],[60.0,50.0],[90.0,80.0],[70.0,90.0],[40.0,70.0],[10.0,100.0],[20.0,140.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-80.0,138.6],[-87.3,111.2],[-58.7,81.6],[-69.6,40.6],[-105.6,42.9],[-117.9,24.3],[-77.0,13.3],[-65.6,-26.3],[-28.3,-51.0],[-39.3,-92.0],[-12.0,-99.3],[-9.6,-63.3],[35.0,-60.6],[59.6,-23.3],[92.0,-39.3],[99.3,-12.0],[58.3,-1.0],[55.6,43.7],[27.0,73.3],[37.9,114.3],[15.6,112.9],[-0.4,80.6],[-41.3,91.6],[-52.7,131.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-138.6,80.0],[-131.2,52.7],[-91.6,41.3],[-80.6,0.4],[-112.9,-15.6],[-114.3,-37.9],[-73.3,-27.0],[-43.7,-55.6],[1.0,-58.3],[12.0,-99.3],[39.3,-92.0],[23.3,-59.6],[60.6,-35.0],[63.3,9.6],[99.3,12.0],[92.0,39.3],[51.0,28.3],[26.3,65.6],[-13.3,77.0],[-24.3,117.9],[-42.9,105.6],[-40.6,69.6],[-81.6,58.7],[-111.2,87.3]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-160.0,0.0],[-140.0,-20.0],[-100.0,-10.0],[-70.0,-40.0],[-90.0,-70.0],[-80.0,-90.0],[-50.0,-60.0],[-10.0,-70.0],[30.0,-50.0],[60.0,-80.0],[80.0,-60.0],[50.0,-40.0],[70.0,-0.0],[50.0,40.0],[80.0,60.0],[60.0,80.0],[30.0,50.0],[-10.0,70.0],[-50.0,60.0],[-80.0,90.0],[-90.0,70.0],[-70.0,40.0],[-100.0,10.0],[-140.0,20.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-138.6,-80.0],[-111.2,-87.3],[-81.6,-58.7],[-40.6,-69.6],[-42.9,-105.6],[-24.3,-117.9],[-13.3,-77.0],[26.3,-65.6],[51.0,-28.3],[92.0,-39.3],[99.3,-12.0],[63.3,-9.6],[60.6,35.0],[23.3,59.6],[39.3,92.0],[12.0,99.3],[1.0,58.3],[-43.7,55.6],[-73.3,27.0],[-114.3,37.9],[-112.9,15.6],[-80.6,-0.4],[-91.6,-41.3],[-131.2,-52.7]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-80.0,-138.6],[-52.7,-131.2],[-41.3,-91.6],[-0.4,-80.6],[15.6,-112.9],[37.9,-114.3],[27.0,-73.3],[55.6,-43.7],[58.3,1.0],[99.3,12.0],[92.0,39.3],[59.6,23.3],[35.0,60.6],[-9.6,63.3],[-12.0,99.3],[-39.3,92.0],[-28.3,51.0],[-65.6,26.3],[-77.0,-13.3],[-117.9,-24.3],[-105.6,-42.9],[-69.6,-40.6],[-58.7,-81.6],[-87.3,-111.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-0.0,-160.0],[20.0,-140.0],[10.0,-100.0],[40.0,-70.0],[70.0,-90.0],[90.0,-80.0],[60.0,-50.0],[70.0,-10.0],[50.0,30.0],[80.0,60.0],[60.0,80.0],[40.0,50.0],[0.0,70.0],[-40.0,50.0],[-60.0,80.0],[-80.0,60.0],[-50.0,30.0],[-70.0,-10.0],[-60.0,-50.0],[-90.0,-80.0],[-70.0,-90.0],[-40.0,-70.0],[-10.0,-100.0],[-20.0,-140.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[80.0,-138.6],[87.3,-111.2],[58.7,-81.6],[69.6,-40.6],[105.6,-42.9],[117.9,-24.3],[77.0,-13.3],[65.6,26.3],[28.3,51.0],[39.3,92.0],[12.0,99.3],[9.6,63.3],[-35.0,60.6],[-59.6,23.3],[-92.0,39.3],[-99.3,12.0],[-58.3,1.0],[-55.6,-43.7],[-27.0,-73.3],[-37.9,-114.3],[-15.6,-112.9],[0.4,-80.6],[41.3,-91.6],[52.7,-131.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[138.6,-80.0],[131.2,-52.7],[91.6,-41.3],[80.6,-0.4],[112.9,15.6],[114.3,37.9],[73.3,27.0],[43.7,55.6],[-1.0,58.3],[-12.0,99.3],[-39.3,92.0],[-23.3,59.6],[-60.6,35.0],[-63.3,-9.6],[-99.3,-12.0],[-92.0,-39.3],[-51.0,-28.3],[-26.3,-65.6],[13.3,-77.0],[24.3,-117.9],[42.9,-105.6],[40.6,-69.6],[81.6,-58.7],[111.2,-87.3]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5}
+          ] }) }
+      ]
+    },
+    { title:"hideturtle() / showturtle() - 숨기고 보이기",
+      explain:["`hideturtle()`(`ht()`)은 거북이 모양을 **안 보이게** 해요.","`showturtle()`(`st()`)은 **다시 보이게** 해요. 선이나 도장은 그대로 남아요.","`time.sleep(초)`는 그 시간 동안 코드 실행을 잠깐 멈추는 기능이에요. 맨 위에 `import time`을 먼저 써야 해요."],
+      shot:"1초 뒤 거북이가 사라졌다 다시 나타나요.",
+      img: turtleScene({ lines:[{x1:-40,y1:0,x2:40,y2:0,color:"#b9c6c0",width:2,dash:"4,4"}], texts:[{x:0,y:35,text:"1초 후",size:12,color:"#7c948a"}], turtles:[{x:-70,y:0,heading:0},{x:70,y:0,heading:0,opacity:0.15}] }),
+      code:`import turtle as t
+import time
+
+t.shape("turtle")
+
+time.sleep(1)
+t.hideturtle()
+time.sleep(1)
+t.showturtle()
+
+t.mainloop()`,
+      tryit:["`time.sleep(1)`의 숫자를 `3`으로 바꿔서 더 천천히 사라지고 나타나는지 확인해보세요.","`t.hideturtle()`과 `t.showturtle()`을 더 추가해서, 여러 번 깜빡이게 만들어보세요."]
+    },
+    { title:"write() - 글씨 쓰기",
+      explain:["`write(\"글자\")`는 화면에 **글씨를 쓰는** 함수예요.","괄호 안에 쓰고 싶은 글자를 따옴표와 함께 적어요.","`align`은 글자를 어디에 맞춰 쓸지 정해요. (\"left\", \"center\", \"right\")","`font=(폰트 이름, 크기, 스타일)`로 글꼴, 크기, 굵기를 정할 수 있어요."],
+      shot:"\"hello\" 글씨가 나타나요.",
+      img: turtleScene({ texts:[{x:8,y:8,text:"hello",size:24,color:"#27392f",bold:true,anchor:"start"}], turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+t.write("hello")
+
+t.mainloop()`,
+      codeLabel:"기본",
+      code2:`import turtle as t
+
+t.shape("turtle")
+t.write("hello")
+
+t.goto(0, 100)
+t.write("hello", align="center", font=("나눔고딕", 20))
+
+t.mainloop()`,
+      code2Label:"글꼴과 크기 정하기",
+      tryit:["`\"hello\"`를 자기 이름으로 바꿔보세요.","폰트 이름을 `\"맑은 고딕\"`이나 `\"Arial\"` 등 다른 글꼴로 바꿔보세요.","글자 크기 `20`을 `30`이나 `40`으로 키워보세요."]
+    }
+  ],
+  funcTable:[
+    {name:"circle(숫자)", desc:"원 그리기", usage:"t.circle(100)"},
+    {name:"circle(숫자, 각도)", desc:"호(원의 일부) 그리기", usage:"t.circle(100, 180)"},
+    {name:"fillcolor(\"색\")", desc:"채울 색 정하기", usage:"t.fillcolor(\"green\")"},
+    {name:"begin_fill() / end_fill()", desc:"채우기 시작 / 끝", usage:"t.begin_fill()"},
+    {name:"stamp()", desc:"도장 찍기", usage:"t.stamp()"},
+    {name:"hideturtle() / showturtle()", desc:"거북이 숨기기 / 보이기", usage:"t.ht()"},
+    {name:"time.sleep(초)", desc:"잠깐 멈추기 (import time 필요)", usage:"time.sleep(1)"},
+    {name:"write(\"글자\")", desc:"글씨 쓰기", usage:"t.write(\"hello\")"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**하늘에 뜬 노란 풍선**
+- 배경은 하늘색, 채우기 색은 노란색으로 정해요.
+- 원을 그려서 풍선 모양을 채워요.
+- 거북이 모양을 도장처럼 한 번 더 찍어요.
+- 화면에 원하는 문구를 써요.
+- 마지막엔 거북이를 숨겨요.`, shot:"하늘색 배경에 노란 풍선과 글씨, 거북이 도장.",
+        img: turtleScene({ bgFill:"#87ceeb", fills:[{cx:0,cy:70,r:50,color:"#ffd400",stroke:"#ffffff",strokeWidth:3}], turtles:[{x:0,y:-30,heading:0,scale:0.9,color:"#27392f",opacity:1}], texts:[{x:0,y:-65,text:"Turtle Balloon!",size:11,color:"#27392f",bold:true}] }) },
+      { task:`**피자 한 조각 그리기**
+- 앞으로 이동해서 자른 선(반지름)을 그려요.
+- 방향을 돌려 둥근 테두리(호)를 그려요.
+- 다시 방향을 돌려 중심으로 돌아와요.
+- 안쪽을 원하는 색으로 채워요.`, shot:"주황색 부채꼴(피자 한 조각).",
+        img: turtleScene({ fills:[{points:[[0,0],[100,0],[99.4,11.2],[97.5,22.2],[94.4,33],[90.1,43.4],[84.7,53.2],[78.2,62.4],[70.7,70.7],[0,0]],color:"#ff8c1a",stroke:"#000000",strokeWidth:3}] }) },
+      { task:`**오륜기 그리기**
+- \`circle()\`과 \`color()\`를 이용해서 올림픽 오륜기를 그려요.
+- 파랑·검정·빨강 원을 윗줄에, 노랑·초록 원을 아랫줄에 서로 겹치도록 그려요.
+- 모든 원의 크기(반지름)는 같게 해요.
+- 원을 그리기 전마다 \`penup()\`/\`goto()\`로 위치를 옮기고, 다시 \`pendown()\`으로 내린 뒤 그려요.`, shot:"다섯 원이 겹쳐진 오륜기 모양.",
+        img: turtleScene({ arcs:[{cx:-160,cy:0,r:80,color:"#1d63d1",width:8},{cx:0,cy:0,r:80,color:"#000000",width:8},{cx:160,cy:0,r:80,color:"#e5383b",width:8},{cx:-80,cy:-70,r:80,color:"#ffd400",width:8},{cx:80,cy:-70,r:80,color:"#2f9e6e",width:8}] }) }
+    ]
+  },
+  quiz:[
+    { q:"원을 그리는 함수는?", choices:["`circle()`","`goto()`","`stamp()`","`write()`"], answer:0 },
+    { q:"도형 안쪽을 색으로 채울 때 짝을 이루는 함수는?", choices:["`penup()` / `pendown()`","`begin_fill()` / `end_fill()`","`left()` / `right()`","`stamp()` / `clear()`"], answer:1 },
+    { q:"거북이 모양을 화면에 도장처럼 찍는 함수는?", choices:["`write()`","`stamp()`","`circle()`","`dot()`"], answer:1 },
+    { q:"거북이 모양을 안 보이게 하는 함수는?", choices:["`hideturtle()`","`showturtle()`","`clear()`","`reset()`"], answer:0 },
+    { q:"화면에 글씨를 쓰는 함수는?", choices:["`write()`","`print()`","`text()`","`say()`"], answer:0 }
+  ],
+  next:["같은 동작을 반복할 때 쓰는 `for` 반복문을 배워요.","반복문으로 도형을 훨씬 짧은 코드로 그려봐요."]
+},
+{
+  slug:"07-for-loop", session:7, icon:"🔁",
+  title:"반복문으로 쉽게 그리기",
+  prevReview:["`circle()`로 원을 그렸어요.","`fillcolor()`, `begin_fill()`, `end_fill()`로 색을 채웠어요."],
+  learn:["`for` 반복문으로 같은 코드 줄여 쓰기","반복문으로 도형과 집 그리기","반복문을 두 번 겹쳐서 여러 개 그리기"],
+  steps:[
+    { title:"for 반복문 알아보기",
+      explain:["같은 동작을 **여러 번** 할 때 `for`를 쓰면 코드가 짧아져요.","`range(3)`은 3번 반복한다는 뜻이에요.","들여쓰기 된 코드가 정해진 횟수만큼 실행돼요."],
+      shot:"50씩 3번, 총 150만큼 이동해요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:50,y2:0,color:"#27392f",width:3},{x1:50,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:150,y2:0,color:"#27392f",width:3}], turtles:[{x:150,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+# range(3) → 3번 반복해요
+for i in range(3):
+    t.fd(50)  # 반복할 때마다 앞으로 50만큼 이동
+
+t.mainloop()`,
+      tryit:["`range(3)`을 `range(6)`으로 바꿔서 결과를 비교해보세요."],
+      minis:[
+        { title:"반복문으로 도장 줄지어 찍기", desc:"`for`문을 이용해서 거북이 도장이 여러 개 나란히 찍히도록 코딩해보세요. 몇 번 반복할지, 도장 사이의 간격은 자유롭게 정해보세요.", shot:"나란히 찍힌 도장 여러 개.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:60,y2:0,color:"#27392f",width:3},{x1:60,y1:0,x2:120,y2:0,color:"#27392f",width:3},{x1:120,y1:0,x2:180,y2:0,color:"#27392f",width:3},{x1:180,y1:0,x2:240,y2:0,color:"#27392f",width:3},{x1:240,y1:0,x2:300,y2:0,color:"#27392f",width:3}], fills:[{points:[[16,0],[14,2],[10,1],[7,4],[9,7],[8,9],[5,6],[1,7],[-3,5],[-6,8],[-8,6],[-5,4],[-7,0],[-5,-4],[-8,-6],[-6,-8],[-3,-5],[1,-7],[5,-6],[8,-9],[9,-7],[7,-4],[10,-1],[14,-2]],color:"#27392f",strokeWidth:0},{points:[[76,0],[74,2],[70,1],[67,4],[69,7],[68,9],[65,6],[61,7],[57,5],[54,8],[52,6],[55,4],[53,0],[55,-4],[52,-6],[54,-8],[57,-5],[61,-7],[65,-6],[68,-9],[69,-7],[67,-4],[70,-1],[74,-2]],color:"#27392f",strokeWidth:0},{points:[[136,0],[134,2],[130,1],[127,4],[129,7],[128,9],[125,6],[121,7],[117,5],[114,8],[112,6],[115,4],[113,0],[115,-4],[112,-6],[114,-8],[117,-5],[121,-7],[125,-6],[128,-9],[129,-7],[127,-4],[130,-1],[134,-2]],color:"#27392f",strokeWidth:0},{points:[[196,0],[194,2],[190,1],[187,4],[189,7],[188,9],[185,6],[181,7],[177,5],[174,8],[172,6],[175,4],[173,0],[175,-4],[172,-6],[174,-8],[177,-5],[181,-7],[185,-6],[188,-9],[189,-7],[187,-4],[190,-1],[194,-2]],color:"#27392f",strokeWidth:0},{points:[[256,0],[254,2],[250,1],[247,4],[249,7],[248,9],[245,6],[241,7],[237,5],[234,8],[232,6],[235,4],[233,0],[235,-4],[232,-6],[234,-8],[237,-5],[241,-7],[245,-6],[248,-9],[249,-7],[247,-4],[250,-1],[254,-2]],color:"#27392f",strokeWidth:0}], turtles:[{x:300,y:0,heading:0}] }) },
+        { title:"반복문으로 눈송이 그리기", desc:"`for`문을 이용해서 도장을 여러 개 원 모양으로 찍어 눈송이 모양을 만들어보세요. 몇 번 반복할지와 한 번에 몇 도씩 돌지는 자유롭게 정해보세요.", hint:"도장 기능과 회전 기능을 함께 써보세요. 도장 크기를 키우면 더 예쁜 눈송이가 돼요.", shot:"원 모양으로 겹쳐 찍힌 눈송이.",
+          img: turtleScene({ bgFill:"#87ceeb", fills:[
+            {points:[[160.0,0.0],[140.0,20.0],[100.0,10.0],[70.0,40.0],[90.0,70.0],[80.0,90.0],[50.0,60.0],[10.0,70.0],[-30.0,50.0],[-60.0,80.0],[-80.0,60.0],[-50.0,40.0],[-70.0,0.0],[-50.0,-40.0],[-80.0,-60.0],[-60.0,-80.0],[-30.0,-50.0],[10.0,-70.0],[50.0,-60.0],[80.0,-90.0],[90.0,-70.0],[70.0,-40.0],[100.0,-10.0],[140.0,-20.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[138.6,80.0],[111.2,87.3],[81.6,58.7],[40.6,69.6],[42.9,105.6],[24.3,117.9],[13.3,77.0],[-26.3,65.6],[-51.0,28.3],[-92.0,39.3],[-99.3,12.0],[-63.3,9.6],[-60.6,-35.0],[-23.3,-59.6],[-39.3,-92.0],[-12.0,-99.3],[-1.0,-58.3],[43.7,-55.6],[73.3,-27.0],[114.3,-37.9],[112.9,-15.6],[80.6,0.4],[91.6,41.3],[131.2,52.7]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[80.0,138.6],[52.7,131.2],[41.3,91.6],[0.4,80.6],[-15.6,112.9],[-37.9,114.3],[-27.0,73.3],[-55.6,43.7],[-58.3,-1.0],[-99.3,-12.0],[-92.0,-39.3],[-59.6,-23.3],[-35.0,-60.6],[9.6,-63.3],[12.0,-99.3],[39.3,-92.0],[28.3,-51.0],[65.6,-26.3],[77.0,13.3],[117.9,24.3],[105.6,42.9],[69.6,40.6],[58.7,81.6],[87.3,111.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[0.0,160.0],[-20.0,140.0],[-10.0,100.0],[-40.0,70.0],[-70.0,90.0],[-90.0,80.0],[-60.0,50.0],[-70.0,10.0],[-50.0,-30.0],[-80.0,-60.0],[-60.0,-80.0],[-40.0,-50.0],[-0.0,-70.0],[40.0,-50.0],[60.0,-80.0],[80.0,-60.0],[50.0,-30.0],[70.0,10.0],[60.0,50.0],[90.0,80.0],[70.0,90.0],[40.0,70.0],[10.0,100.0],[20.0,140.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-80.0,138.6],[-87.3,111.2],[-58.7,81.6],[-69.6,40.6],[-105.6,42.9],[-117.9,24.3],[-77.0,13.3],[-65.6,-26.3],[-28.3,-51.0],[-39.3,-92.0],[-12.0,-99.3],[-9.6,-63.3],[35.0,-60.6],[59.6,-23.3],[92.0,-39.3],[99.3,-12.0],[58.3,-1.0],[55.6,43.7],[27.0,73.3],[37.9,114.3],[15.6,112.9],[-0.4,80.6],[-41.3,91.6],[-52.7,131.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-138.6,80.0],[-131.2,52.7],[-91.6,41.3],[-80.6,0.4],[-112.9,-15.6],[-114.3,-37.9],[-73.3,-27.0],[-43.7,-55.6],[1.0,-58.3],[12.0,-99.3],[39.3,-92.0],[23.3,-59.6],[60.6,-35.0],[63.3,9.6],[99.3,12.0],[92.0,39.3],[51.0,28.3],[26.3,65.6],[-13.3,77.0],[-24.3,117.9],[-42.9,105.6],[-40.6,69.6],[-81.6,58.7],[-111.2,87.3]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-160.0,0.0],[-140.0,-20.0],[-100.0,-10.0],[-70.0,-40.0],[-90.0,-70.0],[-80.0,-90.0],[-50.0,-60.0],[-10.0,-70.0],[30.0,-50.0],[60.0,-80.0],[80.0,-60.0],[50.0,-40.0],[70.0,-0.0],[50.0,40.0],[80.0,60.0],[60.0,80.0],[30.0,50.0],[-10.0,70.0],[-50.0,60.0],[-80.0,90.0],[-90.0,70.0],[-70.0,40.0],[-100.0,10.0],[-140.0,20.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-138.6,-80.0],[-111.2,-87.3],[-81.6,-58.7],[-40.6,-69.6],[-42.9,-105.6],[-24.3,-117.9],[-13.3,-77.0],[26.3,-65.6],[51.0,-28.3],[92.0,-39.3],[99.3,-12.0],[63.3,-9.6],[60.6,35.0],[23.3,59.6],[39.3,92.0],[12.0,99.3],[1.0,58.3],[-43.7,55.6],[-73.3,27.0],[-114.3,37.9],[-112.9,15.6],[-80.6,-0.4],[-91.6,-41.3],[-131.2,-52.7]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-80.0,-138.6],[-52.7,-131.2],[-41.3,-91.6],[-0.4,-80.6],[15.6,-112.9],[37.9,-114.3],[27.0,-73.3],[55.6,-43.7],[58.3,1.0],[99.3,12.0],[92.0,39.3],[59.6,23.3],[35.0,60.6],[-9.6,63.3],[-12.0,99.3],[-39.3,92.0],[-28.3,51.0],[-65.6,26.3],[-77.0,-13.3],[-117.9,-24.3],[-105.6,-42.9],[-69.6,-40.6],[-58.7,-81.6],[-87.3,-111.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[-0.0,-160.0],[20.0,-140.0],[10.0,-100.0],[40.0,-70.0],[70.0,-90.0],[90.0,-80.0],[60.0,-50.0],[70.0,-10.0],[50.0,30.0],[80.0,60.0],[60.0,80.0],[40.0,50.0],[0.0,70.0],[-40.0,50.0],[-60.0,80.0],[-80.0,60.0],[-50.0,30.0],[-70.0,-10.0],[-60.0,-50.0],[-90.0,-80.0],[-70.0,-90.0],[-40.0,-70.0],[-10.0,-100.0],[-20.0,-140.0]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[80.0,-138.6],[87.3,-111.2],[58.7,-81.6],[69.6,-40.6],[105.6,-42.9],[117.9,-24.3],[77.0,-13.3],[65.6,26.3],[28.3,51.0],[39.3,92.0],[12.0,99.3],[9.6,63.3],[-35.0,60.6],[-59.6,23.3],[-92.0,39.3],[-99.3,12.0],[-58.3,1.0],[-55.6,-43.7],[-27.0,-73.3],[-37.9,-114.3],[-15.6,-112.9],[0.4,-80.6],[41.3,-91.6],[52.7,-131.2]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5},
+            {points:[[138.6,-80.0],[131.2,-52.7],[91.6,-41.3],[80.6,-0.4],[112.9,15.6],[114.3,37.9],[73.3,27.0],[43.7,55.6],[-1.0,58.3],[-12.0,99.3],[-39.3,92.0],[-23.3,59.6],[-60.6,35.0],[-63.3,-9.6],[-99.3,-12.0],[-92.0,-39.3],[-51.0,-28.3],[-26.3,-65.6],[13.3,-77.0],[24.3,-117.9],[42.9,-105.6],[40.6,-69.6],[81.6,-58.7],[111.2,-87.3]],color:"#ffffff",stroke:"#dbeeff",strokeWidth:1.5}
+          ] }) }
+      ]
+    },
+    { title:"반복문으로 도형 그리기",
+      explain:["`for` 반복문을 쓰면 반복되는 코드를 **훨씬 짧게** 줄일 수 있어요.","5차시에서는 사각형을 그리려고 `fd()`와 `lt()`를 여러 번 썼어요.","이번에는 한 번씩만 쓰고 반복 횟수만 정해주면 돼요."],
+      shot:"반복문으로 그려진 사각형.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:50,y2:0,color:"#27392f",width:3},{x1:50,y1:0,x2:50,y2:50,color:"#27392f",width:3},{x1:50,y1:50,x2:0,y2:50,color:"#27392f",width:3},{x1:0,y1:50,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+# 4번 반복하면서 사각형을 완성해요
+for i in range(4):
+    t.fd(50)     # 한 변의 길이만큼 이동
+    t.left(90)   # 90도 회전 (사각형의 꼭짓점)
+
+t.mainloop()`,
+      tryit:["숫자를 바꿔서 삼각형을 그려보세요."],
+      minis:[
+        { title:"반복문으로 다른 정다각형 그리기", desc:"사각형이 아닌 다른 정다각형(정삼각형, 정오각형 등)을 반복문으로 그려보세요. 몇 번 반복해야 하는지, 몇 도씩 돌아야 하는지는 5차시에서 배운 계산법을 떠올려 직접 구해보세요.", shot:"정오각형 같은 정다각형.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:80,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:104.7,y2:76.1,color:"#27392f",width:3},{x1:104.7,y1:76.1,x2:40,y2:123.1,color:"#27392f",width:3},{x1:40,y1:123.1,x2:-24.7,y2:76.1,color:"#27392f",width:3},{x1:-24.7,y1:76.1,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }) }
+      ]
+    },
+    { title:"반복문으로 집 그리기",
+      explain:["삼각형과 사각형을 순서대로 그리면 **집 모양**이 돼요.","먼저 사각형으로 몸통을, 그 위에 삼각형으로 지붕을 그려요.","두 도형 모두 반복문으로 짧게 그릴 수 있어요."],
+      shot:"사각형 몸통 위에 삼각형 지붕이 있는 집.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:200,y2:0,color:"#27392f",width:3},{x1:200,y1:0,x2:200,y2:-200,color:"#27392f",width:3},{x1:200,y1:-200,x2:0,y2:-200,color:"#27392f",width:3},{x1:0,y1:-200,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:200,y2:0,color:"#27392f",width:3},{x1:200,y1:0,x2:100,y2:173.2,color:"#27392f",width:3},{x1:100,y1:173.2,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+# 사각형 (집 몸통) - 4번 반복
+for a in range(4):
+    t.fd(200)   # 한 변 그리기
+    t.rt(90)    # 오른쪽으로 90도 회전
+
+# 삼각형 (지붕) - 3번 반복
+for a in range(3):
+    t.fd(200)   # 지붕의 한 변 그리기
+    t.lt(120)   # 왼쪽으로 120도 회전
+
+t.mainloop()`,
+      tryit:["숫자를 바꿔서 더 작은 집을 만들어보세요.","반대로 더 큰 집을 만들어보세요."],
+      minis:[
+        { title:"지붕이 더 넓은 예쁜 집 만들기", desc:"지붕이 집 몸통보다 더 넓게 튀어나오도록 만들어보세요. 배경 색과 채우기 색도 자유롭게 정해서, 나만의 예쁜 집을 완성해보세요.", shot:"지붕이 넓은 알록달록한 집.", hint:"삼각형을 그리기 전에 뒤로 조금 더 이동한 다음 시작하면 지붕이 넓어져요.",
+          img: turtleScene({ bgFill:"#87ceeb", lines:[{x1:0,y1:0,x2:-30,y2:0,color:"#000000",width:3}], fills:[{points:[[0,0],[200,0],[200,-200],[0,-200],[0,0]],color:"#fff6c9",stroke:"#000000",strokeWidth:3},{points:[[-30,0],[230,0],[100,225.2],[-30,0]],color:"#e5383b",stroke:"#000000",strokeWidth:3}] }) }
+      ]
+    },
+    { title:"반복문 두 번 겹쳐 쓰기 - 회전하며 사각형 그리기",
+      explain:["반복문 안에 **또 다른 반복문**을 넣을 수 있어요. 이렇게 겹쳐 쓴 반복문을 '중첩 반복문'이라고 해요.","안쪽 반복문은 사각형을 그리고, 바깥쪽 반복문은 그 사각형을 조금씩 돌려가며 반복해요."],
+      shot:"사각형이 회전하며 겹쳐진 무늬.",
+      img: turtleScene({ lines:[
+        {x1:0,y1:0,x2:100,y2:0,color:"#2f9e6e",width:2},{x1:100,y1:0,x2:100,y2:100,color:"#2f9e6e",width:2},{x1:100,y1:100,x2:0,y2:100,color:"#2f9e6e",width:2},{x1:0,y1:100,x2:0,y2:0,color:"#2f9e6e",width:2},
+        {x1:0,y1:0,x2:94,y2:34.2,color:"#57b98c",width:2},{x1:94,y1:34.2,x2:59.8,y2:128.2,color:"#57b98c",width:2},{x1:59.8,y1:128.2,x2:-34.2,y2:94,color:"#57b98c",width:2},{x1:-34.2,y1:94,x2:0,y2:0,color:"#57b98c",width:2},
+        {x1:0,y1:0,x2:76.6,y2:64.3,color:"#21794f",width:2},{x1:76.6,y1:64.3,x2:12.3,y2:140.9,color:"#21794f",width:2},{x1:12.3,y1:140.9,x2:-64.3,y2:76.6,color:"#21794f",width:2},{x1:-64.3,y1:76.6,x2:0,y2:0,color:"#21794f",width:2},
+        {x1:0,y1:0,x2:50,y2:86.6,color:"#8fd1ac",width:2},{x1:50,y1:86.6,x2:-36.6,y2:136.6,color:"#8fd1ac",width:2},{x1:-36.6,y1:136.6,x2:-86.6,y2:50,color:"#8fd1ac",width:2},{x1:-86.6,y1:50,x2:0,y2:0,color:"#8fd1ac",width:2}
+      ] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+t.speed(0)
+
+for i in range(36):     # 바깥 반복문: 36번 돌면서 회전
+    for a in range(4):  # 안쪽 반복문: 사각형 그리기
+        t.fd(100)
+        t.rt(90)
+    t.rt(10)            # 다음 사각형을 그리기 전에 10도 회전
+
+t.mainloop()`,
+      tryit:["`t.rt(10)`의 `10`을 `20`으로 바꿔서 무늬가 어떻게 달라지는지 확인해보세요.","`range(36)`을 `range(18)`로 바꿔서 반복 횟수를 줄여보세요."],
+      minis:[
+        { title:"회전하며 오각형 그리기", desc:"사각형 대신 오각형을 회전시켜서 다른 무늬를 만들어보세요. 회전 각도와 반복 횟수는 자유롭게 정해보세요.", shot:"도형이 회전하며 겹쳐진 꽃 무늬.",
+          img: turtleScene({ lines:[
+            {x1:0.0,y1:0.0,x2:100.0,y2:0.0,color:"#2f9e6e",width:2},{x1:100.0,y1:0.0,x2:130.9,y2:95.1,color:"#2f9e6e",width:2},{x1:130.9,y1:95.1,x2:50.0,y2:153.9,color:"#2f9e6e",width:2},{x1:50.0,y1:153.9,x2:-30.9,y2:95.1,color:"#2f9e6e",width:2},{x1:-30.9,y1:95.1,x2:-0.0,y2:0.0,color:"#2f9e6e",width:2},
+            {x1:0.0,y1:0.0,x2:70.7,y2:70.7,color:"#57b98c",width:2},{x1:70.7,y1:70.7,x2:25.3,y2:159.8,color:"#57b98c",width:2},{x1:25.3,y1:159.8,x2:-73.5,y2:144.2,color:"#57b98c",width:2},{x1:-73.5,y1:144.2,x2:-89.1,y2:45.4,color:"#57b98c",width:2},{x1:-89.1,y1:45.4,x2:-0.0,y2:-0.0,color:"#57b98c",width:2},
+            {x1:0.0,y1:0.0,x2:0.0,y2:100.0,color:"#21794f",width:2},{x1:0.0,y1:100.0,x2:-95.1,y2:130.9,color:"#21794f",width:2},{x1:-95.1,y1:130.9,x2:-153.9,y2:50.0,color:"#21794f",width:2},{x1:-153.9,y1:50.0,x2:-95.1,y2:-30.9,color:"#21794f",width:2},{x1:-95.1,y1:-30.9,x2:0.0,y2:-0.0,color:"#21794f",width:2},
+            {x1:0.0,y1:0.0,x2:-70.7,y2:70.7,color:"#8fd1ac",width:2},{x1:-70.7,y1:70.7,x2:-159.8,y2:25.3,color:"#8fd1ac",width:2},{x1:-159.8,y1:25.3,x2:-144.2,y2:-73.5,color:"#8fd1ac",width:2},{x1:-144.2,y1:-73.5,x2:-45.4,y2:-89.1,color:"#8fd1ac",width:2},{x1:-45.4,y1:-89.1,x2:0.0,y2:-0.0,color:"#8fd1ac",width:2},
+            {x1:0.0,y1:0.0,x2:-100.0,y2:0.0,color:"#2f9e6e",width:2},{x1:-100.0,y1:0.0,x2:-130.9,y2:-95.1,color:"#2f9e6e",width:2},{x1:-130.9,y1:-95.1,x2:-50.0,y2:-153.9,color:"#2f9e6e",width:2},{x1:-50.0,y1:-153.9,x2:30.9,y2:-95.1,color:"#2f9e6e",width:2},{x1:30.9,y1:-95.1,x2:0.0,y2:0.0,color:"#2f9e6e",width:2},
+            {x1:0.0,y1:0.0,x2:-70.7,y2:-70.7,color:"#57b98c",width:2},{x1:-70.7,y1:-70.7,x2:-25.3,y2:-159.8,color:"#57b98c",width:2},{x1:-25.3,y1:-159.8,x2:73.5,y2:-144.2,color:"#57b98c",width:2},{x1:73.5,y1:-144.2,x2:89.1,y2:-45.4,color:"#57b98c",width:2},{x1:89.1,y1:-45.4,x2:-0.0,y2:-0.0,color:"#57b98c",width:2},
+            {x1:0.0,y1:0.0,x2:-0.0,y2:-100.0,color:"#21794f",width:2},{x1:-0.0,y1:-100.0,x2:95.1,y2:-130.9,color:"#21794f",width:2},{x1:95.1,y1:-130.9,x2:153.9,y2:-50.0,color:"#21794f",width:2},{x1:153.9,y1:-50.0,x2:95.1,y2:30.9,color:"#21794f",width:2},{x1:95.1,y1:30.9,x2:0.0,y2:0.0,color:"#21794f",width:2},
+            {x1:0.0,y1:0.0,x2:70.7,y2:-70.7,color:"#8fd1ac",width:2},{x1:70.7,y1:-70.7,x2:159.8,y2:-25.3,color:"#8fd1ac",width:2},{x1:159.8,y1:-25.3,x2:144.2,y2:73.5,color:"#8fd1ac",width:2},{x1:144.2,y1:73.5,x2:45.4,y2:89.1,color:"#8fd1ac",width:2},{x1:45.4,y1:89.1,x2:-0.0,y2:-0.0,color:"#8fd1ac",width:2}
+          ] }) }
+      ]
+    },
+    { title:"반복문 두 번 겹쳐 쓰기 - 집 5개 그리기",
+      explain:["이번에는 중첩 반복문으로 집을 **여러 개** 그려요.","안쪽 반복문은 집 하나를 그리고, 바깥쪽 반복문은 그걸 반복해요.","사이사이 펜을 들고 이동하면 집이 겹치지 않아요."],
+      shot:"작은 집 5개가 나란히 그려져요.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:20,y2:0,color:"#27392f",width:3},{x1:20,y1:0,x2:20,y2:-20,color:"#27392f",width:3},{x1:20,y1:-20,x2:0,y2:-20,color:"#27392f",width:3},{x1:0,y1:-20,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:-5,y2:0,color:"#27392f",width:3},{x1:-5,y1:0,x2:25,y2:0,color:"#27392f",width:3},{x1:25,y1:0,x2:10,y2:26,color:"#27392f",width:3},{x1:10,y1:26,x2:-5,y2:0,color:"#27392f",width:3},{x1:45,y1:0,x2:65,y2:0,color:"#27392f",width:3},{x1:65,y1:0,x2:65,y2:-20,color:"#27392f",width:3},{x1:65,y1:-20,x2:45,y2:-20,color:"#27392f",width:3},{x1:45,y1:-20,x2:45,y2:0,color:"#27392f",width:3},{x1:45,y1:0,x2:40,y2:0,color:"#27392f",width:3},{x1:40,y1:0,x2:70,y2:0,color:"#27392f",width:3},{x1:70,y1:0,x2:55,y2:26,color:"#27392f",width:3},{x1:55,y1:26,x2:40,y2:0,color:"#27392f",width:3},{x1:90,y1:0,x2:110,y2:0,color:"#27392f",width:3},{x1:110,y1:0,x2:110,y2:-20,color:"#27392f",width:3},{x1:110,y1:-20,x2:90,y2:-20,color:"#27392f",width:3},{x1:90,y1:-20,x2:90,y2:0,color:"#27392f",width:3},{x1:90,y1:0,x2:85,y2:0,color:"#27392f",width:3},{x1:85,y1:0,x2:115,y2:0,color:"#27392f",width:3},{x1:115,y1:0,x2:100,y2:26,color:"#27392f",width:3},{x1:100,y1:26,x2:85,y2:0,color:"#27392f",width:3},{x1:135,y1:0,x2:155,y2:0,color:"#27392f",width:3},{x1:155,y1:0,x2:155,y2:-20,color:"#27392f",width:3},{x1:155,y1:-20,x2:135,y2:-20,color:"#27392f",width:3},{x1:135,y1:-20,x2:135,y2:0,color:"#27392f",width:3},{x1:135,y1:0,x2:130,y2:0,color:"#27392f",width:3},{x1:130,y1:0,x2:160,y2:0,color:"#27392f",width:3},{x1:160,y1:0,x2:145,y2:26,color:"#27392f",width:3},{x1:145,y1:26,x2:130,y2:0,color:"#27392f",width:3},{x1:180,y1:0,x2:200,y2:0,color:"#27392f",width:3},{x1:200,y1:0,x2:200,y2:-20,color:"#27392f",width:3},{x1:200,y1:-20,x2:180,y2:-20,color:"#27392f",width:3},{x1:180,y1:-20,x2:180,y2:0,color:"#27392f",width:3},{x1:180,y1:0,x2:175,y2:0,color:"#27392f",width:3},{x1:175,y1:0,x2:205,y2:0,color:"#27392f",width:3},{x1:205,y1:0,x2:190,y2:26,color:"#27392f",width:3},{x1:190,y1:26,x2:175,y2:0,color:"#27392f",width:3}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+for b in range(5):      # 집을 5번 반복해서 그려요
+    t.pd()
+    for a in range(4):  # 사각형 (몸통)
+        t.fd(20)
+        t.rt(90)
+    t.back(5)
+    for a in range(3):  # 삼각형 (지붕)
+        t.fd(30)
+        t.lt(120)
+    t.penup()
+    t.fd(50)            # 다음 집을 그릴 위치로 이동
+
+t.mainloop()`,
+      tryit:["`range(5)`를 `range(3)`으로 바꿔서 집이 3개만 그려지는지 확인해보세요.","집 사이 거리 `t.fd(50)`을 `t.fd(80)`으로 바꿔서 간격을 넓혀보세요."],
+      minis:[
+        { title:"중첩 반복문으로 다른 모양 여러 개 그리기", desc:"집 대신 삼각형이나 사각형처럼 더 간단한 도형을 중첩 반복문으로 여러 개 나란히 그려보세요. 몇 개를 그릴지, 도형 사이의 간격은 자유롭게 정해보세요.", shot:"작은 삼각형 여러 개가 나란히 그려져요.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:50,y2:0,color:"#27392f",width:3},{x1:50,y1:0,x2:25,y2:43.3,color:"#27392f",width:3},{x1:25,y1:43.3,x2:0,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:130,y2:0,color:"#27392f",width:3},{x1:130,y1:0,x2:105,y2:43.3,color:"#27392f",width:3},{x1:105,y1:43.3,x2:80,y2:0,color:"#27392f",width:3},{x1:160,y1:0,x2:210,y2:0,color:"#27392f",width:3},{x1:210,y1:0,x2:185,y2:43.3,color:"#27392f",width:3},{x1:185,y1:43.3,x2:160,y2:0,color:"#27392f",width:3}] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"for i in range(숫자):", desc:"정해진 횟수만큼 반복", usage:"for i in range(4):"},
+    {name:"(들여쓰기)", desc:"반복할 코드 묶기", usage:"코드 앞에 빈칸 4개"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**반복문으로 정육각형 그리기**
+- 6번 반복하고, 한 번 반복할 때마다 60도씩 돌아요.
+- 한 변의 길이는 80으로 해요.`, shot:"변 6개의 정육각형.",
+        img: turtleScene({ lines:[{x1:0,y1:0,x2:80,y2:0,color:"#27392f",width:3},{x1:80,y1:0,x2:120,y2:69.3,color:"#27392f",width:3},{x1:120,y1:69.3,x2:80,y2:138.6,color:"#27392f",width:3},{x1:80,y1:138.6,x2:0,y2:138.6,color:"#27392f",width:3},{x1:0,y1:138.6,x2:-40,y2:69.3,color:"#27392f",width:3},{x1:-40,y1:69.3,x2:0,y2:0,color:"#27392f",width:3}], turtles:[{x:0,y:0,heading:0}] }), bonus:"`for i in range(12):` 안에서 `fd(100)`, `bk(100)`, `rt(30)`을 반복시켜보고 어떤 모양이 만들어지는지 관찰해보세요." }
+    ]
+  },
+  quiz:[
+    { q:"정해진 횟수만큼 반복할 때 쓰는 문법은?", choices:["`if`","`for`","`def`","`import`"], answer:1 },
+    { q:"`range(5)`는 몇 번 반복한다는 뜻인가요?", choices:["4번","5번","6번","10번"], answer:1 },
+    { q:"반복문 안에 또 반복문을 넣는 것을 무엇이라고 부르나요?", choices:["이중 조건문","중첩 반복문","재귀 함수","이벤트문"], answer:1 }
+  ],
+  next:["반복해서 쓰는 코드를 묶어서 이름 붙이는 `함수`를 배워요.","함수를 만들어서 집과 눈송이를 그려봐요."]
+},
+{
+  slug:"08-functions", session:8, icon:"📦",
+  title:"함수 만들기",
+  prevReview:["`for` 반복문으로 도형과 집을 그렸어요.","반복문을 두 번 겹쳐서 집 5개를 그렸어요."],
+  learn:["함수가 무엇인지 알기","함수 만들기 (`def`)","만든 함수 실행하기 (함수 호출)"],
+  concept:{ title:"함수란?",
+    explain:["함수는 여러 줄의 코드를 **하나의 이름으로 묶은** 거예요.","한 번 만들어두면 여러 번 불러 쓸 수 있어요.","`fd()`, `circle()`, `shape()`도 사실 모두 함수예요.","이번 시간엔 함수를 직접 만들어봐요."]
+  },
+  steps:[
+    { title:"def - 함수 만들기",
+      explain:["`def 함수이름():`으로 **함수를 만들어요**.","이름 뒤에는 괄호와 콜론(`:`)을 꼭 붙여요.","함수 안 코드는 들여쓰기로 구분해요.","함수는 이름을 불러야(호출해야) 실행돼요."],
+      shot:"함수로 그려진 집 모양.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:200,y2:0,color:"#27392f",width:3},{x1:200,y1:0,x2:100,y2:173.2,color:"#27392f",width:3},{x1:100,y1:173.2,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:30,y2:0,color:"#27392f",width:3},{x1:30,y1:0,x2:170,y2:0,color:"#27392f",width:3},{x1:170,y1:0,x2:170,y2:-140,color:"#27392f",width:3},{x1:170,y1:-140,x2:30,y2:-140,color:"#27392f",width:3},{x1:30,y1:-140,x2:30,y2:0,color:"#27392f",width:3}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+# 집 그리는 함수 만들기 (def 함수이름(): 으로 정의)
+def draw_house():
+    t.down()
+    for a in range(3):   # 삼각형 (지붕)
+        t.fd(200)
+        t.lt(120)
+    t.fd(30)              # 지붕에서 몸통 시작 위치로 이동
+    for a in range(4):    # 사각형 (몸통)
+        t.fd(140)
+        t.rt(90)
+    t.up()
+
+# 만든 함수는 이름을 불러야(호출해야) 실행돼요
+draw_house()
+
+t.mainloop()`,
+      tryit:["`draw_house()` 줄을 지우고 실행해보세요. 아무것도 그려지지 않아요. (함수는 불러야 실행돼요)","`draw_house()`를 두 번 쓰고 사이에 `t.fd(300)`을 넣어서, 집이 두 개 그려지는지 확인해보세요."],
+      minis:[
+        { title:"정삼각형 그리는 함수 만들기", desc:"`draw_triangle()`이라는 이름의 함수를 만들고, 함수 안에 정삼각형을 그리는 코드를 넣어보세요. 만든 함수를 두 번 불러서 삼각형 두 개를 나란히 그려보세요.", shot:"정삼각형 두 개가 나란히 그려져요.",
+          img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:50,y2:86.6,color:"#27392f",width:3},{x1:50,y1:86.6,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:150,y2:0,color:"#27392f",width:3},{x1:150,y1:0,x2:250,y2:0,color:"#27392f",width:3},{x1:250,y1:0,x2:200,y2:86.6,color:"#27392f",width:3},{x1:200,y1:86.6,x2:150,y2:0,color:"#27392f",width:3}] }) }
+      ]
+    },
+    { title:"함수로 눈송이 그리기",
+      explain:["6차시 눈송이 도장 코드를 함수로 만들어봐요.","여러 줄이던 코드를 `snow()` 이름 하나로 묶어요.","이제 `snow()`만 부르면 눈송이를 또 그릴 수 있어요."],
+      shot:"원 모양으로 찍힌 눈송이 도장.",
+      img: turtleScene({ bgFill:"#87ceeb", fills:[
+            {points:[[160,0],[140,20],[100,10],[70,40],[90,70],[80,90],[50,60],[10,70],[-30,50],[-60,80],[-80,60],[-50,40],[-70,0],[-50,-40],[-80,-60],[-60,-80],[-30,-50],[10,-70],[50,-60],[80,-90],[90,-70],[70,-40],[100,-10],[140,-20]],color:"#ffffff",strokeWidth:0},
+            {points:[[138.6,-80],[131.2,-52.7],[91.6,-41.3],[80.6,-0.4],[112.9,15.6],[114.3,37.9],[73.3,27],[43.7,55.6],[-1,58.3],[-12,99.3],[-39.3,92],[-23.3,59.6],[-60.6,35],[-63.3,-9.6],[-99.3,-12],[-92,-39.3],[-51,-28.3],[-26.3,-65.6],[13.3,-77],[24.3,-117.9],[42.9,-105.6],[40.6,-69.6],[81.6,-58.7],[111.2,-87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[80,-138.6],[87.3,-111.2],[58.7,-81.6],[69.6,-40.6],[105.6,-42.9],[117.9,-24.3],[77,-13.3],[65.6,26.3],[28.3,51],[39.3,92],[12,99.3],[9.6,63.3],[-35,60.6],[-59.6,23.3],[-92,39.3],[-99.3,12],[-58.3,1],[-55.6,-43.7],[-27,-73.3],[-37.9,-114.3],[-15.6,-112.9],[0.4,-80.6],[41.3,-91.6],[52.7,-131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[0,-160],[20,-140],[10,-100],[40,-70],[70,-90],[90,-80],[60,-50],[70,-10],[50,30],[80,60],[60,80],[40,50],[0,70],[-40,50],[-60,80],[-80,60],[-50,30],[-70,-10],[-60,-50],[-90,-80],[-70,-90],[-40,-70],[-10,-100],[-20,-140]],color:"#ffffff",strokeWidth:0},
+            {points:[[-80,-138.6],[-52.7,-131.2],[-41.3,-91.6],[-0.4,-80.6],[15.6,-112.9],[37.9,-114.3],[27,-73.3],[55.6,-43.7],[58.3,1],[99.3,12],[92,39.3],[59.6,23.3],[35,60.6],[-9.6,63.3],[-12,99.3],[-39.3,92],[-28.3,51],[-65.6,26.3],[-77,-13.3],[-117.9,-24.3],[-105.6,-42.9],[-69.6,-40.6],[-58.7,-81.6],[-87.3,-111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[-138.6,-80],[-111.2,-87.3],[-81.6,-58.7],[-40.6,-69.6],[-42.9,-105.6],[-24.3,-117.9],[-13.3,-77],[26.3,-65.6],[51,-28.3],[92,-39.3],[99.3,-12],[63.3,-9.6],[60.6,35],[23.3,59.6],[39.3,92],[12,99.3],[1,58.3],[-43.7,55.6],[-73.3,27],[-114.3,37.9],[-112.9,15.6],[-80.6,-0.4],[-91.6,-41.3],[-131.2,-52.7]],color:"#ffffff",strokeWidth:0},
+            {points:[[-160,0],[-140,-20],[-100,-10],[-70,-40],[-90,-70],[-80,-90],[-50,-60],[-10,-70],[30,-50],[60,-80],[80,-60],[50,-40],[70,0],[50,40],[80,60],[60,80],[30,50],[-10,70],[-50,60],[-80,90],[-90,70],[-70,40],[-100,10],[-140,20]],color:"#ffffff",strokeWidth:0},
+            {points:[[-138.6,80],[-131.2,52.7],[-91.6,41.3],[-80.6,0.4],[-112.9,-15.6],[-114.3,-37.9],[-73.3,-27],[-43.7,-55.6],[1,-58.3],[12,-99.3],[39.3,-92],[23.3,-59.6],[60.6,-35],[63.3,9.6],[99.3,12],[92,39.3],[51,28.3],[26.3,65.6],[-13.3,77],[-24.3,117.9],[-42.9,105.6],[-40.6,69.6],[-81.6,58.7],[-111.2,87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[-80,138.6],[-87.3,111.2],[-58.7,81.6],[-69.6,40.6],[-105.6,42.9],[-117.9,24.3],[-77,13.3],[-65.6,-26.3],[-28.3,-51],[-39.3,-92],[-12,-99.3],[-9.6,-63.3],[35,-60.6],[59.6,-23.3],[92,-39.3],[99.3,-12],[58.3,-1],[55.6,43.7],[27,73.3],[37.9,114.3],[15.6,112.9],[-0.4,80.6],[-41.3,91.6],[-52.7,131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[0,160],[-20,140],[-10,100],[-40,70],[-70,90],[-90,80],[-60,50],[-70,10],[-50,-30],[-80,-60],[-60,-80],[-40,-50],[0,-70],[40,-50],[60,-80],[80,-60],[50,-30],[70,10],[60,50],[90,80],[70,90],[40,70],[10,100],[20,140]],color:"#ffffff",strokeWidth:0},
+            {points:[[80,138.6],[52.7,131.2],[41.3,91.6],[0.4,80.6],[-15.6,112.9],[-37.9,114.3],[-27,73.3],[-55.6,43.7],[-58.3,-1],[-99.3,-12],[-92,-39.3],[-59.6,-23.3],[-35,-60.6],[9.6,-63.3],[12,-99.3],[39.3,-92],[28.3,-51],[65.6,-26.3],[77,13.3],[117.9,24.3],[105.6,42.9],[69.6,40.6],[58.7,81.6],[87.3,111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[138.6,80],[111.2,87.3],[81.6,58.7],[40.6,69.6],[42.9,105.6],[24.3,117.9],[13.3,77],[-26.3,65.6],[-51,28.3],[-92,39.3],[-99.3,12],[-63.3,9.6],[-60.6,-35],[-23.3,-59.6],[-39.3,-92],[-12,-99.3],[-1,-58.3],[43.7,-55.6],[73.3,-27],[114.3,-37.9],[112.9,-15.6],[80.6,0.4],[91.6,41.3],[131.2,52.7]],color:"#ffffff",strokeWidth:0}
+      ] }),
+      code:`from turtle import *
+
+shape("turtle")
+bgcolor("skyblue")
+color("white")
+
+# 눈송이를 그리는 함수 만들기
+def snow():
+    shapesize(10)          # 도장 크기를 크게 키워요
+    for i in range(12):    # 12번 반복하면서 도장을 찍어요
+        stamp()
+        rt(30)             # 30도씩 돌면서 원 모양으로 배치
+
+snow()  # 함수 호출
+
+ht()
+mainloop()`,
+      tryit:["`snow()` 함수 안의 `shapesize(10)`을 `shapesize(5)`로 바꿔서 눈송이 크기가 작아지는지 확인해보세요.","`snow()`를 부르기 전에 `goto(-200, 0)`을 추가해서 눈송이 위치를 옮겨보세요."],
+      minis:[
+        { title:"눈송이 두 개 그리기", desc:"`snow()` 함수를 부르기 전에 위치를 옮겨서, 서로 다른 자리에 눈송이 두 개를 그려보세요.", shot:"좌우에 하나씩 그려진 눈송이 두 개.",
+          img: turtleScene({ bgFill:"#87ceeb", lines:[{x1:0,y1:0,x2:-200,y2:0,color:"#ffffff",width:3}], fills:[
+            {points:[[-40,0],[-60,20],[-100,10],[-130,40],[-110,70],[-120,90],[-150,60],[-190,70],[-230,50],[-260,80],[-280,60],[-250,40],[-270,0],[-250,-40],[-280,-60],[-260,-80],[-230,-50],[-190,-70],[-150,-60],[-120,-90],[-110,-70],[-130,-40],[-100,-10],[-60,-20]],color:"#ffffff",strokeWidth:0},
+            {points:[[-61.4,-80],[-68.8,-52.7],[-108.4,-41.3],[-119.4,-0.4],[-87.1,15.6],[-85.7,37.9],[-126.7,27],[-156.3,55.6],[-201,58.3],[-212,99.3],[-239.3,92],[-223.3,59.6],[-260.6,35],[-263.3,-9.6],[-299.3,-12],[-292,-39.3],[-251,-28.3],[-226.3,-65.6],[-186.7,-77],[-175.7,-117.9],[-157.1,-105.6],[-159.4,-69.6],[-118.4,-58.7],[-88.8,-87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[-120,-138.6],[-112.7,-111.2],[-141.3,-81.6],[-130.4,-40.6],[-94.4,-42.9],[-82.1,-24.3],[-123,-13.3],[-134.4,26.3],[-171.7,51],[-160.7,92],[-188,99.3],[-190.4,63.3],[-235,60.6],[-259.6,23.3],[-292,39.3],[-299.3,12],[-258.3,1],[-255.6,-43.7],[-227,-73.3],[-237.9,-114.3],[-215.6,-112.9],[-199.6,-80.6],[-158.7,-91.6],[-147.3,-131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[-200,-160],[-180,-140],[-190,-100],[-160,-70],[-130,-90],[-110,-80],[-140,-50],[-130,-10],[-150,30],[-120,60],[-140,80],[-160,50],[-200,70],[-240,50],[-260,80],[-280,60],[-250,30],[-270,-10],[-260,-50],[-290,-80],[-270,-90],[-240,-70],[-210,-100],[-220,-140]],color:"#ffffff",strokeWidth:0},
+            {points:[[-280,-138.6],[-252.7,-131.2],[-241.3,-91.6],[-200.4,-80.6],[-184.4,-112.9],[-162.1,-114.3],[-173,-73.3],[-144.4,-43.7],[-141.7,1],[-100.7,12],[-108,39.3],[-140.4,23.3],[-165,60.6],[-209.6,63.3],[-212,99.3],[-239.3,92],[-228.3,51],[-265.6,26.3],[-277,-13.3],[-317.9,-24.3],[-305.6,-42.9],[-269.6,-40.6],[-258.7,-81.6],[-287.3,-111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[-338.6,-80],[-311.2,-87.3],[-281.6,-58.7],[-240.6,-69.6],[-242.9,-105.6],[-224.3,-117.9],[-213.3,-77],[-173.7,-65.6],[-149,-28.3],[-108,-39.3],[-100.7,-12],[-136.7,-9.6],[-139.4,35],[-176.7,59.6],[-160.7,92],[-188,99.3],[-199,58.3],[-243.7,55.6],[-273.3,27],[-314.3,37.9],[-312.9,15.6],[-280.6,-0.4],[-291.6,-41.3],[-331.2,-52.7]],color:"#ffffff",strokeWidth:0},
+            {points:[[-360,0],[-340,-20],[-300,-10],[-270,-40],[-290,-70],[-280,-90],[-250,-60],[-210,-70],[-170,-50],[-140,-80],[-120,-60],[-150,-40],[-130,0],[-150,40],[-120,60],[-140,80],[-170,50],[-210,70],[-250,60],[-280,90],[-290,70],[-270,40],[-300,10],[-340,20]],color:"#ffffff",strokeWidth:0},
+            {points:[[-338.6,80],[-331.2,52.7],[-291.6,41.3],[-280.6,0.4],[-312.9,-15.6],[-314.3,-37.9],[-273.3,-27],[-243.7,-55.6],[-199,-58.3],[-188,-99.3],[-160.7,-92],[-176.7,-59.6],[-139.4,-35],[-136.7,9.6],[-100.7,12],[-108,39.3],[-149,28.3],[-173.7,65.6],[-213.3,77],[-224.3,117.9],[-242.9,105.6],[-240.6,69.6],[-281.6,58.7],[-311.2,87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[-280,138.6],[-287.3,111.2],[-258.7,81.6],[-269.6,40.6],[-305.6,42.9],[-317.9,24.3],[-277,13.3],[-265.6,-26.3],[-228.3,-51],[-239.3,-92],[-212,-99.3],[-209.6,-63.3],[-165,-60.6],[-140.4,-23.3],[-108,-39.3],[-100.7,-12],[-141.7,-1],[-144.4,43.7],[-173,73.3],[-162.1,114.3],[-184.4,112.9],[-200.4,80.6],[-241.3,91.6],[-252.7,131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[-200,160],[-220,140],[-210,100],[-240,70],[-270,90],[-290,80],[-260,50],[-270,10],[-250,-30],[-280,-60],[-260,-80],[-240,-50],[-200,-70],[-160,-50],[-140,-80],[-120,-60],[-150,-30],[-130,10],[-140,50],[-110,80],[-130,90],[-160,70],[-190,100],[-180,140]],color:"#ffffff",strokeWidth:0},
+            {points:[[-120,138.6],[-147.3,131.2],[-158.7,91.6],[-199.6,80.6],[-215.6,112.9],[-237.9,114.3],[-227,73.3],[-255.6,43.7],[-258.3,-1],[-299.3,-12],[-292,-39.3],[-259.6,-23.3],[-235,-60.6],[-190.4,-63.3],[-188,-99.3],[-160.7,-92],[-171.7,-51],[-134.4,-26.3],[-123,13.3],[-82.1,24.3],[-94.4,42.9],[-130.4,40.6],[-141.3,81.6],[-112.7,111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[-61.4,80],[-88.8,87.3],[-118.4,58.7],[-159.4,69.6],[-157.1,105.6],[-175.7,117.9],[-186.7,77],[-226.3,65.6],[-251,28.3],[-292,39.3],[-299.3,12],[-263.3,9.6],[-260.6,-35],[-223.3,-59.6],[-239.3,-92],[-212,-99.3],[-201,-58.3],[-156.3,-55.6],[-126.7,-27],[-85.7,-37.9],[-87.1,-15.6],[-119.4,0.4],[-108.4,41.3],[-68.8,52.7]],color:"#ffffff",strokeWidth:0},
+            {points:[[360,0],[340,20],[300,10],[270,40],[290,70],[280,90],[250,60],[210,70],[170,50],[140,80],[120,60],[150,40],[130,0],[150,-40],[120,-60],[140,-80],[170,-50],[210,-70],[250,-60],[280,-90],[290,-70],[270,-40],[300,-10],[340,-20]],color:"#ffffff",strokeWidth:0},
+            {points:[[338.6,-80],[331.2,-52.7],[291.6,-41.3],[280.6,-0.4],[312.9,15.6],[314.3,37.9],[273.3,27],[243.7,55.6],[199,58.3],[188,99.3],[160.7,92],[176.7,59.6],[139.4,35],[136.7,-9.6],[100.7,-12],[108,-39.3],[149,-28.3],[173.7,-65.6],[213.3,-77],[224.3,-117.9],[242.9,-105.6],[240.6,-69.6],[281.6,-58.7],[311.2,-87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[280,-138.6],[287.3,-111.2],[258.7,-81.6],[269.6,-40.6],[305.6,-42.9],[317.9,-24.3],[277,-13.3],[265.6,26.3],[228.3,51],[239.3,92],[212,99.3],[209.6,63.3],[165,60.6],[140.4,23.3],[108,39.3],[100.7,12],[141.7,1],[144.4,-43.7],[173,-73.3],[162.1,-114.3],[184.4,-112.9],[200.4,-80.6],[241.3,-91.6],[252.7,-131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[200,-160],[220,-140],[210,-100],[240,-70],[270,-90],[290,-80],[260,-50],[270,-10],[250,30],[280,60],[260,80],[240,50],[200,70],[160,50],[140,80],[120,60],[150,30],[130,-10],[140,-50],[110,-80],[130,-90],[160,-70],[190,-100],[180,-140]],color:"#ffffff",strokeWidth:0},
+            {points:[[120,-138.6],[147.3,-131.2],[158.7,-91.6],[199.6,-80.6],[215.6,-112.9],[237.9,-114.3],[227,-73.3],[255.6,-43.7],[258.3,1],[299.3,12],[292,39.3],[259.6,23.3],[235,60.6],[190.4,63.3],[188,99.3],[160.7,92],[171.7,51],[134.4,26.3],[123,-13.3],[82.1,-24.3],[94.4,-42.9],[130.4,-40.6],[141.3,-81.6],[112.7,-111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[61.4,-80],[88.8,-87.3],[118.4,-58.7],[159.4,-69.6],[157.1,-105.6],[175.7,-117.9],[186.7,-77],[226.3,-65.6],[251,-28.3],[292,-39.3],[299.3,-12],[263.3,-9.6],[260.6,35],[223.3,59.6],[239.3,92],[212,99.3],[201,58.3],[156.3,55.6],[126.7,27],[85.7,37.9],[87.1,15.6],[119.4,-0.4],[108.4,-41.3],[68.8,-52.7]],color:"#ffffff",strokeWidth:0},
+            {points:[[40,0],[60,-20],[100,-10],[130,-40],[110,-70],[120,-90],[150,-60],[190,-70],[230,-50],[260,-80],[280,-60],[250,-40],[270,0],[250,40],[280,60],[260,80],[230,50],[190,70],[150,60],[120,90],[110,70],[130,40],[100,10],[60,20]],color:"#ffffff",strokeWidth:0},
+            {points:[[61.4,80],[68.8,52.7],[108.4,41.3],[119.4,0.4],[87.1,-15.6],[85.7,-37.9],[126.7,-27],[156.3,-55.6],[201,-58.3],[212,-99.3],[239.3,-92],[223.3,-59.6],[260.6,-35],[263.3,9.6],[299.3,12],[292,39.3],[251,28.3],[226.3,65.6],[186.7,77],[175.7,117.9],[157.1,105.6],[159.4,69.6],[118.4,58.7],[88.8,87.3]],color:"#ffffff",strokeWidth:0},
+            {points:[[120,138.6],[112.7,111.2],[141.3,81.6],[130.4,40.6],[94.4,42.9],[82.1,24.3],[123,13.3],[134.4,-26.3],[171.7,-51],[160.7,-92],[188,-99.3],[190.4,-63.3],[235,-60.6],[259.6,-23.3],[292,-39.3],[299.3,-12],[258.3,-1],[255.6,43.7],[227,73.3],[237.9,114.3],[215.6,112.9],[199.6,80.6],[158.7,91.6],[147.3,131.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[200,160],[180,140],[190,100],[160,70],[130,90],[110,80],[140,50],[130,10],[150,-30],[120,-60],[140,-80],[160,-50],[200,-70],[240,-50],[260,-80],[280,-60],[250,-30],[270,10],[260,50],[290,80],[270,90],[240,70],[210,100],[220,140]],color:"#ffffff",strokeWidth:0},
+            {points:[[280,138.6],[252.7,131.2],[241.3,91.6],[200.4,80.6],[184.4,112.9],[162.1,114.3],[173,73.3],[144.4,43.7],[141.7,-1],[100.7,-12],[108,-39.3],[140.4,-23.3],[165,-60.6],[209.6,-63.3],[212,-99.3],[239.3,-92],[228.3,-51],[265.6,-26.3],[277,13.3],[317.9,24.3],[305.6,42.9],[269.6,40.6],[258.7,81.6],[287.3,111.2]],color:"#ffffff",strokeWidth:0},
+            {points:[[338.6,80],[311.2,87.3],[281.6,58.7],[240.6,69.6],[242.9,105.6],[224.3,117.9],[213.3,77],[173.7,65.6],[149,28.3],[108,39.3],[100.7,12],[136.7,9.6],[139.4,-35],[176.7,-59.6],[160.7,-92],[188,-99.3],[199,-58.3],[243.7,-55.6],[273.3,-27],[314.3,-37.9],[312.9,-15.6],[280.6,0.4],[291.6,41.3],[331.2,52.7]],color:"#ffffff",strokeWidth:0}
+          ] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"def 이름():", desc:"함수 만들기", usage:"def draw_house():"},
+    {name:"이름()", desc:"만든 함수 부르기(호출)", usage:"draw_house()"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**도형 그리는 함수 만들기**
+- \`draw_square()\`라는 이름의 함수를 만들어요.
+- 함수 안에는 \`for\` 반복문으로 정사각형을 그리는 코드를 넣어요.
+- 함수를 두 번 불러서 사각형 두 개를 그려요. (사이에 \`fd(150)\`을 넣어 떨어뜨려요)`, shot:"정사각형 두 개가 나란히 그려져요.",
+        img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:100,color:"#27392f",width:3},{x1:100,y1:100,x2:0,y2:100,color:"#27392f",width:3},{x1:0,y1:100,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:150,y2:0,color:"#27392f",width:3},{x1:150,y1:0,x2:250,y2:0,color:"#27392f",width:3},{x1:250,y1:0,x2:250,y2:100,color:"#27392f",width:3},{x1:250,y1:100,x2:150,y2:100,color:"#27392f",width:3},{x1:150,y1:100,x2:150,y2:0,color:"#27392f",width:3}] }), bonus:"좋아하는 모양(별, 육각형 등)을 그리는 나만의 함수도 만들어서 3번 불러보세요." }
+    ]
+  },
+  quiz:[
+    { q:"함수를 만들 때 사용하는 키워드는?", choices:["`for`","`def`","`if`","`import`"], answer:1 },
+    { q:"만든 함수를 실제로 실행시키려면 어떻게 해야 하나요?", choices:["정의만 하면 자동 실행돼요","함수 이름을 불러야(호출해야) 해요","import 해야 해요","변수를 만들어야 해요"], answer:1 },
+    { q:"다음 중 함수 정의 방식으로 올바른 것은?", choices:["`def name():`","`def name;`","`function name()`","`def(name):`"], answer:0 }
+  ],
+  next:["키보드와 마우스로 거북이를 움직이는 법을 배워요.","화면을 클릭하면 그림이 그려지는 코드를 만들어봐요."]
+},
+{
+  slug:"09-events", session:9, icon:"⌨️",
+  title:"키보드와 마우스로 움직이기",
+  prevReview:["`def`로 함수를 만들었어요.","함수를 호출해서 집과 눈송이를 그렸어요."],
+  learn:["키보드와 마우스로 거북이를 움직이는 코드 만들기","일정 시간마다 자동으로 실행되는 코드 만들기","거북이 여러 개 만들어서 함께 움직이기"],
+  steps:[
+    { title:"onkeypress() - 키보드 누르면 실행하기",
+      explain:["키보드를 누르면 **실행할 함수**를 먼저 `def`로 만들어요.","`onkeypress(함수, \"키\")`로 키와 함수를 연결해요.","`listen()`을 써야 키보드 입력을 받을 수 있어요."],
+      shot:"r 키는 빨강, b 키는 파랑 배경.",
+      img: turtleScene({ fills:[
+        {points:[[-150,-100],[0,-100],[0,100],[-150,100]],color:"#e5383b"},
+        {points:[[0,-100],[150,-100],[150,100],[0,100]],color:"#1d63d1"}
+      ], texts:[{x:-75,y:0,text:"r",size:26,color:"#ffffff",bold:true},{x:75,y:0,text:"b",size:26,color:"#ffffff",bold:true}] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+t.title('키보드 연습')
+
+def set_red():         # r 키를 누르면 실행될 함수
+    t.bgcolor('red')
+
+def set_blue():         # b 키를 누르면 실행될 함수
+    t.bgcolor('blue')
+
+t.onkeypress(set_red, 'r')    # r 키에 set_red 함수 연결
+t.onkeypress(set_blue, 'b')   # b 키에 set_blue 함수 연결
+
+t.listen()   # 키보드 입력을 받기 시작해요
+
+t.mainloop()`,
+      tryit:["`set_green` 함수를 새로 만들고 `onkeypress(set_green, 'g')`를 추가해서 `g` 키로 초록 배경이 되게 해보세요.","더 많은 색상을 바꿀 수 있도록 코드를 추가해주세요."],
+      minis:[
+        { title:"키로 거북이 색 바꾸기", desc:"키보드 `1`을 누르면 거북이 색이 노란색, `2`를 누르면 초록색으로 바뀌도록 코딩해보세요.", shot:"1·2 키로 바뀐 거북이 색.",
+          img: turtleScene({ turtles:[{x:-60,y:0,heading:0,color:"#ffd400"},{x:60,y:0,heading:0,color:"#2f9e6e"}], texts:[{x:-60,y:40,text:"1",size:16,color:"#7c948a",bold:true},{x:60,y:40,text:"2",size:16,color:"#7c948a",bold:true}] }) }
+      ]
+    },
+    { title:"onscreenclick() - 화면 클릭하면 실행하기",
+      explain:["`onscreenclick(함수, 버튼번호)`는 **클릭하면 함수를 실행**해요.","클릭한 좌표는 함수의 `x, y` 값으로 들어와요.","버튼번호는 1은 왼쪽, 2는 가운데, 3은 오른쪽이에요."],
+      shot:"클릭한 방향으로 그려진 빨간·파란 선.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:60,color:"#e5383b",width:3},{x1:0,y1:0,x2:-100,y2:-60,color:"#1d63d1",width:3}], dots:[{x:100,y:60,r:5,color:"#e5383b"},{x:-100,y:-60,r:5,color:"#1d63d1"}] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+
+def draw_red(x, y):  # 왼쪽 클릭 시 실행 (x, y는 클릭한 좌표)
+    t.color('red')
+    t.goto(x, y)
+
+def draw_blue(x, y): # 오른쪽 클릭 시 실행
+    t.color('blue')
+    t.goto(x, y)
+
+def f_clear(x, y):   # 가운데 버튼 클릭 시 실행
+    t.clear()
+
+t.onscreenclick(draw_red, 1)    # 1: 왼쪽 버튼
+t.onscreenclick(draw_blue, 3)   # 3: 오른쪽 버튼
+t.onscreenclick(f_clear, 2)     # 2: 가운데 버튼
+
+t.listen()
+
+t.mainloop()`,
+      tryit:["`draw_red` 함수의 색을 `'red'`에서 `'purple'`로 바꿔보세요.","함수 이름도 `draw_red`에서 `draw_purple`로 바꿔주세요."],
+      minis:[
+        { title:"클릭한 자리에 도장 찍기", desc:"화면을 클릭하면 그 자리로 이동해서 도장을 찍도록 코딩해보세요.", shot:"클릭한 자리마다 찍힌 도장.",
+          img: turtleScene({ turtles:[{x:-80,y:60,heading:0},{x:70,y:40,heading:30},{x:0,y:-70,heading:-45},{x:100,y:-30,heading:90}] }) }
+      ]
+    },
+    { title:"ondrag() - 마우스로 끌어서 움직이기",
+      explain:["`ondrag(함수)`는 거북이를 **끌었을 때** 실행할 함수를 정해요.","`t.goto`처럼 이미 있는 함수를 그대로 써도 돼요.","마우스로 끌면 거북이가 따라와요."],
+      shot:"끈 자리로 거북이가 따라와요.",
+      img: turtleScene({ lines:[{x1:-100,y1:-50,x2:80,y2:60,color:"#b9c6c0",width:2,dash:"4,4"}], dots:[{x:-100,y:-50,r:6,color:"#7c948a"}], turtles:[{x:80,y:60,heading:30}] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+t.shape("turtle")
+
+t.ondrag(t.goto)   # 마우스로 끌면 그 위치로 이동(goto)해요
+
+t.mainloop()`,
+      explain2:["`t.ondrag(t.goto)`만 쓰면 컴퓨터나 화면 환경에 따라 거북이가 버벅거리거나 잘 따라오지 않을 수 있어요.","끄는 동안 `goto()`가 다시 드래그 이벤트를 일으켜서 서로 겹치기 때문이에요.","드래그 중에는 `ondrag`를 잠깐 꺼두었다가, 이동이 끝나면 다시 켜주면 훨씬 안정적으로 동작해요."],
+      code2:`import turtle as t
+
+t.shape("turtle")
+
+def move(x, y):
+    t.ondrag(None)      # 드래그 이벤트 잠시 해제
+    t.goto(x, y)
+    t.ondrag(move)      # 다시 등록
+
+t.ondrag(move)
+
+t.mainloop()`,
+      code2Label:"더 부드럽게 동작하는 코드",
+      tryit:["거북이가 지나간 자리에 선이 남아요. `t.penup()`을 추가해서 선 없이 거북이만 움직이게 해보세요."],
+      minis:[
+        { title:"색 있는 펜으로 끌어서 그리기", desc:"거북이 색을 \"orange\"로 정하고, 마우스로 끌면서 선이 그려지는지 확인해보세요.", shot:"끈 자리를 따라 그려진 주황 선.",
+          img: turtleScene({ lines:[{x1:-100,y1:-50,x2:80,y2:60,color:"#ff8c1a",width:3}], turtles:[{x:80,y:60,heading:30,color:"#ff8c1a"}] }) }
+      ]
+    },
+    { title:"ontimer() - 시간마다 반복 실행하기",
+      explain:["`ontimer(함수, 시간)`은 **정해진 시간 뒤에** 함수를 실행해요.","시간 단위는 1000이 1초예요.","함수 안에서 다시 부르면 계속 반복돼요."],
+      shot:"1초마다 30씩 이동한 경로.",
+      img: turtleScene({ lines:[{x1:0,y1:0,x2:30,y2:0,color:"#27392f",width:3},{x1:30,y1:0,x2:60,y2:0,color:"#27392f",width:3},{x1:60,y1:0,x2:90,y2:0,color:"#27392f",width:3},{x1:90,y1:0,x2:120,y2:0,color:"#27392f",width:3}], turtles:[{x:120,y:0,heading:0}] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+
+def move():
+    t.forward(30)
+    t.ontimer(move, 1000)   # 1초(1000) 뒤에 move()를 다시 실행
+
+move()   # 처음 한 번 실행해서 반복을 시작해요
+
+t.mainloop()`,
+      tryit:["`1000`을 `300`으로 바꿔서 더 빠르게 움직이는지 확인해보세요."],
+      minis:[
+        { title:"타이머로 빙글빙글 돌기", desc:"정해진 시간마다 조금씩 앞으로 이동하면서 살짝 방향을 틀도록 만들어서, 거북이가 빙글빙글 도는 모습을 만들어보세요. 이동 거리와 도는 각도는 자유롭게 정해보세요.", shot:"빙글빙글 도는 나선 모양.",
+          img: turtleScene({ lines:[
+            {x1:0,y1:0,x2:20,y2:0,color:"#27392f",width:2.5},
+            {x1:20,y1:0,x2:44.2,y2:14,color:"#27392f",width:2.5},
+            {x1:44.2,y1:14,x2:36.2,y2:45.2,color:"#27392f",width:2.5},
+            {x1:36.2,y1:45.2,x2:36.2,y2:89.2,color:"#27392f",width:2.5},
+            {x1:36.2,y1:89.2,x2:10.2,y2:134.2,color:"#27392f",width:2.5}
+          ], turtles:[{x:10.2,y:134.2,heading:150}] }) }
+      ]
+    },
+    { title:"tracer(), update() - 화면 한번에 그리기",
+      explain:["그림을 너무 빠르게 많이 그리면 **화면이 멈출 수** 있어요.","`tracer(0)`은 화면을 잠깐 멈춰두는 기능이에요.","`update()`를 불러야 멈춰둔 그림이 한 번에 나타나요."],
+      shot:"한 번에 나타난 복잡한 나선 모양.",
+      img: turtleScene({ lines:[
+        {x1:0,y1:0,x2:5,y2:0,color:"#27392f",width:2},
+        {x1:5,y1:0,x2:10.15,y2:8.57,color:"#27392f",width:2},
+        {x1:10.15,y1:8.57,x2:3.11,y2:21.81,color:"#27392f",width:2},
+        {x1:3.11,y1:21.81,x2:-16.86,y2:22.86,color:"#27392f",width:2},
+        {x1:-16.86,y1:22.86,x2:-30.84,y2:2.13,color:"#27392f",width:2},
+        {x1:-30.84,y1:2.13,x2:-18.16,y2:-25.06,color:"#27392f",width:2},
+        {x1:-18.16,y1:-25.06,x2:16.65,y2:-28.72,color:"#27392f",width:2},
+        {x1:16.65,y1:-28.72,x2:40.72,y2:3.23,color:"#27392f",width:2},
+        {x1:40.72,y1:3.23,x2:23.86,y2:44.93,color:"#27392f",width:2},
+        {x1:23.86,y1:44.93,x2:-25.52,y2:52.75,color:"#27392f",width:2}
+      ] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+t.tracer(0)   # 화면을 바로바로 그리지 않고 잠깐 멈춰둬요
+
+for i in range(100):
+    t.forward(i)   # i가 점점 커지면서 나선 모양이 만들어져요
+    t.left(59)
+
+t.update()   # 멈춰뒀던 그림을 한 번에 화면에 보여줘요
+
+t.mainloop()`,
+      tryit:["`t.tracer(0)`과 `t.update()` 두 줄을 지우고 실행해서, 그림이 그려지는 과정이 천천히 보이는지 비교해보세요. (그림이 많아지면 이 방법은 더 느리고 끊길 수 있어요)"],
+      minis:[
+        { title:"tracer 꺼서 사각형 여러 개 그리기", desc:"`tracer(0)`을 이용해서, 크기가 조금씩 커지는 사각형 여러 개가 한번에 나타나도록 코딩해보세요.", shot:"점점 커지는 사각형 여러 개.",
+          img: turtleScene({ lines:[
+            {x1:-20,y1:-20,x2:20,y2:-20,color:"#1d63d1",width:2},{x1:20,y1:-20,x2:20,y2:20,color:"#1d63d1",width:2},{x1:20,y1:20,x2:-20,y2:20,color:"#1d63d1",width:2},{x1:-20,y1:20,x2:-20,y2:-20,color:"#1d63d1",width:2},
+            {x1:-35,y1:-35,x2:35,y2:-35,color:"#57b98c",width:2},{x1:35,y1:-35,x2:35,y2:35,color:"#57b98c",width:2},{x1:35,y1:35,x2:-35,y2:35,color:"#57b98c",width:2},{x1:-35,y1:35,x2:-35,y2:-35,color:"#57b98c",width:2},
+            {x1:-50,y1:-50,x2:50,y2:-50,color:"#ffd400",width:2},{x1:50,y1:-50,x2:50,y2:50,color:"#ffd400",width:2},{x1:50,y1:50,x2:-50,y2:50,color:"#ffd400",width:2},{x1:-50,y1:50,x2:-50,y2:-50,color:"#ffd400",width:2},
+            {x1:-65,y1:-65,x2:65,y2:-65,color:"#ff8c1a",width:2},{x1:65,y1:-65,x2:65,y2:65,color:"#ff8c1a",width:2},{x1:65,y1:65,x2:-65,y2:65,color:"#ff8c1a",width:2},{x1:-65,y1:65,x2:-65,y2:-65,color:"#ff8c1a",width:2}
+          ] }) }
+      ]
+    },
+    { title:"거북이 여러 개 만들기",
+      explain:["`t.Turtle()`로 **새 거북이를 만들** 수 있어요.","`t1`, `t2`처럼 변수 이름을 붙여서 각각 다뤄요.","거북이마다 색, 모양, 위치를 다르게 정할 수 있어요."],
+      shot:"서로 다른 위치·길이로 이동한 두 거북이.",
+      img: turtleScene({ lines:[{x1:-300,y1:100,x2:200,y2:100,color:"#e5383b",width:2},{x1:-300,y1:0,x2:50,y2:0,color:"#1d63d1",width:2}], turtles:[{x:200,y:100,heading:0,color:"#e5383b"},{x:50,y:0,heading:0,color:"#1d63d1"}] }),
+      code:`import turtle as t
+
+t.setup(800, 600)
+
+t1 = t.Turtle()      # 첫 번째 거북이
+t1.color("red")
+t1.shape("turtle")
+t1.up()
+t1.goto(-300, 100)   # 시작 위치로 이동
+t1.down()
+
+t2 = t.Turtle()      # 두 번째 거북이
+t2.color("blue")
+t2.shape("turtle")
+t2.up()
+t2.goto(-300, 0)
+t2.down()
+
+t1.forward(500)   # 각자 원하는 만큼 이동
+t2.forward(350)
+
+t.mainloop()`,
+      tryit:["`t3` 거북이를 추가해서 초록색으로 만들고, `(-300, -100)`에서 시작해 420만큼 이동시켜보세요."],
+      minis:[
+        { title:"서로 다른 모양의 거북이 세 마리", desc:"`t1`은 \"turtle\", `t2`는 \"circle\", `t3`는 \"square\" 모양으로 만들고, 각각 다른 색으로 나란히 세워보세요.", shot:"모양·색이 다른 캐릭터 세 개.",
+          img: turtleScene({ turtles:[{x:-100,y:0,heading:0,color:"#e5383b",shape:"turtle"},{x:0,y:0,heading:0,color:"#1d63d1",shape:"circle"},{x:100,y:0,heading:0,color:"#2f9e6e",shape:"square"}] }) }
+      ]
+    }
+  ],
+  funcTable:[
+    {name:"onkeypress(함수, \"키\")", desc:"키보드 누르면 함수 실행", usage:"t.onkeypress(set_red, 'r')"},
+    {name:"onscreenclick(함수, 버튼번호)", desc:"화면 클릭하면 함수 실행", usage:"t.onscreenclick(draw_red, 1)"},
+    {name:"ondrag(함수)", desc:"마우스로 끌면 함수 실행", usage:"t.ondrag(t.goto)"},
+    {name:"ontimer(함수, 시간)", desc:"시간 뒤에 함수 실행", usage:"t.ontimer(move, 1000)"},
+    {name:"listen()", desc:"키보드/마우스 입력 받기 시작", usage:"t.listen()"},
+    {name:"tracer(0), update()", desc:"그림 한번에 보여주기", usage:"t.tracer(0)"},
+    {name:"Turtle()", desc:"새 거북이 만들기", usage:"t1 = t.Turtle()"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**클릭하면 별이 그려지는 프로그램 만들기**
+- 화면을 클릭하면 그 자리로 이동해서 작은 별을 그려요.
+- 배경은 검은색, 별 색은 노란색으로 해요.
+- \`speed(0)\`으로 빠르게 그려지게 해요.`, shot:"검은 배경에 그려진 노란 별.",
+        img: turtleScene({ bgFill:"#000000", lines:[
+          {x1:0,y1:0,x2:100,y2:0,color:"#ffd400",width:4},
+          {x1:100,y1:0,x2:19,y2:-58.8,color:"#ffd400",width:4},
+          {x1:19,y1:-58.8,x2:50,y2:36.3,color:"#ffd400",width:4},
+          {x1:50,y1:36.3,x2:80.9,y2:-58.8,color:"#ffd400",width:4},
+          {x1:80.9,y1:-58.8,x2:0,y2:0,color:"#ffd400",width:4}
+        ] }), bonus:"방향키(\"Up\", \"Down\", \"Left\", \"Right\")를 눌렀을 때 거북이가 그 방향으로 한 칸씩 움직이는 기능도 추가해보세요." }
+    ]
+  },
+  quiz:[
+    { q:"키보드를 누르면 함수를 실행시켜주는 함수는?", choices:["`onscreenclick()`","`onkeypress()`","`ondrag()`","`ontimer()`"], answer:1 },
+    { q:"마우스로 화면을 클릭했을 때 함수를 실행시켜주는 함수는?", choices:["`onkeypress()`","`onscreenclick()`","`ontimer()`","`listen()`"], answer:1 },
+    { q:"일정 시간마다 함수를 반복 실행하는 함수는?", choices:["`ontimer()`","`onkeypress()`","`ondrag()`","`tracer()`"], answer:0 },
+    { q:"화면을 잠깐 멈춰뒀다가 한 번에 보여줄 때 짝을 이루는 함수는?", choices:["`penup()` / `pendown()`","`tracer()` / `update()`","`onkeypress()` / `onscreenclick()`","`goto()` / `circle()`"], answer:1 },
+    { q:"새로운 거북이를 추가로 만들 때 쓰는 것은?", choices:["`Turtle()`","`shape()`","`home()`","`setup()`"], answer:0 }
+  ],
+  next:["지금까지 배운 모든 함수를 모아서 미니 게임을 만들어요."]
+},
+{
+  slug:"10-mini-game", session:10, icon:"🎮",
+  title:"미니 게임 만들기 - 터틀 피하기",
+  prevReview:["거북이 모양, 색, 이동, 회전, 원, 채우기, 도장, 글씨","반복문(`for`), 함수(`def`)","키보드, 마우스, 타이머 이벤트"],
+  learn:["지금까지 배운 함수를 모두 모아서 게임 하나를 완성해요.","게임 규칙: 빨간 적 거북이를 화살표 키로 피해 다녀요. 오래 버틸수록 점수가 올라가요.","적과 닿으면 게임이 끝나요."],
+  note:["한 번에 전체 코드를 입력하지 않아요. 조각마다 입력하고 실행해서 확인한 다음, 다음 조각을 추가해요."],
+  steps:[
+    { title:"화면 만들기",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`Screen()`으로 게임 화면을 만들어요.","`setup()`으로 가로, 세로 크기를 정해요.","`tracer(0)`은 화면을 잠깐 멈춰두는 기능이에요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["게임을 위한 첫 화면을 만들어요."] }
+      ],
+      shot:"500×500 크기의 검은 화면.",
+      img: turtleScene({ bgFill:"#000000", lines:[
+        {x1:-180,y1:-180,x2:180,y2:-180,color:"#57b98c",width:2,dash:"6,4"},
+        {x1:180,y1:-180,x2:180,y2:180,color:"#57b98c",width:2,dash:"6,4"},
+        {x1:180,y1:180,x2:-180,y2:180,color:"#57b98c",width:2,dash:"6,4"},
+        {x1:-180,y1:180,x2:-180,y2:-180,color:"#57b98c",width:2,dash:"6,4"}
+      ], texts:[{x:0,y:0,text:"500 × 500",size:16,color:"#ffffff",bold:true}] }),
+      code:`import turtle
+
+screen = turtle.Screen()       # 게임 화면 만들기
+screen.title("Turtle Game!!")   # 창 제목
+screen.setup(500, 500)          # 창 크기
+screen.bgcolor("black")
+screen.tracer(0)                 # 화면 깜빡임(자동 갱신)을 잠깐 꺼둬요
+
+turtle.mainloop()`,
+      tryit:["`screen.title(\"Turtle Game!!\")`의 글자를 내가 원하는 게임 이름으로 바꿔보세요."]
+    },
+    { title:"내 거북이(me)와 적 거북이(enemy) 만들기",
+      explainSections:[
+        { emoji:"🎯", label:"이번 단계 목표", lines:["나를 움직일 거북이(`me`)와 적 거북이(`enemy`)를 만들어요.","둘은 색과 시작 위치가 달라요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`mainloop()` 위에 추가해요."] }
+      ],
+      shot:"아래는 흰 거북이(나), 위는 빨간 거북이(적).",
+      img: turtleScene({ bgFill:"#000000", turtles:[{x:100,y:-150,heading:0,color:"#ffffff"},{x:-100,y:150,heading:0,color:"#e5383b"}] }),
+      code:`import turtle
+
+screen = turtle.Screen()
+screen.title("Turtle Game!!")
+screen.setup(500, 500)
+screen.bgcolor("black")
+screen.tracer(0)
+
+# 나의 거북이
+me = turtle.Turtle()
+me.shape("turtle")
+me.color("white")
+me.up()
+me.goto(100, -200)   # 시작 위치
+me.speed(0)
+
+# 적 거북이
+enemy = turtle.Turtle()
+# <<적 거북이에 필요한 코드 추가하기>>
+
+screen.update()   # 멈춰뒀던 화면을 한 번에 보여줘요
+turtle.mainloop()`,
+      tryit:["힌트: 위 `me` 코드를 참고해서 `enemy`도 `shape()`, `color()`, `up()`, `goto()`를 채워보세요.","내 거북이 시작 위치를 바꿔보세요.","색상 등을 바꿔 나만의 게임으로 바꿔보세요."],
+      minis:[
+        { title:"응원단 거북이 추가하기", desc:"움직이지 않는 노란색 사각형 거북이를 화면 구석에 하나 추가해서, 게임을 지켜보는 관중처럼 꾸며보세요. 위치는 자유롭게 정해보세요.", shot:"구석에 놓인 노란 사각형 응원단.",
+          img: turtleScene({ bgFill:"#000000", turtles:[{x:100,y:-150,heading:0,color:"#ffffff"},{x:-100,y:150,heading:0,color:"#e5383b"},{x:-150,y:-150,heading:0,color:"#ffd400",shape:"square"}] }) }
+      ]
+    },
+    { title:"점수판 거북이(pen) 만들기",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`ht()`는 거북이 모양을 화면에서 숨겨주는 함수예요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["점수를 글씨로 써줄 흰색 `pen` 거북이를 만들어요.","화면 위쪽 자리로 옮기고, `ht()`로 모양은 숨겨서 글씨만 보이게 해요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`screen.update()` 줄 위에 추가해요."] }
+      ],
+      code:`# 점수 표시용 흰색 거북이
+pen = turtle.Turtle()
+# <<펜 거북이에 필요한 코드 추가하기>>`,
+      tryit:["힌트: 색을 정하고 화면 위쪽 자리로 옮겨보세요. 추가로 필요한 코드가 있으면 자유롭게 코딩해주세요."]
+    },
+    { title:"방향키로 움직이는 함수 만들기",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`setheading(각도)`는 머리 방향을 바로 돌리는 함수예요.","0은 오른쪽, 90은 위, 180은 왼쪽, 270은 아래예요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["방향키마다 다른 함수를 연결해서, 키보드로 내 거북이를 움직여요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`screen.update()` 줄 위에 추가해요."] }
+      ],
+      code:`def go_up():
+    me.setheading(90)   # 위쪽(90도)을 바라보고
+    me.forward(10)      # 10만큼 이동
+
+screen.onkeypress(go_up, "Up") # 방향키 Up에 go_up 연결
+
+screen.listen()    # 키보드 입력을 받기 시작해요`,
+      tryit:["go_down(), go_right(), go_left() 함수를 만들고 방향키와 연결해주도록 코딩해주세요.","`forward(10)`의 `10`을 `20`으로 바꿔서 한 번에 더 많이 움직이는지 확인해보세요."],
+      minis:[
+        { title:"스페이스바로 제자리 되돌아가기", desc:"스페이스바(\"space\")를 누르면 내 거북이가 처음 시작 위치로 돌아가는 함수(go_home)를 만들어서 연결해보세요.", shot:"처음 위치로 돌아온 거북이.",
+          img: turtleScene({ bgFill:"#000000", lines:[{x1:120,y1:100,x2:100,y2:-150,color:"#57b98c",width:2,dash:"4,4"}], dots:[{x:120,y:100,r:5,color:"#7c948a"}], turtles:[{x:100,y:-150,heading:0,color:"#ffffff"}] }) }
+      ]
+    },
+    { title:"적이 나를 따라오게 만들기",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`towards(좌표)`는 지금 위치에서 그 좌표를 바라보려면 몇 도를 향해야 하는지 계산해주는 함수예요.","`global 변수이름`은 함수 안에서 함수 밖에 있는 변수의 값을 바꿀 때 먼저 써줘야 해요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["게임을 계속 진행시켜주는 함수 `play()`를 만들어요.","`playing`은 \"게임이 진행 중이다\"라는 상태를 저장해두는 변수예요.","`enemy.towards(me.pos())`로 적이 나를 바라볼 각도를 구하고, `setheading()`으로 방향을 돌린 뒤 `forward()`로 이동하면 적이 나를 따라오게 돼요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`def go_up():` 함수들 위에 추가해요."] }
+      ],
+      shot:"적이 나를 향하는 방향과 각도.",
+      img: turtleScene({ bgFill:"#000000", lines:[
+        {x1:-60,y1:60,x2:50,y2:-80,color:"#ffd400",width:2,dash:"5,3"},
+        {x1:-60,y1:60,x2:40,y2:60,color:"#7c948a",width:1}
+      ], arcs:[{cx:-60,cy:60,r:30,a1:-54,a2:0,color:"#ffd400",width:2}], turtles:[{x:50,y:-80,heading:0,color:"#ffffff"},{x:-60,y:60,heading:-52,color:"#e5383b"}] }),
+      code:`playing = True   # 게임이 진행 중인지 저장하는 변수
+
+def play():
+    global playing   # 함수 안에서 바깥 변수 playing의 값을 바꾸려면 필요해요
+
+    ang = enemy.towards(me.pos())   # 나를 향하는 각도 계산
+    enemy.setheading(ang)
+    enemy.forward(7)                 # 그 방향으로 이동 (나를 따라옴)
+
+    screen.update()
+
+    if playing:
+        screen.ontimer(play, 100)   # 0.1초 뒤에 play()를 다시 실행 (반복)`,
+      explainSections2:[
+        { emoji:"🎯", label:"이번 단계 목표", lines:["지금까지는 `play()` 함수를 만들기만 했어요.","함수를 호출하지 않으면 동작하지 않으니, 직접 호출해서 게임을 시작해요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`screen.update()`와 `turtle.mainloop()` 사이에 추가해요."] }
+      ],
+      code2:`play() # 함수를 호출해야 실행돼요
+
+turtle.mainloop()`,
+      tryit:["`enemy.forward(7)`의 `7`을 다른 숫자로 바꿔서 적의 속도가 달라지는지 확인해보세요."]
+    },
+    { title:"적과 부딪혔는지 확인하기",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`distance(거북이)`는 두 거북이 사이의 거리를 숫자로 구해줘요.","`if 조건:`은 조건이 맞을 때만 아래 들여쓰기 된 코드를 실행하는 문법이에요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["\"적과의 거리가 20보다 가까우면\"이라는 조건으로 충돌을 확인해요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`play()` 함수 안, `enemy.forward(7)` 다음 줄에 추가해요."] }
+      ],
+      shot:"부딪혀서 파랗게 변한 거북이.",
+      img: turtleScene({ bgFill:"#000000", turtles:[{x:0,y:0,heading:0,color:"#1d63d1"},{x:18,y:12,heading:200,color:"#e5383b"}] }),
+      code:`    if me.distance(enemy) < 20:     # 적과 가까워지면 (충돌 확인)
+        playing = False
+        me.color("blue")`,
+      tryit:["`20`을 다른 숫자로 바꿔서 충돌 범위가 어떻게 달라지는지 확인해보세요."]
+    },
+    { title:"점수 표시하기 (버틴 시간)",
+      explainSections:[
+        { emoji:"🆕", label:"새로운 함수", lines:["`time.time()`은 지금까지 흐른 시간을 초 단위 숫자로 알려줘요."] },
+        { emoji:"🎯", label:"이번 단계 목표", lines:["게임이 시작된 시간을 미리 저장해두고, 지금 시간에서 그 값을 빼면 \"지난 시간(버틴 시간)\"을 구할 수 있어요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["코드 맨 위에 `import time`을 추가하고, 이 코드는 `import turtle` 아래 `playing = True` 근처에 추가해요."] }
+      ],
+      code:`import time   # 시간을 계산하려면 필요해요
+
+start_time = time.time()   # 게임이 시작된 시간을 저장`,
+      explainSections2:[
+        { emoji:"🎯", label:"이번 단계 목표", lines:["점수를 계산하고 화면에 보여주는 코드를 추가해요."] },
+        { emoji:"📍", label:"코드 추가 위치", lines:["`play()` 함수 맨 처음(`global playing` 다음 줄)에 추가해요."] }
+      ],
+      code2:`    elapsed_time = int(time.time() - start_time)   # 지금까지 버틴 시간(초)
+    pen.clear()
+    pen.write("버틴 시간 :" + str(elapsed_time) + "초", align="center", font=("Arial", 15, "bold"))`,
+      code3:`        pen.goto(0, 0)
+        pen.write("Game Over", align="center", font=("Arial", 30, "bold"))`,
+      code3Label:"충돌 확인 코드 안에 추가",
+      shot:"점수와 함께 진행되는 게임 화면.",
+      img: turtleScene({ bgFill:"#000000", texts:[{x:0,y:150,text:"버틴 시간 :7초",size:12,color:"#ffffff"},{x:0,y:0,text:"Game Over",size:16,color:"#ffffff",bold:true}], turtles:[{x:0,y:-60,heading:0,color:"#1d63d1"},{x:14,y:-50,heading:200,color:"#e5383b"}] })
+    },
+    { title:"직접 수정하며 난이도 바꿔보기",
+      explain:["지금까지 만든 게임을 아래처럼 수정하면서 난이도를 바꿔보세요."],
+      tryit:["적이 더 빨리 따라오도록 속도 숫자를 바꿔보세요.","적과의 충돌 간격을 `40`으로 바꿔서 더 쉽게 게임이 끝나는지 확인해보세요.","`screen.ontimer(play, 100)`의 `100`을 `50`으로 바꿔서 게임 속도가 빨라지는지 확인해보세요."]
+    }
+  ],
+  funcTable:[
+    {name:"turtle.Screen()", desc:"게임 화면 만들기", usage:"screen = turtle.Screen()"},
+    {name:"Turtle()", desc:"거북이(캐릭터) 만들기", usage:"me = turtle.Turtle()"},
+    {name:"setheading(각도)", desc:"머리 방향을 각도로 정하기", usage:"me.setheading(90)"},
+    {name:"towards(좌표)", desc:"그 좌표를 바라보는 각도 구하기", usage:"enemy.towards(me.pos())"},
+    {name:"distance(거북이)", desc:"두 거북이 사이 거리 구하기", usage:"me.distance(enemy)"},
+    {name:"onkeypress(함수, 키)", desc:"키보드 누르면 함수 실행", usage:"screen.onkeypress(go_up, \"Up\")"},
+    {name:"ontimer(함수, 시간)", desc:"시간 뒤에 함수 실행(반복)", usage:"screen.ontimer(play, 100)"},
+    {name:"time.time()", desc:"지금까지 흐른 시간(초) 구하기", usage:"time.time() - start_time"}
+  ],
+  mission:{
+    tasks:[
+      { task:`**나만의 게임으로 완성하기**
+- \`me.color("white")\`를 좋아하는 색으로 바꿔보세요.
+- \`elapsed_time\`이 10보다 크면 "버틴 시간 :10초 (대단해요!)"처럼 칭호가 붙게 만들어보세요.
+- 거북이 모양, 배경 색, 적의 속도, 충돌 거리, 점수판 위치를 자유롭게 바꿔서 완성해보세요.`, shot:"나만의 색과 배경으로 완성한 게임.",
+        img: turtleScene({ bgFill:"#1b1035", texts:[{x:0,y:150,text:"버틴 시간 :12초",size:12,color:"#ffffff"}], turtles:[{x:0,y:-60,heading:0,color:"#ffd400"},{x:-70,y:60,heading:-120,color:"#e5383b"}] }) }
+    ]
+  },
+  quiz:[
+    { q:"게임 화면을 만드는 함수는?", choices:["`turtle.Screen()`","`turtle.Turtle()`","`turtle.setup()`","`turtle.Window()`"], answer:0 },
+    { q:"거북이 머리 방향을 특정 각도로 바로 돌리는 함수는?", choices:["`left()`","`setheading()`","`towards()`","`goto()`"], answer:1 },
+    { q:"상대(적)가 나를 바라보는 각도를 구해주는 함수는?", choices:["`distance()`","`towards()`","`setheading()`","`pos()`"], answer:1 },
+    { q:"두 거북이 사이의 거리를 구하는 함수는?", choices:["`towards()`","`distance()`","`pos()`","`goto()`"], answer:1 },
+    { q:"지금까지 흐른 시간을 초 단위로 알려주는 것은?", choices:["`time.sleep()`","`time.time()`","`ontimer()`","`tracer()`"], answer:1 }
+  ],
+  challenge:{
+    tasks:[
+      { task:"적 거북이를 하나 더 만들어서 2마리로 늘려보세요. (`enemy2`를 만들고, `play()` 안에서 `enemy2`도 나를 따라오게 하고 충돌도 확인해요.)" },
+      { task:"먹이(아이템) 거북이를 추가해서, 내 거북이가 먹이에 닿으면 점수가 올라가도록 만들어보세요. (`distance()`로 먹이와의 거리를 확인하고, 가까워지면 점수를 더하고 먹이 위치를 다른 곳으로 옮겨요.)" },
+      { task:"그 외에도 원하는 기능을 자유롭게 추가해보세요. (예: 시간이 지날수록 적이 빨라지기, 목숨 여러 개 만들기 등)" }
+    ]
+  },
+  outro:["1차시부터 10차시까지 터틀 그래픽의 기본 함수를 모두 배웠어요.","반복문과 함수로 코드를 더 짧고 똑똑하게 쓰는 법도 배웠어요.","이제 배운 함수들을 조합해서 자신만의 그림과 게임을 자유롭게 만들어볼 수 있어요."]
+},
+];
+
+/* ===== 이전 초안 데이터 (미사용, 완전 비활성화) =====
+const OLD_DRAFT_UNUSED = [
 {
   slug:"00-intro", session:0, icon:"🐢",
   title:"파이썬 터틀, 시작하기 전에",
@@ -1356,6 +2778,7 @@ t.mainloop()`,
   }
 }
 ];
+===== 이전 초안 데이터 끝 ===== */
 
 function escapeHtml(s){
   return (s==null?"":String(s)).replace(/[&<>"]/g, function(c){
@@ -1363,7 +2786,127 @@ function escapeHtml(s){
   });
 }
 function mdBold(s){
-  return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  let out = escapeHtml(s);
+  out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  out = out.replace(/`([^`]+?)`/g, '<code class="inline-code">$1</code>');
+  out = out.replace(/\n/g, "<br>");
+  return out;
+}
+
+// 터틀 코드의 좌표를 그대로 넣으면 자동으로 여백/크기를 맞춰 SVG로 그려주는 헬퍼.
+// 모든 이미지가 같은 규칙(320x200, 자동 맞춤, 동일 여백)으로 그려지므로 이미지 크기가 들쑥날쑥하지 않아요.
+function turtleScene(spec){
+  const W = spec.w || 320, H = spec.h || 200;
+  const pad = spec.pad != null ? spec.pad : 26;
+  const lines = spec.lines || [];
+  const arcs = spec.arcs || [];
+  const dots = spec.dots || [];
+  const texts = spec.texts || [];
+  const turtles = spec.turtles || [];
+  const fills = spec.fills || [];
+
+  let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+  function upd(x,y,r){ r=r||0; minX=Math.min(minX,x-r); maxX=Math.max(maxX,x+r); minY=Math.min(minY,y-r); maxY=Math.max(maxY,y+r); }
+  lines.forEach(function(l){ upd(l.x1,l.y1); upd(l.x2,l.y2); });
+  arcs.forEach(function(a){ upd(a.cx,a.cy,a.r + (a.width||0)/2); });
+  dots.forEach(function(d){ upd(d.x,d.y,(d.r||4)/ (spec._s||1)); });
+  turtles.forEach(function(t){ upd(t.x,t.y,16*(t.scale||1)); });
+  fills.forEach(function(f){ if(f.points){ f.points.forEach(function(p){ upd(p[0],p[1]); }); } else { upd(f.cx,f.cy,f.r); } });
+  texts.forEach(function(t){ upd(t.x,t.y,10); });
+  if(spec.fixedWorld){ minX=spec.fixedWorld[0]; minY=spec.fixedWorld[1]; maxX=spec.fixedWorld[2]; maxY=spec.fixedWorld[3]; }
+  if(minX===Infinity){ minX=-10; maxX=10; minY=-10; maxY=10; }
+
+  const worldW = Math.max(maxX-minX, 1), worldH = Math.max(maxY-minY, 1);
+  const availW = W - pad*2, availH = H - pad*2;
+  const scale = Math.min(availW/worldW, availH/worldH);
+  const offX = pad + (availW - worldW*scale)/2 - minX*scale;
+  const offY = pad + (availH - worldH*scale)/2 + maxY*scale;
+  function CX(x){ return (offX + x*scale).toFixed(1); }
+  function CY(y){ return (offY - y*scale).toFixed(1); }
+
+  let s = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '">';
+  s += '<rect x="1" y="1" width="' + (W-2) + '" height="' + (H-2) + '" rx="10" fill="' + (spec.bg || '#ffffff') + '" stroke="#d7ecdf" stroke-width="2"/>';
+  if(spec.bgFill){
+    s += '<rect x="9" y="9" width="' + (W-18) + '" height="' + (H-18) + '" rx="6" fill="' + spec.bgFill + '"/>';
+  }
+  fills.forEach(function(f){
+    if(f.points){
+      const pts = f.points.map(function(p){ return CX(p[0]) + ',' + CY(p[1]); }).join(' ');
+      s += '<polygon points="' + pts + '" fill="' + f.color + '" stroke="' + (f.stroke||'none') + '" stroke-width="' + (f.strokeWidth||0) + '"/>';
+    } else {
+      s += '<circle cx="' + CX(f.cx) + '" cy="' + CY(f.cy) + '" r="' + (f.r*scale).toFixed(1) + '" fill="' + f.color + '"' + (f.stroke ? ' stroke="' + f.stroke + '" stroke-width="' + (f.strokeWidth||3) + '"' : '') + '/>';
+    }
+  });
+  lines.forEach(function(l){
+    s += '<line x1="' + CX(l.x1) + '" y1="' + CY(l.y1) + '" x2="' + CX(l.x2) + '" y2="' + CY(l.y2) + '" stroke="' + l.color + '" stroke-width="' + (l.width||5) + '" stroke-linecap="round"' + (l.dash ? ' stroke-dasharray="' + l.dash + '"' : '') + '/>';
+  });
+  arcs.forEach(function(a){
+    if(a.a1 == null){
+      s += '<circle cx="' + CX(a.cx) + '" cy="' + CY(a.cy) + '" r="' + (a.r*scale).toFixed(1) + '" fill="' + (a.fill||'none') + '" stroke="' + (a.color||'none') + '" stroke-width="' + (a.width||5) + '"/>';
+    } else {
+      const rad = Math.PI/180;
+      const sx = a.cx + a.r*Math.cos(a.a1*rad), sy = a.cy + a.r*Math.sin(a.a1*rad);
+      const ex = a.cx + a.r*Math.cos(a.a2*rad), ey = a.cy + a.r*Math.sin(a.a2*rad);
+      const largeArc = Math.abs(a.a2-a.a1) > 180 ? 1 : 0;
+      const sweep = a.a2 > a.a1 ? 1 : 0;
+      if(a.pie){
+        s += '<path d="M ' + CX(a.cx) + ' ' + CY(a.cy) + ' L ' + CX(sx) + ' ' + CY(sy) + ' A ' + (a.r*scale).toFixed(1) + ' ' + (a.r*scale).toFixed(1) + ' 0 ' + largeArc + ' ' + sweep + ' ' + CX(ex) + ' ' + CY(ey) + ' Z" fill="' + (a.fill||'none') + '" stroke="' + (a.color||'none') + '" stroke-width="' + (a.width||0) + '"/>';
+      } else {
+        s += '<path d="M ' + CX(sx) + ' ' + CY(sy) + ' A ' + (a.r*scale).toFixed(1) + ' ' + (a.r*scale).toFixed(1) + ' 0 ' + largeArc + ' ' + sweep + ' ' + CX(ex) + ' ' + CY(ey) + '" fill="' + (a.fill||'none') + '" stroke="' + (a.color||'#000') + '" stroke-width="' + (a.width||5) + '" stroke-linecap="round"/>';
+      }
+    }
+  });
+  dots.forEach(function(d){
+    s += '<circle cx="' + CX(d.x) + '" cy="' + CY(d.y) + '" r="' + (d.r||4) + '" fill="' + (d.color||'#999') + '"/>';
+  });
+  texts.forEach(function(t){
+    s += '<text x="' + CX(t.x) + '" y="' + CY(t.y) + '" font-size="' + (t.size||14) + '" fill="' + (t.color||'#27392f') + '" text-anchor="' + (t.anchor||'middle') + '" font-family="Consolas, monospace" font-weight="' + (t.bold?'bold':'normal') + '">' + escapeHtml(t.text) + '</text>';
+  });
+  turtles.forEach(function(t){
+    const cx = CX(t.x), cy = CY(t.y);
+    const rot = -(t.heading||0);
+    const shape = t.shape || 'turtle';
+    const color = t.color || '#2f9e6e';
+    const sc = t.scale || 1;
+    const op = t.opacity != null ? t.opacity : 1;
+    if(shape === 'circle'){
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (9*sc) + '" fill="' + color + '" stroke="#195c3c" stroke-width="1.2" opacity="' + op + '"/>';
+    } else if(shape === 'square'){
+      s += '<rect x="' + (cx-8*sc) + '" y="' + (cy-8*sc) + '" width="' + (16*sc) + '" height="' + (16*sc) + '" fill="' + color + '" stroke="#195c3c" stroke-width="1.2" transform="rotate(' + rot + ' ' + cx + ' ' + cy + ')" opacity="' + op + '"/>';
+    } else {
+      s += '<g opacity="' + op + '" transform="translate(' + cx + ',' + cy + ') rotate(' + rot + ') scale(' + sc + ')">'
+        + '<polygon points="-9,0 -14,-3 -14,3" fill="' + color + '" stroke="#195c3c" stroke-width="1"/>'
+        + '<ellipse cx="5" cy="-7" rx="3" ry="2" fill="' + color + '" stroke="#195c3c" stroke-width="0.8" transform="rotate(-30 5 -7)"/>'
+        + '<ellipse cx="5" cy="7" rx="3" ry="2" fill="' + color + '" stroke="#195c3c" stroke-width="0.8" transform="rotate(30 5 7)"/>'
+        + '<ellipse cx="-5" cy="-7" rx="3" ry="2" fill="' + color + '" stroke="#195c3c" stroke-width="0.8" transform="rotate(30 -5 -7)"/>'
+        + '<ellipse cx="-5" cy="7" rx="3" ry="2" fill="' + color + '" stroke="#195c3c" stroke-width="0.8" transform="rotate(-30 -5 7)"/>'
+        + '<ellipse cx="0" cy="0" rx="9" ry="6" fill="' + color + '" stroke="#195c3c" stroke-width="1.2"/>'
+        + '<circle cx="13" cy="0" r="3.6" fill="' + color + '" stroke="#195c3c" stroke-width="1"/>'
+        + '</g>';
+    }
+  });
+  s += '</svg>';
+  return s;
+}
+
+// 이미지가 준비됐으면 실제 이미지를(인라인 SVG 또는 외부 파일), 없으면 캡션 텍스트 자리표시를 보여줘요.
+function renderShot(imgSrc, caption, tag, big){
+  if(imgSrc){
+    const isInlineSvg = imgSrc.trim().indexOf('<svg') === 0;
+    const imgHtml = isInlineSvg
+      ? imgSrc
+      : '<img src="' + escapeHtml(imgSrc) + '" alt="' + escapeHtml(caption || tag) + '" onclick="openLightbox(\'' + escapeHtml(imgSrc) + '\')">';
+    const sizeSuffix = big === 'xl' ? '-xl' : (big ? '-lg' : '');
+    return '<div class="shot-img-box' + sizeSuffix + '"><div class="shot-img-frame' + sizeSuffix + '">'
+      + imgHtml
+      + '</div>'
+      + (caption ? '<div class="shot-caption">' + mdBold(caption) + '</div>' : '')
+      + '</div>';
+  }
+  if(caption){
+    return '<div class="shot-placeholder"><span class="shot-tag">' + escapeHtml(tag) + '</span><br>' + mdBold(caption) + '</div>';
+  }
+  return '';
 }
 
 // 파이썬 코드 신택스 하이라이팅 (키워드/문자열/숫자/주석/함수 색상 표시)
@@ -1461,6 +3004,9 @@ function showHome(){
   html += '</div>';
   main.innerHTML = html;
   main.scrollTop = 0;
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 function showDetail(idx){
@@ -1469,67 +3015,157 @@ function showDetail(idx){
   let html = '<button class="back-btn" id="backBtn">← 목록으로</button>';
   html += '<div class="cover-section">';
   html += '<div class="cover-icon">' + u.icon + '</div>';
-  html += '<div class="cover-text"><h2>' + mdBold(u.title) + '</h2><p>' + mdBold(u.intro) + '</p>';
+  html += '<div class="cover-text"><h2>' + mdBold(u.title) + '</h2>';
+  if(u.intro){ html += '<p>' + mdBold(u.intro) + '</p>'; }
+  if(u.prevReview && u.prevReview.length){
+    html += '<div class="prev-review"><span class="prev-label">📌 지난 시간 복습</span>' + u.prevReview.map(mdBold).join(' · ') + '</div>';
+  }
   if(u.learn && u.learn.length){
     html += '<ol>';
     u.learn.forEach(function(l){ html += '<li>' + mdBold(l) + '</li>'; });
     html += '</ol>';
   }
+  if(u.note && u.note.length){
+    html += '<div class="prev-review"><span class="prev-label">🗒️ 시작하기 전에</span>' + u.note.map(mdBold).join(' · ') + '</div>';
+  }
   html += '</div></div>';
+
+  if(u.concept){
+    html += '<div class="concept-card"><div class="concept-label">💡 ' + escapeHtml(u.concept.title) + '</div>';
+    (u.concept.explain || []).forEach(function(p){ html += '<p>' + mdBold(p) + '</p>'; });
+    html += renderShot(u.concept.img, u.concept.shot, '그림', true);
+    html += '</div>';
+  }
 
   (u.steps || []).forEach(function(s, i){
     html += '<div class="step-card">';
     html += '<div class="step-head"><span class="step-num">' + (i+1) + '</span>' + mdBold(s.title) + '</div>';
     html += '<div class="step-body">';
 
-    if(s.funcs && s.funcs.length){
-      html += '<div class="func-card"><div class="func-label">🔧 이번에 배울 명령어</div><ul class="func-list">';
-      s.funcs.forEach(function(f){
-        html += '<li class="func-item"><span class="func-name">' + escapeHtml(f.name) + '</span><span class="func-desc">' + mdBold(f.desc) + '</span></li>';
+    if(s.explainSections && s.explainSections.length){
+      html += '<div class="explain-card">';
+      s.explainSections.forEach(function(sec){
+        html += '<div class="explain-group"><div class="explain-sublabel">' + sec.emoji + ' ' + escapeHtml(sec.label) + '</div>';
+        sec.lines.forEach(function(p){ html += '<p>' + mdBold(p) + '</p>'; });
+        html += '</div>';
       });
-      html += '</ul></div>';
+      html += '</div>';
+    } else if(s.explain && s.explain.length){
+      html += '<div class="explain-card"><div class="explain-label">📖 알아보기</div>';
+      s.explain.forEach(function(p){ html += '<p>' + mdBold(p) + '</p>'; });
+      html += '</div>';
     }
     if(s.predict){
       html += '<div class="predict-card"><div class="predict-label">🤔 예측해 보기</div><p>' + mdBold(s.predict) + '</p></div>';
     }
-    if(s.result_img){
-      html += '<div class="result-img-wrap">'
-        + '<img src="' + s.result_img + '" alt="실행결과" onclick="openLightbox(\'' + s.result_img + '\')">'
-        + '</div>';
-      if(s.result){
-        html += '<div class="result-note" style="text-align:center;">💡 ' + mdBold(s.result) + '</div>';
-      }
-    }
+    html += renderShot(s.img, s.shot, '실행결과', s.imgSize);
     if(s.code){
       html += '<div class="code-block-wrap">'
-        + '<div class="code-label">🐍 코드</div>'
+        + '<div class="code-label">🐍 코드 입력하기' + (s.codeLabel ? ' — ' + escapeHtml(s.codeLabel) : '') + '</div>'
         + '<pre class="code-block"><code>' + highlightPy(s.code) + '</code></pre>'
         + '</div>';
     }
-    if(s.image){
-      html += '<div class="step-img-wrap">'
-        + '<img src="' + s.image + '" alt="' + escapeHtml(s.title) + '" onclick="openLightbox(\'' + s.image + '\')">'
-        + '<button class="zoom-btn" onclick="openLightbox(\'' + s.image + '\')">🔍 눌러서 크게 보기</button>'
+    if(s.explainSections2 && s.explainSections2.length){
+      html += '<div class="explain-card">';
+      s.explainSections2.forEach(function(sec){
+        html += '<div class="explain-group"><div class="explain-sublabel">' + sec.emoji + ' ' + escapeHtml(sec.label) + '</div>';
+        sec.lines.forEach(function(p){ html += '<p>' + mdBold(p) + '</p>'; });
+        html += '</div>';
+      });
+      html += '</div>';
+    } else if(s.explain2 && s.explain2.length){
+      html += '<div class="explain-card"><div class="explain-label">📖 알아보기</div>';
+      s.explain2.forEach(function(p){ html += '<p>' + mdBold(p) + '</p>'; });
+      html += '</div>';
+    }
+    if(s.code2){
+      html += '<div class="code-block-wrap">'
+        + '<div class="code-label">🐍 코드 입력하기' + (s.code2Label ? ' — ' + escapeHtml(s.code2Label) : ' (2)') + '</div>'
+        + '<pre class="code-block"><code>' + highlightPy(s.code2) + '</code></pre>'
         + '</div>';
     }
-    html += '<div class="points-card"><div class="points-label">✏️ 따라 코딩하기</div><ol>';
-    (s.points || []).forEach(function(p){
-      html += '<li>' + mdBold(p) + '</li>';
+    if(s.code3){
+      html += '<div class="code-block-wrap">'
+        + '<div class="code-label">🐍 코드 입력하기' + (s.code3Label ? ' — ' + escapeHtml(s.code3Label) : ' (3)') + '</div>'
+        + '<pre class="code-block"><code>' + highlightPy(s.code3) + '</code></pre>'
+        + '</div>';
+    }
+    if(s.tryit && s.tryit.length){
+      html += '<div class="points-card"><div class="points-label">✏️ 직접 수정하기</div><ol>';
+      s.tryit.forEach(function(p){ html += '<li>' + mdBold(p) + '</li>'; });
+      html += '</ol></div>';
+    }
+    (s.minis || []).forEach(function(mm){
+      html += '<div class="mini-card"><h4>🌟 미니 미션 - ' + escapeHtml(mm.title) + '</h4>'
+        + '<div class="mini-desc">' + mdBold(mm.desc) + '</div>';
+      html += renderShot(mm.img, mm.shot, '결과 이미지');
+      if(mm.hint){
+        html += '<button class="hint-btn" onclick="toggleHint(this)">💡 힌트 보기</button><div class="mission-hint">' + mdBold(mm.hint) + '</div>';
+      }
+      html += '</div>';
     });
-    html += '</ol></div>';
     html += '</div></div>';
   });
 
+  if(u.funcTable && u.funcTable.length){
+    html += '<div class="func-card" style="margin-bottom:24px;"><div class="func-label">📋 오늘 배운 함수 정리</div><ul class="func-list">';
+    u.funcTable.forEach(function(f){
+      html += '<li class="func-item"><span class="func-name">' + escapeHtml(f.name) + '</span><span class="func-desc">' + mdBold(f.desc) + '</span>'
+        + (f.usage ? '<span class="func-usage">' + escapeHtml(f.usage) + '</span>' : '') + '</li>';
+    });
+    html += '</ul></div>';
+  }
+
+  function renderMissionCard(m, icon, label){
+    let h = '<div class="mission-card"><h3>' + icon + ' ' + escapeHtml(label) + '</h3>';
+    if(m.tasks && m.tasks.length){
+      h += '<ul class="mission-task-list">';
+      m.tasks.forEach(function(tk, ti){
+        const taskText = (typeof tk === 'string') ? tk : tk.task;
+        const taskHint = (typeof tk === 'string') ? null : tk.hint;
+        const taskBonus = (typeof tk === 'string') ? null : tk.bonus;
+        const taskShot = (typeof tk === 'string') ? null : tk.shot;
+        const taskImg = (typeof tk === 'string') ? null : tk.img;
+        h += '<li class="mission-task-item">'
+          + '<div class="mission-task-head"><span class="mission-task-num">' + (ti+1) + '</span>'
+          + '<span class="mission-task-text">' + mdBold(taskText) + '</span></div>';
+        if(taskShot || taskImg){
+          h += '<div style="margin:8px 0 0 36px;">' + renderShot(taskImg, taskShot, '결과 이미지') + '</div>';
+        }
+        if(taskHint){
+          h += '<button class="mission-task-hint-btn" onclick="toggleHint(this)">💡 ' + (ti+1) + '번 힌트 보기</button>'
+            + '<div class="mission-task-hint">' + mdBold(taskHint) + '</div>';
+        }
+        if(taskBonus){
+          h += '<button class="mission-task-bonus-btn" onclick="toggleHint(this)">🌟 다 완성했다면?</button>'
+            + '<div class="mission-task-bonus">' + mdBold(taskBonus) + '</div>';
+        }
+        h += '</li>';
+      });
+      h += '</ul>';
+    } else if(m.desc){
+      h += '<div class="mission-desc">' + mdBold(m.desc) + '</div>';
+      if(m.hint){
+        h += '<button class="hint-btn" onclick="toggleHint(this)">💡 힌트 보기</button>'
+          + '<div class="mission-hint">' + mdBold(m.hint) + '</div>';
+      }
+    }
+    h += '</div>';
+    return h;
+  }
+
+  if(u.mission){ html += renderMissionCard(u.mission, '🏁', '최종 미션'); }
+
   if(u.quiz && u.quiz.length){
     quizScore[idx] = { correct:0, answered:0, total:u.quiz.length };
-    html += '<div class="quiz-card" id="quiz-card-' + idx + '"><h3>🧩 단원 퀴즈</h3>';
+    html += '<div class="quiz-card" id="quiz-card-' + idx + '"><h3>🧩 단원 퀴즈 - 배운 내용 확인하기</h3>';
     html += '<div class="quiz-score" id="quiz-score-' + idx + '">맞은 개수: 0 / ' + u.quiz.length + '</div>';
     u.quiz.forEach(function(q, qi){
       html += '<div class="quiz-q">'
         + '<div class="quiz-q-text">Q' + (qi+1) + '. ' + mdBold(q.q) + '</div>'
         + '<div class="quiz-choices" data-answered="0">';
       q.choices.forEach(function(c, ci){
-        html += '<button class="quiz-choice" onclick="checkQuiz(this,' + ci + ',' + q.answer + ',\'' + idx + '_' + qi + '\')">' + mdBold(c) + '</button>';
+        html += '<button class="quiz-choice" onclick="checkQuiz(this,' + ci + ',' + q.answer + ',\'' + idx + '_' + qi + '\')">' + (ci+1) + '. ' + mdBold(c) + '</button>';
       });
       html += '</div><div class="quiz-feedback" id="qf-' + idx + '_' + qi + '" style="display:none;"></div>';
       html += '</div>';
@@ -1538,37 +3174,25 @@ function showDetail(idx){
     html += '</div>';
   }
 
-  if(u.mission){
-    html += '<div class="mission-card">'
-      + '<h3>🚀 코딩 미션</h3>';
-    if(u.mission.tasks && u.mission.tasks.length){
-      html += '<ul class="mission-task-list">';
-      u.mission.tasks.forEach(function(tk, ti){
-        const taskText = (typeof tk === 'string') ? tk : tk.task;
-        const taskHint = (typeof tk === 'string') ? null : tk.hint;
-        html += '<li class="mission-task-item">'
-          + '<div class="mission-task-head"><span class="mission-task-num">' + (ti+1) + '</span>'
-          + '<span class="mission-task-text">' + mdBold(taskText) + '</span></div>';
-        if(taskHint){
-          html += '<button class="mission-task-hint-btn" onclick="toggleHint(this)">💡 ' + (ti+1) + '번 힌트 보기</button>'
-            + '<div class="mission-task-hint">' + mdBold(taskHint) + '</div>';
-        }
-        html += '</li>';
-      });
-      html += '</ul>';
-    } else if(u.mission.desc){
-      html += '<div class="mission-desc">' + mdBold(u.mission.desc) + '</div>';
-      if(u.mission.hint){
-        html += '<button class="hint-btn" onclick="toggleHint(this)">💡 힌트 보기</button>'
-          + '<div class="mission-hint">' + mdBold(u.mission.hint) + '</div>';
-      }
-    }
-    html += '</div>';
+  if(u.challenge){ html += renderMissionCard(u.challenge, '🚀', '도전 미션 - 나만의 기능 추가하기'); }
+
+  if(u.next && u.next.length){
+    html += '<div class="next-card"><div class="next-label">⏭️ 다음 시간 예고</div><ul>';
+    u.next.forEach(function(n){ html += '<li>' + mdBold(n) + '</li>'; });
+    html += '</ul></div>';
+  }
+  if(u.outro && u.outro.length){
+    html += '<div class="next-card"><div class="next-label">🎉 수고했어요!</div><ul>';
+    u.outro.forEach(function(n){ html += '<li>' + mdBold(n) + '</li>'; });
+    html += '</ul></div>';
   }
 
   main.innerHTML = html;
   document.getElementById("backBtn").onclick = showHome;
   main.scrollTop = 0;
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 const quizScore = {};
