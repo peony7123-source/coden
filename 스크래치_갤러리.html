@@ -158,7 +158,7 @@ body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--
 .sh4 .cert-tag{background:rgba(14,165,233,0.12);color:#0369A1;border:1px solid rgba(78,205,196,0.3);}
 .sh5 .cert-tag{background:rgba(139,92,246,0.12);color:#6D28D9;border:1px solid rgba(199,125,255,0.3);}
 
-/* 미션 갤러리 진입 버튼 (스크래치 COS 패널) */
+/* 미션 갤러리 진입 버튼 (엔트리 패널) */
 .gallery-entry-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,rgba(74,158,255,0.15),rgba(199,125,255,0.10));border:1.5px solid rgba(74,158,255,0.4);border-radius:18px;padding:16px 20px;cursor:pointer;margin-bottom:18px;transition:all 0.2s;text-decoration:none;}
 .gallery-entry-btn:hover{background:linear-gradient(135deg,rgba(74,158,255,0.25),rgba(199,125,255,0.18));transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,158,255,0.2);}
 .ge-icon{font-size:32px;}
@@ -302,8 +302,10 @@ body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--
 #detailView{display:none;}
 #detailView.active{display:block;}
 .detail-main{max-width:1100px;margin:0 auto;padding:24px 16px 80px;animation:slideIn 0.3s ease both;}
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--border);border-radius:50px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:13px;color:var(--text2);padding:8px 18px;cursor:pointer;margin-bottom:24px;transition:all 0.2s;text-decoration:none;}
-.back-btn:hover{border-color:var(--border2);color:var(--text);}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);border:none;border-radius:50px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:17px;font-weight:700;color:#fff;padding:14px 26px;cursor:pointer;margin-bottom:24px;transition:all 0.2s;text-decoration:none;box-shadow:0 4px 14px rgba(107,71,237,0.35);}
+.back-btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
+.back-btn-arrow{display:inline-block;font-size:20px;animation:backBtnWiggle 1.4s ease-in-out infinite;}
+@keyframes backBtnWiggle{0%,100%{transform:translateX(0);}50%{transform:translateX(-4px);}}
 .detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
 @media(max-width:720px){.detail-layout{grid-template-columns:1fr;}}
 .detail-preview{width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:90px;position:relative;overflow:hidden;border-radius:20px;border:1.5px solid var(--border2);margin-bottom:14px;}
@@ -340,6 +342,10 @@ body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--
 .step-title{font-family:'Nunito','Noto Sans KR',sans-serif;font-size:17px;color:var(--text);margin-bottom:4px;}
 .step-desc{font-size:14px;color:var(--text2);line-height:1.7;}
 .section-title-small{font-family:'Nunito','Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--text2);margin-bottom:12px;display:flex;align-items:center;gap:7px;}
+/* 인라인 편집 (관리자 모드) */
+.admin-editable{outline:none;border-radius:6px;padding:2px 4px;margin:-2px -4px;transition:background 0.15s,box-shadow 0.15s;cursor:text;}
+.admin-editable:hover{background:rgba(107,71,237,0.07);box-shadow:inset 0 -1.5px 0 rgba(107,71,237,0.35);}
+.admin-editable:focus{background:rgba(107,71,237,0.10);box-shadow:inset 0 -2px 0 var(--purple);}
 
 /* ══════════════════════════════════════════
    MISSION COMPLETE MODAL
@@ -466,19 +472,15 @@ body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--
 /* ══════════════════════════════════════════
    ADMIN INLINE TOOLBAR (detail view)
 ══════════════════════════════════════════ */
-.admin-detail-toolbar{background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.06));border:1.5px solid rgba(239,68,68,0.30);border-radius:20px;padding:18px 20px;margin-bottom:18px;animation:fadeIn 0.3s ease;}
+.admin-detail-toolbar{background:#FAECE7;border:0.5px solid #f0c4b6;border-radius:16px;padding:16px 18px;margin-bottom:18px;animation:fadeIn 0.3s ease;}
 .admin-toolbar-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.admin-toolbar-badge{background:rgba(239,68,68,0.12);border:1.5px solid rgba(239,68,68,0.35);border-radius:20px;padding:4px 12px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:12px;font-weight:700;color:#DC2626;}
-.admin-toolbar-title{font-family:'Nunito','Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:var(--text);flex:1;}
+.admin-toolbar-badge{background:#993C1D;border-radius:20px;padding:4px 12px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:12px;font-weight:700;color:#fff;}
+.admin-toolbar-title{font-family:'Nunito','Noto Sans KR',sans-serif;font-size:15px;font-weight:700;color:#1a1a18;flex:1;}
 .admin-toolbar-btns{display:flex;gap:8px;flex-wrap:wrap;}
 .admin-tb-img-btn{display:flex;align-items:center;gap:7px;padding:10px 18px;border-radius:50px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap;background:rgba(79,110,247,0.10);border:1.5px solid rgba(79,110,247,0.35);color:var(--blue);}
 .admin-tb-img-btn:hover{background:rgba(79,110,247,0.20);transform:translateY(-1px);}
 .admin-tb-img-del{display:flex;align-items:center;gap:6px;padding:10px 14px;border-radius:50px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;background:rgba(255,87,87,0.10);border:1.5px solid rgba(255,87,87,0.30);color:var(--red);}
 .admin-tb-img-del:hover{background:rgba(255,87,87,0.22);}
-.admin-tb-memo-btn{display:flex;align-items:center;gap:7px;padding:10px 18px;border-radius:50px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap;background:rgba(139,92,246,0.10);border:1.5px solid rgba(139,92,246,0.30);color:var(--purple);}
-.admin-tb-memo-btn:hover{background:rgba(139,92,246,0.20);}
-.admin-tb-memo-btn.open{background:rgba(139,92,246,0.18);border-color:var(--purple);}
-.admin-detail-memo-panel{display:none;border-top:1.5px solid rgba(79,110,247,0.15);padding-top:16px;margin-top:14px;}
 .admin-detail-memo-panel.open{display:block;animation:fadeIn 0.25s ease;}
 .admin-detail-memo-label{font-family:'Nunito','Noto Sans KR',sans-serif;font-size:13px;font-weight:700;color:var(--purple);margin-bottom:8px;}
 .admin-detail-memo-hint{font-size:12px;color:var(--text3);margin-bottom:10px;line-height:1.5;}
@@ -556,8 +558,8 @@ body.embedded .filter-btn.active { background:rgba(74,158,255,0.10); border-colo
 /* 챕터 구분선 */
 body.embedded .chapter-line { background:var(--border); }
 /* 디테일 뷰 */
-body.embedded .back-btn { background:var(--card); border-color:var(--border); color:var(--text2); }
-body.embedded .back-btn:hover { background:var(--card2); border-color:var(--border2); color:var(--text); }
+body.embedded .back-btn { background:var(--purple); border:none; color:#fff; }
+body.embedded .back-btn:hover { filter:brightness(1.08); }
 body.embedded .detail-info { background:var(--card); border-color:var(--border); }
 body.embedded .detail-right-card { background:var(--card); border-color:var(--border); }
 body.embedded .detail-preview { border-color:var(--border2); }
@@ -574,6 +576,11 @@ body.embedded .cm-info-box { background:var(--bg3); border-color:var(--border); 
 body.embedded .cm-cancel { background:var(--bg3); border-color:var(--border2); color:var(--text2); }
 /* 어드민 */
 body.embedded .admin-pw-box { background:var(--card); border-color:rgba(74,158,255,0.3); }
+body.embedded .admin-pw-overlay.visible { align-items:flex-start !important; padding-top:40px !important; }
+body.embedded .complete-modal-overlay.open { align-items:flex-start !important; padding-top:40px !important; }
+body.embedded .modal-overlay.visible { align-items:flex-start !important; padding-top:40px !important; }
+body.embedded #bulkVideoOverlay { align-items:flex-start !important; padding-top:40px !important; }
+body.embedded #missionEditOverlay { align-items:flex-start !important; padding-top:40px !important; }
 body.embedded .admin-pw-input { background:var(--bg2); border-color:var(--border); color:var(--text); }
 body.embedded .admin-header { background:linear-gradient(135deg,rgba(74,158,255,0.10),rgba(167,139,250,0.06)); border-color:rgba(74,158,255,0.30); }
 body.embedded .admin-mission-row { background:var(--card); border-color:var(--border); }
@@ -583,7 +590,7 @@ body.embedded .admin-ch-btn.active { background:rgba(74,158,255,0.08); border-co
 body.embedded .admin-inline-memo { background:rgba(74,158,255,0.03); border-color:rgba(74,158,255,0.15); }
 body.embedded .admin-inline-textarea,
 body.embedded .admin-detail-textarea { background:var(--bg2); border-color:rgba(74,158,255,0.25); color:var(--text); }
-body.embedded .admin-detail-toolbar { background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.06)); border-color:rgba(239,68,68,0.30); }
+body.embedded .admin-detail-toolbar { background:#FAECE7; border-color:#f0c4b6; }
 body.embedded .admin-close-btn { background:rgba(255,255,255,0.06); border-color:var(--border2); color:var(--text2); }
 /* 토스트 */
 body.embedded .toast { background:var(--card); border-color:var(--border2); color:var(--text); box-shadow:0 8px 24px rgba(0,0,0,0.4); }
@@ -747,8 +754,8 @@ body { background:#FAFAFA !important; }
 /* 뒤로 버튼 */
 .gallery-back-btn { background:#FFFFFF !important; border-color:rgba(0,0,0,0.09) !important; color:#52606D !important; }
 .gallery-back-btn:hover { border-color:rgba(0,0,0,0.14) !important; color:#0F1317 !important; }
-.back-btn { background:#FFFFFF !important; border-color:rgba(0,0,0,0.09) !important; color:#52606D !important; }
-.back-btn:hover { border-color:rgba(0,0,0,0.14) !important; color:#0F1317 !important; }
+.back-btn { background:var(--purple) !important; border:none !important; color:#fff !important; }
+.back-btn:hover { filter:brightness(1.08) !important; }
 
 /* 디테일 뷰 */
 .detail-info { background:#FFFFFF !important; border-color:rgba(0,0,0,0.08) !important; }
@@ -847,6 +854,7 @@ body { background:#FAFAFA !important; }
   <div class="topbar">
     <div class="topbar-logo" id="topbarLogo">🐱 스크래치 미션 갤러리</div>
     <div class="topbar-right">
+      <span id="heroStats2" style="font-size:13px;font-weight:700;color:var(--text2);">미션 0 / 30 완료</span>
       <div class="xp-badge" id="topXP">⭐ 0 XP</div>
       <div class="user-chip">
         <div class="user-avatar" id="topAvatar">?</div>
@@ -856,8 +864,7 @@ body { background:#FAFAFA !important; }
       <div style="position:relative;display:inline-block" id="adminMenuWrap">
         <button class="admin-trigger" id="adminTriggerBtn" onclick="toggleAdminMenu()" title="관리자">⚙️</button>
         <div id="adminDropdown" style="display:none;position:absolute;right:0;top:40px;background:var(--card);border:1.5px solid var(--border2);border-radius:14px;box-shadow:0 8px 28px rgba(79,110,247,0.18);z-index:9999;min-width:180px;overflow:hidden;">
-          <button onclick="closeAdminMenu();openAdmin()" style="display:block;width:100%;text-align:left;padding:13px 18px;background:none;border:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);">🗂️ 관리자 패널</button>
-          <button onclick="closeAdminMenu();goAdminGallery()" style="display:block;width:100%;text-align:left;padding:13px 18px;background:none;border:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);">🖼️ 갤러리에서 편집</button>
+          <button onclick="closeAdminMenu();openAdmin()" style="display:block;width:100%;text-align:left;padding:13px 18px;background:none;border:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--text);cursor:pointer;border-bottom:1px solid var(--border);">✏️ 미션 편집</button>
           <button onclick="closeAdminMenu();logoutAdmin()" style="display:block;width:100%;text-align:left;padding:13px 18px;background:none;border:none;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#DC2626;cursor:pointer;">🔓 관리자 종료</button>
         </div>
       </div>
@@ -867,7 +874,7 @@ body { background:#FAFAFA !important; }
     <!-- ══ GALLERY VIEW ══ -->
   <div id="galleryView" class="active">
     <div class="gallery-main">
-      <div id="galleryHeroRow" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+      <div id="galleryHeroRow" style="display:none;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
         <div style="font-family:'Nunito','Noto Sans KR',sans-serif;font-size:15px;font-weight:800;color:var(--text);" id="heroGreet2">🐱 스크래치 미션</div>
         <div style="display:flex;align-items:center;gap:10px;">
           <span style="font-size:13px;font-weight:700;color:var(--text2);" id="heroStats2">미션 0 / 30 완료</span>
@@ -901,17 +908,18 @@ body { background:#FAFAFA !important; }
     <div class="admin-main">
       <div class="admin-header">
         <div>
-          <div class="admin-header-title">⚙️ 관리자 패널</div>
+          <div class="admin-header-title">✏️ 미션 편집</div>
           <div class="admin-header-sub">📷 이미지 업로드 &amp; 📝 미션 안내 편집</div>
           <div style="margin-top:8px;padding:10px 14px;background:rgba(249,115,22,0.10);border:1.5px solid rgba(249,115,22,0.30);border-radius:12px;font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#92400E;line-height:1.7;">
-            💡 <b>이미지·안내 편집 방법:</b> 이 패널에서 수정하거나, 상단 ⚙️ → <b>🖼️ 갤러리에서 편집</b>을 눌러 미션 카드를 클릭하세요.<br>
-            ⚠️ <b>저장은 이 브라우저에만 유지됩니다.</b> 다른 PC/브라우저에서 쓰려면 <b>📥 전체 내보내기</b> 후 <b>📤 불러오기</b>를 하세요.
+            💡 <b>이미지·안내 편집 방법:</b> 아래 목록에서 미션을 클릭해 수정하세요.<br>
+            ⚠️ <b>저장은 이 브라우저에만 유지됩니다.</b> 편집 후 <b>📥 내보내기 → GitHub 업로드</b>해야 학생들에게 반영됩니다. 다른 PC에서 이어 작업할 때도 <b>📥 내보내기</b> 후 <b>📤 불러오기</b>를 사용하세요.
           </div>
         </div>
         <div class="admin-header-btns">
           <button class="admin-export-btn" onclick="exportAll()">📥 scratch_data.json 내보내기</button>
-          <button class="admin-export-btn" onclick="openBulkVideoUpload()" style="background:rgba(14,165,233,0.15);border-color:rgba(14,165,233,0.4);color:var(--teal);">🎬 동영상 일괄 업로드</button>
+          
           <button class="admin-import-btn" onclick="document.getElementById('importFileInput').click()">📤 전체 불러오기</button>
+          
           <button class="admin-close-btn" onclick="closeAdmin()">← 갤러리로</button>
         </div>
       </div>
@@ -938,11 +946,11 @@ body { background:#FAFAFA !important; }
   align-items:center;justify-content:center;gap:6px;padding:0 12px;">
   <span style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:0.06em;margin-right:4px;">🔐 관리자</span>
   <div style="width:1px;height:16px;background:rgba(255,255,255,0.25);margin:0 4px;"></div>
-  <button onclick="openAdmin()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-size:12px;font-family:'Noto Sans KR',sans-serif;padding:5px 12px;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">🗂️ 관리자 패널</button>
-  <button onclick="goAdminGallery()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-size:12px;font-family:'Noto Sans KR',sans-serif;padding:5px 12px;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">✏️ 갤러리 편집</button>
-  <div style="width:1px;height:16px;background:rgba(255,255,255,0.25);margin:0 4px;"></div>
+  <button onclick="openAdmin()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:8px;color:#fff;font-size:12px;font-family:'Noto Sans KR',sans-serif;padding:5px 12px;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">✏️ 미션 편집</button>
+  <button id="adminBarSyncBtn" onclick="syncFromSheet()" style="background:rgba(34,197,94,0.25);border:1px solid rgba(34,197,94,0.5);border-radius:8px;color:#fff;font-size:12px;font-family:'Noto Sans KR',sans-serif;padding:5px 12px;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='rgba(34,197,94,0.4)'" onmouseout="this.style.background='rgba(34,197,94,0.25)'">🔄 시트 동기화</button>
   <button onclick="logoutAdmin()" style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:rgba(255,255,255,0.8);font-size:12px;font-family:'Noto Sans KR',sans-serif;padding:5px 12px;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='rgba(0,0,0,0.35)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">🔓 종료</button>
 </div>
+
 
 <!-- 관리자 비밀번호 오버레이 -->
 <div class="admin-pw-overlay" id="adminPwOverlay">
@@ -985,7 +993,7 @@ let isAdminMode=false;
 // ══════════════════════════════════════════
 //  MISSION DATA (30개)
 // ══════════════════════════════════════════
-const MISSIONS = [
+let MISSIONS = [
   {id:1,chapter:'ch1',emoji:'🐾',bg:'linear-gradient(135deg,#1a3a5c,#1e2d48)',color:'var(--teal)',title:'강아지를 산책시켜라!',diff:1,xp:10,tag:'QUEST 1',tagColor:'var(--teal)',desc:'키보드 화살표로 강아지(고양이)를 움직여봐요. 방향키를 누르면 캐릭터가 걸어가요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#0d2a3d,#1a3a5c)',steps:[{title:'🐱 스프라이트 선택',desc:'강아지나 고양이 스프라이트를 골라요.'},{title:'⬆️ 위쪽 화살표 연결',desc:'\"위쪽 화살표 키를 눌렀을 때\" 블록을 가져와요.'},{title:'🚶 y 좌표 바꾸기',desc:'\"y좌표를 10 바꾸기\" 블록을 연결해요.'},{title:'⬇️⬅️➡️ 나머지 방향도',desc:'아래, 왼쪽, 오른쪽 화살표도 똑같이 만들어요.'},{title:'🔄 모양 바꾸기',desc:'움직일 때 모양도 바꿔보세요!'}],hint:['block-motion','이동하기 10걸음','block-events','⬆️ 위쪽 화살표 키를 눌렀을 때','block-motion','방향을 90도로 정하기'],modal:{icon:'🐾',title:'산책 완료!',msg:'키보드로 캐릭터를 움직이는 마법을 배웠어요!'}},
   {id:2,chapter:'ch1',emoji:'🌳',bg:'linear-gradient(135deg,#1a3d2e,#1e3a2a)',color:'var(--green)',title:'나무를 10그루 심어라!',diff:1,xp:10,tag:'QUEST 2',tagColor:'var(--green)',desc:'반복 블록을 사용해서 나무(도장)를 10번 찍어봐요. 반복문의 마법을 경험하세요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#0d2a1e,#1a3d2e)',steps:[{title:'🖊️ 펜 확장 추가',desc:'확장 메뉴에서 \"펜\" 블록을 추가해요.'},{title:'10번 반복하기',desc:'\"10번 반복하기\" 블록을 가져와요.'},{title:'🌳 도장 찍기',desc:'반복 안에 \"도장\" 블록을 넣어요.'},{title:'➡️ 위치 이동',desc:'도장 찍고 옆으로 이동하는 블록을 추가해요.'},{title:'✨ 실행해보기',desc:'녹색 깃발을 눌러서 결과를 확인해요!'}],hint:['block-control','10번 반복하기','block-motion','x좌표를 40 바꾸기','block-looks','도장'],modal:{icon:'🌳',title:'숲이 생겼어요!',msg:'반복문으로 힘든 일도 척척! 개발자처럼 생각하기 시작했어요!'}},
   {id:3,chapter:'ch1',emoji:'🎵',bg:'linear-gradient(135deg,#3a1a4a,#2d1a3e)',color:'var(--purple)',title:'나만의 밴드를 만들어라!',diff:1,xp:10,tag:'QUEST 3',tagColor:'var(--purple)',desc:'스프라이트를 클릭하면 소리가 나는 악기를 만들어요. 여러 개 만들면 밴드가 완성!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#1f0d2e,#3a1a4a)',steps:[{title:'🎸 악기 스프라이트 추가',desc:'드럼, 기타, 피아노 스프라이트를 골라요.'},{title:'🖱️ 클릭 이벤트',desc:'\"이 스프라이트를 클릭했을 때\" 블록을 가져와요.'},{title:'🔊 소리 재생',desc:'\"소리 재생하기\" 블록으로 음악을 연결해요.'},{title:'🎭 모양 변화',desc:'클릭할 때 모양이 바뀌면 더 재미있어요!'},{title:'🎶 3개 이상 만들기',desc:'악기를 3개 이상 만들어서 밴드를 완성해요!'}],hint:['block-events','이 스프라이트를 클릭했을 때','block-sound','소리 재생하기','block-looks','다음 모양으로 바꾸기'],modal:{icon:'🎵',title:'밴드 결성!',msg:'이벤트와 소리의 마법을 배웠어요!'}},
@@ -996,26 +1004,26 @@ const MISSIONS = [
   {id:8,chapter:'ch1',emoji:'🎯',bg:'linear-gradient(135deg,#3a1a1a,#2e1414)',color:'var(--red)',title:'랜덤 위치에 나타나라!',diff:2,xp:10,tag:'QUEST 8',tagColor:'var(--red)',desc:'난수 블록을 사용해서 캐릭터가 무작위 위치에 나타나게 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#1a0808,#3a1a1a)',steps:[{title:'🎲 난수 블록 찾기',desc:'\"~부터 ~사이의 난수\" 블록을 찾아요.'},{title:'📍 x 위치 랜덤',desc:'x좌표에 -200~200 난수를 연결해요.'},{title:'📍 y 위치 랜덤',desc:'y좌표에 -150~150 난수를 연결해요.'},{title:'🔁 계속 반복',desc:'\"계속 반복하기\" 안에 넣어서 계속 이동해요.'},{title:'⏱️ 잠깐 기다리기',desc:'1초 기다리고 다시 이동하게 만들어요.'}],hint:['block-motion','x: -200~200 y: -150~150 으로 이동하기','block-operators','-200부터 200 사이의 난수','block-control','1초 기다리기'],modal:{icon:'🎯',title:'랜덤 마스터!',msg:'난수의 마법을 배웠어요!'}},
   {id:9,chapter:'ch1',emoji:'🖱️',bg:'linear-gradient(135deg,#1a2a3a,#14203a)',color:'var(--blue)',title:'마우스를 따라다녀라!',diff:1,xp:10,tag:'QUEST 9',tagColor:'var(--blue)',desc:'캐릭터가 마우스 포인터를 졸졸 따라다니게 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#0d1420,#1a2a3a)',steps:[{title:'🖱️ 마우스 포인터로 이동',desc:'\"마우스 포인터 쪽으로 이동하기\" 블록을 써요.'},{title:'🔁 계속 반복',desc:'\"계속 반복하기\" 안에 이동 블록을 넣어요.'},{title:'💨 속도 조절',desc:'\"마우스 포인터 쪽으로 5만큼 이동하기\"로 속도를 줘요.'},{title:'👀 마우스 보기',desc:'\"마우스 포인터 쪽 보기\"를 추가하면 방향도 돌아봐요.'},{title:'✨ 효과 추가',desc:'이동할 때 색깔 효과를 주면 더 화려해요!'}],hint:['block-motion','마우스 포인터 쪽으로 10만큼 이동하기','block-motion','마우스 포인터 쪽 보기','block-control','계속 반복하기'],modal:{icon:'🖱️',title:'마우스 팔로워!',msg:'마우스를 따라다니는 마법 완성!'}},
   {id:10,chapter:'ch1',emoji:'🎨',bg:'linear-gradient(135deg,#2a1a3a,#3a2a4a)',color:'var(--purple)',title:'배경을 바꿔라!',diff:1,xp:10,tag:'QUEST 10',tagColor:'var(--purple)',desc:'키보드나 클릭으로 배경이 바뀌는 장면 전환 효과를 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#140d20,#2a1a3a)',steps:[{title:'🖼️ 배경 3개 추가',desc:'무대에 배경을 3개 이상 추가해요.'},{title:'🖱️ 클릭 이벤트',desc:'배경이나 버튼을 클릭했을 때 이벤트를 만들어요.'},{title:'🔄 배경 바꾸기',desc:'\"배경을 다음으로 바꾸기\" 블록을 연결해요.'},{title:'📡 메시지 보내기',desc:'배경이 바뀔 때 다른 스프라이트에게 신호를 보내요.'},{title:'🎬 전환 효과',desc:'바뀔 때 효과음을 넣으면 영화처럼 멋져요!'}],hint:['block-looks','배경을 다음으로 바꾸기','block-events','📡 메시지 보내기','block-sound','소리 재생하기'],modal:{icon:'🎨',title:'배경 마스터!',msg:'장면 전환을 배웠어요!'}},
-  {id:11,chapter:'ch2',emoji:'⚡',bg:'linear-gradient(135deg,#2a3a1a,#3a4a1a)',color:'var(--yellow)',title:'장애물을 피해라!',diff:2,xp:15,tag:'QUEST 11',tagColor:'var(--yellow)',desc:'움직이는 장애물을 화살표 키로 피하는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#1a2008,#2a3a1a)',steps:[{title:'🚀 플레이어 이동',desc:'화살표 키로 움직이는 플레이어를 만들어요.'},{title:'🪨 장애물 만들기',desc:'새 스프라이트로 장애물을 만들어요.'},{title:'↔️ 장애물 이동',desc:'장애물이 계속 왼쪽에서 오른쪽으로 이동해요.'},{title:'💥 충돌 감지',desc:'\"플레이어에 닿았는가?\" 블록으로 충돌을 확인해요.'},{title:'🔄 무한 반복',desc:'장애물이 끝에 가면 다시 처음으로 돌아와요.'}],hint:['block-sensing','플레이어에 닿았는가?','block-motion','x좌표를 -10 바꾸기','block-control','계속 반복하기'],modal:{icon:'⚡',title:'장애물 게임 완성!',msg:'충돌 감지를 배웠어요!'}},
-  {id:12,chapter:'ch2',emoji:'🏃',bg:'linear-gradient(135deg,#1a2e4a,#1e3a5a)',color:'var(--blue)',title:'달리기 게임을 만들어라!',diff:2,xp:15,tag:'QUEST 12',tagColor:'var(--blue)',desc:'끝없이 달리는 무한 러너 게임을 만들어봐요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#0d1e30,#1a2e4a)',steps:[{title:'🏃 달리기 애니메이션',desc:'캐릭터 모양을 계속 바꿔서 달리는 효과를 줘요.'},{title:'🌍 배경 스크롤',desc:'배경이 왼쪽으로 이동하면 달리는 것처럼 보여요.'},{title:'⬆️ 점프 기능',desc:'스페이스바를 누르면 위로 점프하게 만들어요.'},{title:'⬇️ 중력 효과',desc:'조금씩 내려오는 중력을 y좌표로 표현해요.'},{title:'📦 장애물 추가',desc:'달리다 장애물에 부딪히면 게임 오버!'}],hint:['block-motion','y좌표를 10 바꾸기','block-control','계속 반복하기','block-sensing','스페이스키를 눌렀는가?'],modal:{icon:'🏃',title:'러너 게임 완성!',msg:'게임 개발자의 길을 걷고 있어요!'}},
-  {id:13,chapter:'ch2',emoji:'🐟',bg:'linear-gradient(135deg,#0d2a3a,#0d3040)',color:'var(--teal)',title:'물고기를 잡아라!',diff:2,xp:15,tag:'QUEST 13',tagColor:'var(--teal)',desc:'물속을 헤엄치는 물고기를 클릭해서 잡는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#041520,#0d2a3a)',steps:[{title:'🐟 물고기 스프라이트',desc:'물고기 스프라이트를 추가해요.'},{title:'🎲 랜덤 이동',desc:'물고기가 무작위로 헤엄치게 만들어요.'},{title:'🖱️ 클릭으로 잡기',desc:'클릭하면 점수가 올라가고 물고기가 사라져요.'},{title:'⏱️ 제한 시간',desc:'30초 안에 최대한 많이 잡아요!'},{title:'👥 복제하기',desc:'\"나 자신 복제하기\"로 물고기를 여러 마리 만들어요.'}],hint:['block-control','나 자신 복제하기','block-events','복제되었을 때','block-operators','-200부터 200 사이의 난수'],modal:{icon:'🐟',title:'낚시왕!',msg:'복제 기능을 배웠어요!'}},
-  {id:14,chapter:'ch2',emoji:'🧱',bg:'linear-gradient(135deg,#3a2a1a,#4a3020)',color:'var(--orange)',title:'벽돌 깨기 게임!',diff:3,xp:15,tag:'QUEST 14',tagColor:'var(--orange)',desc:'공을 튕겨서 벽돌을 모두 깨는 클래식 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#1a1008,#3a2a1a)',steps:[{title:'🏓 패들 만들기',desc:'왼쪽/오른쪽 키로 움직이는 패들을 만들어요.'},{title:'⚽ 공 만들기',desc:'공이 벽에서 튕기도록 만들어요.'},{title:'🧱 벽돌 배열',desc:'\"복제하기\"로 벽돌을 여러 줄 만들어요.'},{title:'💥 공-벽돌 충돌',desc:'공이 벽돌에 닿으면 벽돌이 사라져요.'},{title:'🏆 클리어 조건',desc:'모든 벽돌이 사라지면 클리어!'}],hint:['block-sensing','패들에 닿았는가?','block-motion','튕기기','block-control','복제되었을 때'],modal:{icon:'🧱',title:'벽돌 깨기 완성!',msg:'복잡한 게임 로직을 만들었어요!'}},
-  {id:15,chapter:'ch2',emoji:'🎪',bg:'linear-gradient(135deg,#3a1a3a,#4a1a4a)',color:'var(--pink)',title:'클릭 속도 게임!',diff:2,xp:15,tag:'QUEST 15',tagColor:'var(--pink)',desc:'10초 안에 버튼을 얼마나 많이 클릭하는지 겨루는 게임이에요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#200820,#3a1a3a)',steps:[{title:'🖱️ 클릭 카운터',desc:'버튼을 클릭할 때마다 카운트가 올라가요.'},{title:'⏱️ 10초 타이머',desc:'10초 카운트다운 타이머를 만들어요.'},{title:'🔔 게임 시작',desc:'스페이스바를 누르면 게임이 시작돼요.'},{title:'🏁 게임 종료',desc:'시간이 끝나면 최종 점수를 보여줘요.'},{title:'🏆 최고 점수',desc:'최고 기록을 저장하는 변수를 추가해요.'}],hint:['block-variables','클릭수를 1 바꾸기','block-control','10초 기다리기','block-variables','최고점수 업데이트'],modal:{icon:'🎪',title:'클릭왕!',msg:'시간 제한 게임을 만들었어요!'}},
-  {id:16,chapter:'ch2',emoji:'🌟',bg:'linear-gradient(135deg,#2a2a1a,#3a3a1a)',color:'var(--yellow)',title:'별 먹기 게임!',diff:2,xp:15,tag:'QUEST 16',tagColor:'var(--yellow)',desc:'하늘에서 떨어지는 별을 바구니로 받는 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#0d0d00,#2a2a1a)',steps:[{title:'🧺 바구니 만들기',desc:'화살표 키로 움직이는 바구니를 만들어요.'},{title:'⭐ 별 떨어뜨리기',desc:'랜덤 위치에서 별이 아래로 떨어져요.'},{title:'✨ 별 복제하기',desc:'\"복제하기\"로 여러 별이 동시에 떨어지게 해요.'},{title:'🎯 받으면 점수+',desc:'바구니에 닿으면 점수가 올라가요.'},{title:'💔 놓치면 생명-',desc:'별이 바닥에 닿으면 생명이 줄어요.'}],hint:['block-motion','y좌표를 -5 바꾸기','block-sensing','바구니에 닿았는가?','block-control','복제되었을 때'],modal:{icon:'🌟',title:'별 수집가!',msg:'중력과 충돌을 한 번에!'}},
-  {id:17,chapter:'ch2',emoji:'🧮',bg:'linear-gradient(135deg,#1a3040,#1e3850)',color:'var(--blue)',title:'퀴즈 게임을 만들어라!',diff:2,xp:15,tag:'QUEST 17',tagColor:'var(--blue)',desc:'답을 입력하면 맞고 틀림을 알려주는 퀴즈 게임을 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#0d1e30,#1a3040)',steps:[{title:'❓ 질문하기',desc:'\"~라고 묻고 기다리기\" 블록을 사용해요.'},{title:'📝 대답 확인',desc:'\"대답\" 변수와 정답을 비교해요.'},{title:'✅ 맞았을 때',desc:'정답이면 \"정답!\" 소리와 효과를 줘요.'},{title:'❌ 틀렸을 때',desc:'오답이면 힌트를 알려주거나 다시 묻게 해요.'},{title:'📊 점수 계산',desc:'맞힐 때마다 점수를 올려봐요.'}],hint:['block-sensing','정답을 입력하세요 라고 묻고 기다리기','block-operators','대답 = 정답','block-control','만약 대답 = 정답 이면'],modal:{icon:'🧮',title:'퀴즈 게임 완성!',msg:'입력 받기를 배웠어요!'}},
-  {id:18,chapter:'ch2',emoji:'🎭',bg:'linear-gradient(135deg,#2a1a3a,#3a2a4a)',color:'var(--purple)',title:'움직이는 애니메이션!',diff:2,xp:15,tag:'QUEST 18',tagColor:'var(--purple)',desc:'여러 스프라이트가 함께 메시지를 주고받으며 움직이는 짧은 애니메이션을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#140d20,#2a1a3a)',steps:[{title:'📡 메시지 만들기',desc:'\"시작!\" 메시지를 만들고 보내봐요.'},{title:'🎭 스프라이트 A',desc:'메시지를 받으면 움직이는 스프라이트를 만들어요.'},{title:'🎭 스프라이트 B',desc:'A가 끝나면 B에게 메시지를 보내요.'},{title:'🔄 순서대로',desc:'메시지를 체인처럼 연결해서 순서를 만들어요.'},{title:'🎬 완성 영상',desc:'전체 애니메이션을 한 번에 실행해봐요!'}],hint:['block-events','📡 메시지 보내기','block-events','메시지를 받았을 때','block-control','~초 기다리기'],modal:{icon:'🎭',title:'애니메이션 감독!',msg:'메시지 시스템을 마스터했어요!'}},
-  {id:19,chapter:'ch2',emoji:'🌀',bg:'linear-gradient(135deg,#1a1a3a,#2a2a4a)',color:'var(--teal)',title:'스파이럴 아트!',diff:2,xp:15,tag:'QUEST 19',tagColor:'var(--teal)',desc:'반복과 펜 블록으로 나선형 아름다운 패턴을 그려봐요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#0d0d20,#1a1a3a)',steps:[{title:'🖊️ 펜 준비',desc:'펜 내리기로 그리기 시작해요.'},{title:'🔁 100번 반복',desc:'100번 반복하면서 조금씩 커져요.'},{title:'↩️ 조금씩 회전',desc:'매번 89도씩 방향을 바꿔요.'},{title:'📏 점점 길게',desc:'이동 거리를 매번 조금씩 늘려요.'},{title:'🎨 색깔 변화',desc:'색깔도 조금씩 바뀌게 하면 더 아름다워요!'}],hint:['block-motion','이동하기','block-motion','89도 돌기','block-looks','색깔 효과를 5 바꾸기'],modal:{icon:'🌀',title:'아트 마스터!',msg:'수학과 예술이 만났어요!'}},
-  {id:20,chapter:'ch2',emoji:'🏰',bg:'linear-gradient(135deg,#2a1a1a,#3a2020)',color:'var(--red)',title:'미로 탈출 게임!',diff:3,xp:15,tag:'QUEST 20',tagColor:'var(--red)',desc:'미로를 그리고 캐릭터가 벽에 닿으면 처음으로 돌아오는 미로 게임이에요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#100808,#2a1a1a)',steps:[{title:'🗺️ 미로 배경 그리기',desc:'그림판으로 미로 배경을 그려요.'},{title:'🚶 캐릭터 작게',desc:'작은 캐릭터로 미로 안을 이동할 수 있게 해요.'},{title:'🧱 벽 감지',desc:'벽 색깔에 닿으면 처음 위치로 돌아가요.'},{title:'🏁 도착 감지',desc:'도착 지점 색깔에 닿으면 클리어!'},{title:'⏱️ 기록 재기',desc:'몇 초 만에 탈출하는지 타이머로 기록해요.'}],hint:['block-sensing','벽 색에 닿았는가?','block-motion','x: 시작위치 y: 시작위치 로 이동하기','block-sensing','색에 닿았는가?'],modal:{icon:'🏰',title:'미로 탈출!',msg:'색깔 감지로 멋진 게임을 만들었어요!'}},
-  {id:21,chapter:'ch3',emoji:'🔥',bg:'linear-gradient(135deg,#3a1a0a,#4a2010)',color:'var(--orange)',title:'플랫폼 점프 게임!',diff:3,xp:20,tag:'QUEST 21',tagColor:'var(--orange)',desc:'발판 위를 점프하며 이동하는 마리오 스타일 플랫폼 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#1a0800,#3a1a0a)',steps:[{title:'🚀 점프 물리',desc:'스페이스바로 점프하고 중력이 당겨내리게 해요.'},{title:'🟩 발판 감지',desc:'발판 위에 서있을 때만 점프 가능하게 해요.'},{title:'📦 발판 복제',desc:'\"복제하기\"로 여러 발판을 만들어요.'},{title:'⬅️ 발판 이동',desc:'발판이 왼쪽으로 이동하면 달리는 느낌!'},{title:'🏆 코인 추가',desc:'공중에 코인을 배치하고 먹으면 점수를!'}],hint:['block-variables','속도y를 -2 바꾸기','block-sensing','발판색에 닿았는가?','block-control','계속 반복하기'],modal:{icon:'🔥',title:'플랫폼 마스터!',msg:'물리 엔진을 직접 만들었어요!'}},
-  {id:22,chapter:'ch3',emoji:'🎰',bg:'linear-gradient(135deg,#1a3a1a,#204020)',color:'var(--green)',title:'슬롯머신 게임!',diff:2,xp:20,tag:'QUEST 22',tagColor:'var(--green)',desc:'클릭하면 세 개의 그림이 랜덤으로 바뀌고 같으면 당첨되는 슬롯머신이에요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#0a200a,#1a3a1a)',steps:[{title:'🎲 3개 변수',desc:'슬롯1, 슬롯2, 슬롯3 변수를 만들어요.'},{title:'🎰 랜덤 값 설정',desc:'각 슬롯에 1~5 난수를 넣어요.'},{title:'🎭 모양 바꾸기',desc:'숫자에 따라 모양이 바뀌게 연결해요.'},{title:'🏆 당첨 확인',desc:'세 슬롯이 모두 같으면 당첨 애니메이션!'},{title:'💰 베팅 시스템',desc:'코인을 걸고 이기면 2배로 받아요.'}],hint:['block-variables','슬롯1을 1~5 난수로 정하기','block-operators','슬롯1 = 슬롯2','block-control','만약 슬롯1=슬롯2 그리고 슬롯2=슬롯3 이면'],modal:{icon:'🎰',title:'슬롯머신 완성!',msg:'복잡한 조건문도 해냈어요!'}},
-  {id:23,chapter:'ch3',emoji:'🎤',bg:'linear-gradient(135deg,#2a0a2a,#3a1a3a)',color:'var(--pink)',title:'음악 작곡 도구!',diff:3,xp:20,tag:'QUEST 23',tagColor:'var(--pink)',desc:'피아노 건반처럼 클릭하면 음이 나오는 나만의 악기를 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#140514,#2a0a2a)',steps:[{title:'🎹 건반 8개 만들기',desc:'도레미파솔라시도 건반을 8개 만들어요.'},{title:'🎵 각 음 설정',desc:'각 건반마다 다른 음을 연결해요.'},{title:'🎨 클릭 효과',desc:'클릭할 때 건반이 눌리는 모양 변화를 줘요.'},{title:'⌨️ 키보드도 연결',desc:'1~8 숫자키로도 연주할 수 있게 해요.'},{title:'🎼 녹음 기능',desc:'연주 내용을 리스트에 저장해봐요.'}],hint:['block-sound','음 60번을 0.5박자 연주하기','block-events','이 스프라이트를 클릭했을 때','block-looks','모양을 바꾸기'],modal:{icon:'🎤',title:'작곡가 탄생!',msg:'악기를 직접 만들었어요!'}},
-  {id:24,chapter:'ch3',emoji:'💬',bg:'linear-gradient(135deg,#1a2a3a,#203040)',color:'var(--blue)',title:'대화하는 챗봇!',diff:3,xp:20,tag:'QUEST 24',tagColor:'var(--blue)',desc:'질문을 입력하면 캐릭터가 대답해주는 간단한 챗봇을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#0d1520,#1a2a3a)',steps:[{title:'❓ 질문 받기',desc:'\"~라고 묻고 기다리기\"로 질문을 받아요.'},{title:'📝 키워드 감지',desc:'\"대답\"에 \"안녕\"이 포함되어 있는지 확인해요.'},{title:'💬 조건별 대답',desc:'키워드에 따라 다른 대답을 해요.'},{title:'🔁 계속 대화',desc:'\"계속 반복하기\"로 대화를 이어가요.'},{title:'😄 표정 변화',desc:'대답할 때 표정(모양)도 바꿔줘요.'}],hint:['block-operators','대답 에 안녕 포함?','block-control','만약-아니면','block-sensing','~라고 묻고 기다리기'],modal:{icon:'💬',title:'챗봇 완성!',msg:'AI 챗봇의 원리를 배웠어요!'}},
-  {id:25,chapter:'ch3',emoji:'🌍',bg:'linear-gradient(135deg,#0a2a1a,#103020)',color:'var(--teal)',title:'나만의 RPG 월드!',diff:3,xp:20,tag:'QUEST 25',tagColor:'var(--teal)',desc:'NPC에게 말을 걸고, 아이템을 모으는 미니 RPG 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#041510,#0a2a1a)',steps:[{title:'🗺️ 맵 만들기',desc:'탑뷰 맵을 그리고 캐릭터가 이동해요.'},{title:'🧙 NPC 추가',desc:'NPC에게 가까이 가면 말을 걸어요.'},{title:'📦 아이템 수집',desc:'아이템에 닿으면 인벤토리에 추가돼요.'},{title:'📋 리스트 활용',desc:'\"리스트\"로 가방 속 아이템을 관리해요.'},{title:'🏆 퀘스트 완료',desc:'아이템을 모으면 NPC가 다른 말을 해요.'}],hint:['block-variables','리스트에 아이템 추가','block-sensing','NPC에 닿았는가?','block-operators','리스트 길이 = 3'],modal:{icon:'🌍',title:'RPG 마스터!',msg:'리스트와 복잡한 게임 로직을 모두 사용했어요!'}},
-  {id:26,chapter:'ch3',emoji:'🏹',bg:'linear-gradient(135deg,#3a2a0a,#4a3414)',color:'var(--yellow)',title:'슈팅 게임!',diff:3,xp:20,tag:'QUEST 26',tagColor:'var(--yellow)',desc:'스페이스바로 총알을 발사해서 적을 쓰러뜨리는 슈팅 게임을 만들어봐요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#180e00,#3a2a0a)',steps:[{title:'🚀 플레이어 이동',desc:'좌우로 이동하는 플레이어를 만들어요.'},{title:'💥 총알 만들기',desc:'스페이스바를 누르면 총알이 위로 날아가요.'},{title:'👾 적 만들기',desc:'적이 위에서 아래로 내려와요.'},{title:'🎯 총알-적 충돌',desc:'총알이 적에 닿으면 둘 다 사라져요.'},{title:'💔 적-플레이어 충돌',desc:'적이 플레이어에 닿으면 생명이 줄어요.'}],hint:['block-control','나 자신 복제하기','block-motion','y좌표를 10 바꾸기','block-sensing','적에 닿았는가?'],modal:{icon:'🏹',title:'슈팅 마스터!',msg:'총알과 적을 동시에 관리했어요!'}},
-  {id:27,chapter:'ch3',emoji:'🐍',bg:'linear-gradient(135deg,#0a2a0a,#103010)',color:'var(--green)',title:'스네이크 게임!',diff:3,xp:20,tag:'QUEST 27',tagColor:'var(--green)',desc:'사과를 먹으면 뱀이 길어지는 고전 스네이크 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#040f04,#0a2a0a)',steps:[{title:'🐍 뱀 머리 이동',desc:'화살표로 머리가 이동해요.'},{title:'📝 리스트로 몸통',desc:'리스트에 좌표를 저장해서 몸통을 만들어요.'},{title:'🍎 사과 먹기',desc:'사과에 닿으면 리스트가 길어져요.'},{title:'🔄 몸통 따라오기',desc:'몸통이 머리 경로를 따라와요.'},{title:'💥 벽/자신 충돌',desc:'벽이나 자신에 닿으면 게임 오버!'}],hint:['block-variables','리스트에 좌표 추가','block-control','리스트 길이만큼 반복','block-sensing','벽에 닿았는가?'],modal:{icon:'🐍',title:'스네이크 마스터!',msg:'리스트로 뱀을 만들다니!'}},
-  {id:28,chapter:'ch3',emoji:'🧠',bg:'linear-gradient(135deg,#1a0a2a,#2a1040)',color:'var(--purple)',title:'기억력 카드 게임!',diff:3,xp:20,tag:'QUEST 28',tagColor:'var(--purple)',desc:'카드를 뒤집어서 짝을 맞추는 기억력 게임을 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#0d0514,#1a0a2a)',steps:[{title:'🃏 카드 만들기',desc:'앞면(그림)과 뒷면(?)이 있는 카드를 만들어요.'},{title:'🔄 카드 뒤집기',desc:'클릭하면 모양이 바뀌어요.'},{title:'🔢 첫번째 카드',desc:'처음 클릭한 카드를 변수에 저장해요.'},{title:'✅ 짝 확인',desc:'두 번째 클릭과 비교해서 같으면 성공!'},{title:'❌ 다시 뒤집기',desc:'다르면 1초 후에 다시 뒤집어요.'}],hint:['block-variables','첫번째카드를 현재카드로 정하기','block-control','1초 기다리기','block-operators','첫번째 = 두번째'],modal:{icon:'🧠',title:'기억력 챔피언!',msg:'상태 관리 게임을 만들었어요!'}},
-  {id:29,chapter:'ch3',emoji:'🌊',bg:'linear-gradient(135deg,#0a1a3a,#0d2050)',color:'var(--blue)',title:'잠수함 게임!',diff:3,xp:20,tag:'QUEST 29',tagColor:'var(--blue)',desc:'잠수함이 장애물을 피해 깊은 바다를 탐험하는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#040c20,#0a1a3a)',steps:[{title:'🚤 잠수함 이동',desc:'마우스를 클릭하면 위로, 놓으면 가라앉아요.'},{title:'🪸 산호초 장애물',desc:'랜덤한 간격의 산호초가 오른쪽에서 나타나요.'},{title:'💥 충돌 게임오버',desc:'산호초에 닿으면 게임이 끝나요.'},{title:'📏 점점 빨라짐',desc:'시간이 지날수록 속도가 빨라져요.'},{title:'🏆 최고 기록',desc:'얼마나 멀리 갔는지 거리를 기록해요.'}],hint:['block-sensing','마우스를 클릭했는가?','block-motion','y좌표를 5 바꾸기','block-variables','속도를 0.1 바꾸기'],modal:{icon:'🌊',title:'심해 탐험가!',msg:'플래피버드 스타일 게임을 만들었어요!'}},
-  {id:30,chapter:'ch3',emoji:'🏆',bg:'linear-gradient(135deg,#3a3a0a,#4a4a14)',color:'var(--yellow)',title:'🔥 나만의 게임 완성!',diff:3,xp:30,tag:'🏆 최종 보스',tagColor:'var(--yellow)',desc:'지금까지 배운 모든 것을 합쳐서 세상에 단 하나뿐인 나만의 게임을 완성해봐요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#141400,#3a3a0a)',steps:[{title:'💡 게임 기획',desc:'어떤 게임을 만들지 종이에 먼저 적어봐요.'},{title:'🎮 핵심 기능',desc:'이동, 충돌, 점수 — 세 가지는 반드시 있어야 해요.'},{title:'🎨 나만의 디자인',desc:'스프라이트와 배경을 직접 그려봐요.'},{title:'🔊 효과음',desc:'게임에 어울리는 소리를 넣어요.'},{title:'🚀 공유하기',desc:'완성 후 스크래치에 올리고 친구에게 링크를 보내요!'}],hint:['block-variables','모든 변수를 활용해요','block-control','메시지로 장면을 연결해요','block-events','다양한 이벤트를 써봐요'],modal:{icon:'🏆',title:'🎉 졸업 축하!',msg:'30개 미션을 모두 완료했어요! 당신은 이제 진짜 스크래치 마스터예요! 🚀'}},
+  {id:11,chapter:'ch2',emoji:'⚡',bg:'linear-gradient(135deg,#2a3a1a,#3a4a1a)',color:'var(--yellow)',title:'장애물을 피해라!',diff:2,xp:10,tag:'QUEST 11',tagColor:'var(--yellow)',desc:'움직이는 장애물을 화살표 키로 피하는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#1a2008,#2a3a1a)',steps:[{title:'🚀 플레이어 이동',desc:'화살표 키로 움직이는 플레이어를 만들어요.'},{title:'🪨 장애물 만들기',desc:'새 스프라이트로 장애물을 만들어요.'},{title:'↔️ 장애물 이동',desc:'장애물이 계속 왼쪽에서 오른쪽으로 이동해요.'},{title:'💥 충돌 감지',desc:'\"플레이어에 닿았는가?\" 블록으로 충돌을 확인해요.'},{title:'🔄 무한 반복',desc:'장애물이 끝에 가면 다시 처음으로 돌아와요.'}],hint:['block-sensing','플레이어에 닿았는가?','block-motion','x좌표를 -10 바꾸기','block-control','계속 반복하기'],modal:{icon:'⚡',title:'장애물 게임 완성!',msg:'충돌 감지를 배웠어요!'}},
+  {id:12,chapter:'ch2',emoji:'🏃',bg:'linear-gradient(135deg,#1a2e4a,#1e3a5a)',color:'var(--blue)',title:'달리기 게임을 만들어라!',diff:2,xp:10,tag:'QUEST 12',tagColor:'var(--blue)',desc:'끝없이 달리는 무한 러너 게임을 만들어봐요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#0d1e30,#1a2e4a)',steps:[{title:'🏃 달리기 애니메이션',desc:'캐릭터 모양을 계속 바꿔서 달리는 효과를 줘요.'},{title:'🌍 배경 스크롤',desc:'배경이 왼쪽으로 이동하면 달리는 것처럼 보여요.'},{title:'⬆️ 점프 기능',desc:'스페이스바를 누르면 위로 점프하게 만들어요.'},{title:'⬇️ 중력 효과',desc:'조금씩 내려오는 중력을 y좌표로 표현해요.'},{title:'📦 장애물 추가',desc:'달리다 장애물에 부딪히면 게임 오버!'}],hint:['block-motion','y좌표를 10 바꾸기','block-control','계속 반복하기','block-sensing','스페이스키를 눌렀는가?'],modal:{icon:'🏃',title:'러너 게임 완성!',msg:'게임 개발자의 길을 걷고 있어요!'}},
+  {id:13,chapter:'ch2',emoji:'🐟',bg:'linear-gradient(135deg,#0d2a3a,#0d3040)',color:'var(--teal)',title:'물고기를 잡아라!',diff:2,xp:10,tag:'QUEST 13',tagColor:'var(--teal)',desc:'물속을 헤엄치는 물고기를 클릭해서 잡는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#041520,#0d2a3a)',steps:[{title:'🐟 물고기 스프라이트',desc:'물고기 스프라이트를 추가해요.'},{title:'🎲 랜덤 이동',desc:'물고기가 무작위로 헤엄치게 만들어요.'},{title:'🖱️ 클릭으로 잡기',desc:'클릭하면 점수가 올라가고 물고기가 사라져요.'},{title:'⏱️ 제한 시간',desc:'30초 안에 최대한 많이 잡아요!'},{title:'👥 복제하기',desc:'\"나 자신 복제하기\"로 물고기를 여러 마리 만들어요.'}],hint:['block-control','나 자신 복제하기','block-events','복제되었을 때','block-operators','-200부터 200 사이의 난수'],modal:{icon:'🐟',title:'낚시왕!',msg:'복제 기능을 배웠어요!'}},
+  {id:14,chapter:'ch2',emoji:'🧱',bg:'linear-gradient(135deg,#3a2a1a,#4a3020)',color:'var(--orange)',title:'벽돌 깨기 게임!',diff:3,xp:10,tag:'QUEST 14',tagColor:'var(--orange)',desc:'공을 튕겨서 벽돌을 모두 깨는 클래식 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#1a1008,#3a2a1a)',steps:[{title:'🏓 패들 만들기',desc:'왼쪽/오른쪽 키로 움직이는 패들을 만들어요.'},{title:'⚽ 공 만들기',desc:'공이 벽에서 튕기도록 만들어요.'},{title:'🧱 벽돌 배열',desc:'\"복제하기\"로 벽돌을 여러 줄 만들어요.'},{title:'💥 공-벽돌 충돌',desc:'공이 벽돌에 닿으면 벽돌이 사라져요.'},{title:'🏆 클리어 조건',desc:'모든 벽돌이 사라지면 클리어!'}],hint:['block-sensing','패들에 닿았는가?','block-motion','튕기기','block-control','복제되었을 때'],modal:{icon:'🧱',title:'벽돌 깨기 완성!',msg:'복잡한 게임 로직을 만들었어요!'}},
+  {id:15,chapter:'ch2',emoji:'🎪',bg:'linear-gradient(135deg,#3a1a3a,#4a1a4a)',color:'var(--pink)',title:'클릭 속도 게임!',diff:2,xp:10,tag:'QUEST 15',tagColor:'var(--pink)',desc:'10초 안에 버튼을 얼마나 많이 클릭하는지 겨루는 게임이에요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#200820,#3a1a3a)',steps:[{title:'🖱️ 클릭 카운터',desc:'버튼을 클릭할 때마다 카운트가 올라가요.'},{title:'⏱️ 10초 타이머',desc:'10초 카운트다운 타이머를 만들어요.'},{title:'🔔 게임 시작',desc:'스페이스바를 누르면 게임이 시작돼요.'},{title:'🏁 게임 종료',desc:'시간이 끝나면 최종 점수를 보여줘요.'},{title:'🏆 최고 점수',desc:'최고 기록을 저장하는 변수를 추가해요.'}],hint:['block-variables','클릭수를 1 바꾸기','block-control','10초 기다리기','block-variables','최고점수 업데이트'],modal:{icon:'🎪',title:'클릭왕!',msg:'시간 제한 게임을 만들었어요!'}},
+  {id:16,chapter:'ch2',emoji:'🌟',bg:'linear-gradient(135deg,#2a2a1a,#3a3a1a)',color:'var(--yellow)',title:'별 먹기 게임!',diff:2,xp:10,tag:'QUEST 16',tagColor:'var(--yellow)',desc:'하늘에서 떨어지는 별을 바구니로 받는 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#0d0d00,#2a2a1a)',steps:[{title:'🧺 바구니 만들기',desc:'화살표 키로 움직이는 바구니를 만들어요.'},{title:'⭐ 별 떨어뜨리기',desc:'랜덤 위치에서 별이 아래로 떨어져요.'},{title:'✨ 별 복제하기',desc:'\"복제하기\"로 여러 별이 동시에 떨어지게 해요.'},{title:'🎯 받으면 점수+',desc:'바구니에 닿으면 점수가 올라가요.'},{title:'💔 놓치면 생명-',desc:'별이 바닥에 닿으면 생명이 줄어요.'}],hint:['block-motion','y좌표를 -5 바꾸기','block-sensing','바구니에 닿았는가?','block-control','복제되었을 때'],modal:{icon:'🌟',title:'별 수집가!',msg:'중력과 충돌을 한 번에!'}},
+  {id:17,chapter:'ch2',emoji:'🧮',bg:'linear-gradient(135deg,#1a3040,#1e3850)',color:'var(--blue)',title:'퀴즈 게임을 만들어라!',diff:2,xp:10,tag:'QUEST 17',tagColor:'var(--blue)',desc:'답을 입력하면 맞고 틀림을 알려주는 퀴즈 게임을 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#0d1e30,#1a3040)',steps:[{title:'❓ 질문하기',desc:'\"~라고 묻고 기다리기\" 블록을 사용해요.'},{title:'📝 대답 확인',desc:'\"대답\" 변수와 정답을 비교해요.'},{title:'✅ 맞았을 때',desc:'정답이면 \"정답!\" 소리와 효과를 줘요.'},{title:'❌ 틀렸을 때',desc:'오답이면 힌트를 알려주거나 다시 묻게 해요.'},{title:'📊 점수 계산',desc:'맞힐 때마다 점수를 올려봐요.'}],hint:['block-sensing','정답을 입력하세요 라고 묻고 기다리기','block-operators','대답 = 정답','block-control','만약 대답 = 정답 이면'],modal:{icon:'🧮',title:'퀴즈 게임 완성!',msg:'입력 받기를 배웠어요!'}},
+  {id:18,chapter:'ch2',emoji:'🎭',bg:'linear-gradient(135deg,#2a1a3a,#3a2a4a)',color:'var(--purple)',title:'움직이는 애니메이션!',diff:2,xp:10,tag:'QUEST 18',tagColor:'var(--purple)',desc:'여러 스프라이트가 함께 메시지를 주고받으며 움직이는 짧은 애니메이션을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#140d20,#2a1a3a)',steps:[{title:'📡 메시지 만들기',desc:'\"시작!\" 메시지를 만들고 보내봐요.'},{title:'🎭 스프라이트 A',desc:'메시지를 받으면 움직이는 스프라이트를 만들어요.'},{title:'🎭 스프라이트 B',desc:'A가 끝나면 B에게 메시지를 보내요.'},{title:'🔄 순서대로',desc:'메시지를 체인처럼 연결해서 순서를 만들어요.'},{title:'🎬 완성 영상',desc:'전체 애니메이션을 한 번에 실행해봐요!'}],hint:['block-events','📡 메시지 보내기','block-events','메시지를 받았을 때','block-control','~초 기다리기'],modal:{icon:'🎭',title:'애니메이션 감독!',msg:'메시지 시스템을 마스터했어요!'}},
+  {id:19,chapter:'ch2',emoji:'🌀',bg:'linear-gradient(135deg,#1a1a3a,#2a2a4a)',color:'var(--teal)',title:'스파이럴 아트!',diff:2,xp:10,tag:'QUEST 19',tagColor:'var(--teal)',desc:'반복과 펜 블록으로 나선형 아름다운 패턴을 그려봐요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#0d0d20,#1a1a3a)',steps:[{title:'🖊️ 펜 준비',desc:'펜 내리기로 그리기 시작해요.'},{title:'🔁 100번 반복',desc:'100번 반복하면서 조금씩 커져요.'},{title:'↩️ 조금씩 회전',desc:'매번 89도씩 방향을 바꿔요.'},{title:'📏 점점 길게',desc:'이동 거리를 매번 조금씩 늘려요.'},{title:'🎨 색깔 변화',desc:'색깔도 조금씩 바뀌게 하면 더 아름다워요!'}],hint:['block-motion','이동하기','block-motion','89도 돌기','block-looks','색깔 효과를 5 바꾸기'],modal:{icon:'🌀',title:'아트 마스터!',msg:'수학과 예술이 만났어요!'}},
+  {id:20,chapter:'ch2',emoji:'🏰',bg:'linear-gradient(135deg,#2a1a1a,#3a2020)',color:'var(--red)',title:'미로 탈출 게임!',diff:3,xp:10,tag:'QUEST 20',tagColor:'var(--red)',desc:'미로를 그리고 캐릭터가 벽에 닿으면 처음으로 돌아오는 미로 게임이에요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#100808,#2a1a1a)',steps:[{title:'🗺️ 미로 배경 그리기',desc:'그림판으로 미로 배경을 그려요.'},{title:'🚶 캐릭터 작게',desc:'작은 캐릭터로 미로 안을 이동할 수 있게 해요.'},{title:'🧱 벽 감지',desc:'벽 색깔에 닿으면 처음 위치로 돌아가요.'},{title:'🏁 도착 감지',desc:'도착 지점 색깔에 닿으면 클리어!'},{title:'⏱️ 기록 재기',desc:'몇 초 만에 탈출하는지 타이머로 기록해요.'}],hint:['block-sensing','벽 색에 닿았는가?','block-motion','x: 시작위치 y: 시작위치 로 이동하기','block-sensing','색에 닿았는가?'],modal:{icon:'🏰',title:'미로 탈출!',msg:'색깔 감지로 멋진 게임을 만들었어요!'}},
+  {id:21,chapter:'ch3',emoji:'🔥',bg:'linear-gradient(135deg,#3a1a0a,#4a2010)',color:'var(--orange)',title:'플랫폼 점프 게임!',diff:3,xp:10,tag:'QUEST 21',tagColor:'var(--orange)',desc:'발판 위를 점프하며 이동하는 마리오 스타일 플랫폼 게임을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#1a0800,#3a1a0a)',steps:[{title:'🚀 점프 물리',desc:'스페이스바로 점프하고 중력이 당겨내리게 해요.'},{title:'🟩 발판 감지',desc:'발판 위에 서있을 때만 점프 가능하게 해요.'},{title:'📦 발판 복제',desc:'\"복제하기\"로 여러 발판을 만들어요.'},{title:'⬅️ 발판 이동',desc:'발판이 왼쪽으로 이동하면 달리는 느낌!'},{title:'🏆 코인 추가',desc:'공중에 코인을 배치하고 먹으면 점수를!'}],hint:['block-variables','속도y를 -2 바꾸기','block-sensing','발판색에 닿았는가?','block-control','계속 반복하기'],modal:{icon:'🔥',title:'플랫폼 마스터!',msg:'물리 엔진을 직접 만들었어요!'}},
+  {id:22,chapter:'ch3',emoji:'🎰',bg:'linear-gradient(135deg,#1a3a1a,#204020)',color:'var(--green)',title:'슬롯머신 게임!',diff:2,xp:10,tag:'QUEST 22',tagColor:'var(--green)',desc:'클릭하면 세 개의 그림이 랜덤으로 바뀌고 같으면 당첨되는 슬롯머신이에요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#0a200a,#1a3a1a)',steps:[{title:'🎲 3개 변수',desc:'슬롯1, 슬롯2, 슬롯3 변수를 만들어요.'},{title:'🎰 랜덤 값 설정',desc:'각 슬롯에 1~5 난수를 넣어요.'},{title:'🎭 모양 바꾸기',desc:'숫자에 따라 모양이 바뀌게 연결해요.'},{title:'🏆 당첨 확인',desc:'세 슬롯이 모두 같으면 당첨 애니메이션!'},{title:'💰 베팅 시스템',desc:'코인을 걸고 이기면 2배로 받아요.'}],hint:['block-variables','슬롯1을 1~5 난수로 정하기','block-operators','슬롯1 = 슬롯2','block-control','만약 슬롯1=슬롯2 그리고 슬롯2=슬롯3 이면'],modal:{icon:'🎰',title:'슬롯머신 완성!',msg:'복잡한 조건문도 해냈어요!'}},
+  {id:23,chapter:'ch3',emoji:'🎤',bg:'linear-gradient(135deg,#2a0a2a,#3a1a3a)',color:'var(--pink)',title:'음악 작곡 도구!',diff:3,xp:10,tag:'QUEST 23',tagColor:'var(--pink)',desc:'피아노 건반처럼 클릭하면 음이 나오는 나만의 악기를 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#140514,#2a0a2a)',steps:[{title:'🎹 건반 8개 만들기',desc:'도레미파솔라시도 건반을 8개 만들어요.'},{title:'🎵 각 음 설정',desc:'각 건반마다 다른 음을 연결해요.'},{title:'🎨 클릭 효과',desc:'클릭할 때 건반이 눌리는 모양 변화를 줘요.'},{title:'⌨️ 키보드도 연결',desc:'1~8 숫자키로도 연주할 수 있게 해요.'},{title:'🎼 녹음 기능',desc:'연주 내용을 리스트에 저장해봐요.'}],hint:['block-sound','음 60번을 0.5박자 연주하기','block-events','이 스프라이트를 클릭했을 때','block-looks','모양을 바꾸기'],modal:{icon:'🎤',title:'작곡가 탄생!',msg:'악기를 직접 만들었어요!'}},
+  {id:24,chapter:'ch3',emoji:'💬',bg:'linear-gradient(135deg,#1a2a3a,#203040)',color:'var(--blue)',title:'대화하는 챗봇!',diff:3,xp:10,tag:'QUEST 24',tagColor:'var(--blue)',desc:'질문을 입력하면 캐릭터가 대답해주는 간단한 챗봇을 만들어봐요!',previewAnim:'bounce',previewBg:'linear-gradient(135deg,#0d1520,#1a2a3a)',steps:[{title:'❓ 질문 받기',desc:'\"~라고 묻고 기다리기\"로 질문을 받아요.'},{title:'📝 키워드 감지',desc:'\"대답\"에 \"안녕\"이 포함되어 있는지 확인해요.'},{title:'💬 조건별 대답',desc:'키워드에 따라 다른 대답을 해요.'},{title:'🔁 계속 대화',desc:'\"계속 반복하기\"로 대화를 이어가요.'},{title:'😄 표정 변화',desc:'대답할 때 표정(모양)도 바꿔줘요.'}],hint:['block-operators','대답 에 안녕 포함?','block-control','만약-아니면','block-sensing','~라고 묻고 기다리기'],modal:{icon:'💬',title:'챗봇 완성!',msg:'AI 챗봇의 원리를 배웠어요!'}},
+  {id:25,chapter:'ch3',emoji:'🌍',bg:'linear-gradient(135deg,#0a2a1a,#103020)',color:'var(--teal)',title:'나만의 RPG 월드!',diff:3,xp:10,tag:'QUEST 25',tagColor:'var(--teal)',desc:'NPC에게 말을 걸고, 아이템을 모으는 미니 RPG 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#041510,#0a2a1a)',steps:[{title:'🗺️ 맵 만들기',desc:'탑뷰 맵을 그리고 캐릭터가 이동해요.'},{title:'🧙 NPC 추가',desc:'NPC에게 가까이 가면 말을 걸어요.'},{title:'📦 아이템 수집',desc:'아이템에 닿으면 인벤토리에 추가돼요.'},{title:'📋 리스트 활용',desc:'\"리스트\"로 가방 속 아이템을 관리해요.'},{title:'🏆 퀘스트 완료',desc:'아이템을 모으면 NPC가 다른 말을 해요.'}],hint:['block-variables','리스트에 아이템 추가','block-sensing','NPC에 닿았는가?','block-operators','리스트 길이 = 3'],modal:{icon:'🌍',title:'RPG 마스터!',msg:'리스트와 복잡한 게임 로직을 모두 사용했어요!'}},
+  {id:26,chapter:'ch3',emoji:'🏹',bg:'linear-gradient(135deg,#3a2a0a,#4a3414)',color:'var(--yellow)',title:'슈팅 게임!',diff:3,xp:10,tag:'QUEST 26',tagColor:'var(--yellow)',desc:'스페이스바로 총알을 발사해서 적을 쓰러뜨리는 슈팅 게임을 만들어봐요!',previewAnim:'wiggle',previewBg:'linear-gradient(135deg,#180e00,#3a2a0a)',steps:[{title:'🚀 플레이어 이동',desc:'좌우로 이동하는 플레이어를 만들어요.'},{title:'💥 총알 만들기',desc:'스페이스바를 누르면 총알이 위로 날아가요.'},{title:'👾 적 만들기',desc:'적이 위에서 아래로 내려와요.'},{title:'🎯 총알-적 충돌',desc:'총알이 적에 닿으면 둘 다 사라져요.'},{title:'💔 적-플레이어 충돌',desc:'적이 플레이어에 닿으면 생명이 줄어요.'}],hint:['block-control','나 자신 복제하기','block-motion','y좌표를 10 바꾸기','block-sensing','적에 닿았는가?'],modal:{icon:'🏹',title:'슈팅 마스터!',msg:'총알과 적을 동시에 관리했어요!'}},
+  {id:27,chapter:'ch3',emoji:'🐍',bg:'linear-gradient(135deg,#0a2a0a,#103010)',color:'var(--green)',title:'스네이크 게임!',diff:3,xp:10,tag:'QUEST 27',tagColor:'var(--green)',desc:'사과를 먹으면 뱀이 길어지는 고전 스네이크 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#040f04,#0a2a0a)',steps:[{title:'🐍 뱀 머리 이동',desc:'화살표로 머리가 이동해요.'},{title:'📝 리스트로 몸통',desc:'리스트에 좌표를 저장해서 몸통을 만들어요.'},{title:'🍎 사과 먹기',desc:'사과에 닿으면 리스트가 길어져요.'},{title:'🔄 몸통 따라오기',desc:'몸통이 머리 경로를 따라와요.'},{title:'💥 벽/자신 충돌',desc:'벽이나 자신에 닿으면 게임 오버!'}],hint:['block-variables','리스트에 좌표 추가','block-control','리스트 길이만큼 반복','block-sensing','벽에 닿았는가?'],modal:{icon:'🐍',title:'스네이크 마스터!',msg:'리스트로 뱀을 만들다니!'}},
+  {id:28,chapter:'ch3',emoji:'🧠',bg:'linear-gradient(135deg,#1a0a2a,#2a1040)',color:'var(--purple)',title:'기억력 카드 게임!',diff:3,xp:10,tag:'QUEST 28',tagColor:'var(--purple)',desc:'카드를 뒤집어서 짝을 맞추는 기억력 게임을 만들어봐요!',previewAnim:'pulse',previewBg:'linear-gradient(135deg,#0d0514,#1a0a2a)',steps:[{title:'🃏 카드 만들기',desc:'앞면(그림)과 뒷면(?)이 있는 카드를 만들어요.'},{title:'🔄 카드 뒤집기',desc:'클릭하면 모양이 바뀌어요.'},{title:'🔢 첫번째 카드',desc:'처음 클릭한 카드를 변수에 저장해요.'},{title:'✅ 짝 확인',desc:'두 번째 클릭과 비교해서 같으면 성공!'},{title:'❌ 다시 뒤집기',desc:'다르면 1초 후에 다시 뒤집어요.'}],hint:['block-variables','첫번째카드를 현재카드로 정하기','block-control','1초 기다리기','block-operators','첫번째 = 두번째'],modal:{icon:'🧠',title:'기억력 챔피언!',msg:'상태 관리 게임을 만들었어요!'}},
+  {id:29,chapter:'ch3',emoji:'🌊',bg:'linear-gradient(135deg,#0a1a3a,#0d2050)',color:'var(--blue)',title:'잠수함 게임!',diff:3,xp:10,tag:'QUEST 29',tagColor:'var(--blue)',desc:'잠수함이 장애물을 피해 깊은 바다를 탐험하는 게임을 만들어봐요!',previewAnim:'wave',previewBg:'linear-gradient(135deg,#040c20,#0a1a3a)',steps:[{title:'🚤 잠수함 이동',desc:'마우스를 클릭하면 위로, 놓으면 가라앉아요.'},{title:'🪸 산호초 장애물',desc:'랜덤한 간격의 산호초가 오른쪽에서 나타나요.'},{title:'💥 충돌 게임오버',desc:'산호초에 닿으면 게임이 끝나요.'},{title:'📏 점점 빨라짐',desc:'시간이 지날수록 속도가 빨라져요.'},{title:'🏆 최고 기록',desc:'얼마나 멀리 갔는지 거리를 기록해요.'}],hint:['block-sensing','마우스를 클릭했는가?','block-motion','y좌표를 5 바꾸기','block-variables','속도를 0.1 바꾸기'],modal:{icon:'🌊',title:'심해 탐험가!',msg:'플래피버드 스타일 게임을 만들었어요!'}},
+  {id:30,chapter:'ch3',emoji:'🏆',bg:'linear-gradient(135deg,#3a3a0a,#4a4a14)',color:'var(--yellow)',title:'🔥 나만의 게임 완성!',diff:3,xp:10,tag:'🏆 최종 보스',tagColor:'var(--yellow)',desc:'지금까지 배운 모든 것을 합쳐서 세상에 단 하나뿐인 나만의 게임을 완성해봐요!',previewAnim:'spin',previewBg:'linear-gradient(135deg,#141400,#3a3a0a)',steps:[{title:'💡 게임 기획',desc:'어떤 게임을 만들지 종이에 먼저 적어봐요.'},{title:'🎮 핵심 기능',desc:'이동, 충돌, 점수 — 세 가지는 반드시 있어야 해요.'},{title:'🎨 나만의 디자인',desc:'스프라이트와 배경을 직접 그려봐요.'},{title:'🔊 효과음',desc:'게임에 어울리는 소리를 넣어요.'},{title:'🚀 공유하기',desc:'완성 후 스크래치에 올리고 친구에게 링크를 보내요!'}],hint:['block-variables','모든 변수를 활용해요','block-control','메시지로 장면을 연결해요','block-events','다양한 이벤트를 써봐요'],modal:{icon:'🏆',title:'🎉 졸업 축하!',msg:'30개 미션을 모두 완료했어요! 당신은 이제 진짜 스크래치 마스터예요! 🚀'}},
 ];
 
 // ══════════════════════════════════════════
@@ -1091,7 +1099,31 @@ function sendHeight(){
 // ══════════════════════════════════════════
 //  VIEW 전환
 // ══════════════════════════════════════════
+function renderEditHints(hint){
+  const wrap=document.getElementById('editHintWrap'); if(!wrap) return;
+  const cats=[
+    {v:'block-motion',   l:'🔵 이동'},
+    {v:'block-events',   l:'🟡 이벤트'},
+    {v:'block-control',  l:'🟠 제어'},
+    {v:'block-looks',    l:'🟣 형태'},
+    {v:'block-sound',    l:'🔵 소리'},
+    {v:'block-sensing',  l:'🩵 감지'},
+    {v:'block-variables',l:'🟠 변수'},
+    {v:'block-operators',l:'🟢 연산'},
+  ];
+  const opts=cats.map(c=>`<option value="${c.v}">${c.l}</option>`).join('');
+  wrap.innerHTML='';
+  for(let i=0;i<3;i++){
+    const cat=hint[i*2]||''; const txt=hint[i*2+1]||'';
+    const row=document.createElement('div');
+    row.style.cssText='display:flex;gap:6px;align-items:center;';
+    row.innerHTML=`<select id="eh_cat_${i}" style="background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:12px;padding:7px 8px;outline:none;flex-shrink:0;"><option value="">카테고리</option>${opts}</select><input id="eh_txt_${i}" type="text" value="${txt.replace(/"/g,'&quot;')}" placeholder="블록 이름 입력" style="flex:1;background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:7px 10px;outline:none;font-family:'Noto Sans KR',sans-serif;">`;
+    wrap.appendChild(row);
+    if(cat) row.querySelector('select').value=cat;
+  }
+}
 function openGallery(){
+  document.getElementById('adminView').classList.remove('active');
   document.getElementById('galleryView').classList.add('active');
   document.getElementById('detailView').classList.remove('active');
   renderGallery();
@@ -1102,6 +1134,11 @@ function closeGallery(){ openGallery(); }
 function showDetail(){
   document.getElementById('galleryView').classList.remove('active');
   document.getElementById('detailView').classList.add('active');
+  // 그리드에서 스크롤을 많이 내린 상태로 카드를 눌러도 상세화면은 항상 맨 위부터 보이게 부모(study_home)에 요청
+  if(window!==window.top){
+    window.parent.postMessage({type:'gallery-scroll-top'},'*');
+    window.parent.postMessage({type:'gallery-detail-state',open:true,subject:'scratch'},'*');
+  }
   sendHeight();
 }
 
@@ -1152,9 +1189,10 @@ function renderGallery(){
       card.style.animationDelay=(idx*0.04)+'s'; card.dataset.missionId=m.id;
       const diffDots=[1,2,3].map(d=>`<div class="diff-dot" style="background:${d<=m.diff?getDiffColor(m.diff):'var(--border2)'}"></div>`).join('');
       const _ytThumb=getYoutubeThumbnail(entryLinks[m.id]);
+      const _forceEmoji=(thumbMode[m.id]==='emoji');
       const thumbContent=missionVideos[m.id]
         ?`<video src="${missionVideos[m.id]}" autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;"></video>`
-        :_ytThumb
+        :(!_forceEmoji&&_ytThumb)
         ?`<img src="${_ytThumb}" alt="" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','mqdefault');" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;"><div style="width:44px;height:44px;background:rgba(255,0,0,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;"><span style="color:#fff;font-size:18px;margin-left:4px;">▶</span></div></div>`
         :missionImages[m.id]
         ?`<img src="${missionImages[m.id]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">`
@@ -1175,20 +1213,26 @@ function renderGallery(){
 //  MISSION DETAIL
 // ══════════════════════════════════════════
 function openMission(id){
-  const m=getMissionData(id); if(!m||!m.id) return;
+  const m=getMissionData(id); if(!m) return;
+  if(!isAdminMode && localStorage.getItem('학습홈_admin')==='1'){ isAdminMode=true; showAdminBar(); }
   currentMissionId=id; showDetail();
   const isDone=!!completedMissions[id]; const starVal=starRatings[id]||0;
-  const adminMemoResult=getAdminMemoHTML(id);
+  const adminMemoResult=null;
   let stepsSection='';
   if(adminMemoResult){ const label=adminMemoResult.isSteps?'📋 미션 단계':'📋 미션 안내'; stepsSection=`<div class="section-title-small">${label}</div>${adminMemoResult.html}`; }
   else{
     const stepsHTML=m.steps.map((s,i)=>{const key=`m${id}-s${i}`;const doneClass=stepsDone[key]?' done-step':'';const numText=stepsDone[key]?'✓':(i+1);
+      if(isAdminMode){
+        return `<div class="step-card${doneClass}" id="${key}"><div class="step-num" onclick="toggleStep('${key}')" style="cursor:pointer;flex-shrink:0;">${numText}</div><div class="step-body"><div class="step-title admin-editable" contenteditable="true" spellcheck="false" onblur="saveInlineStep(${id},${i},'title',this)">${s.title}</div><div class="step-desc admin-editable" contenteditable="true" spellcheck="false" onblur="saveInlineStep(${id},${i},'desc',this)">${s.desc}</div></div></div>`;
+      }
       return `<div class="step-card${doneClass}" id="${key}" onclick="toggleStep('${key}')"><div class="step-num">${numText}</div><div class="step-body"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div></div></div>`;
     }).join('');
-    stepsSection=`<div class="section-title-small">📋 미션 단계</div>${stepsHTML}`;
+    stepsSection=`<div class="section-title-small">📋 미션 단계${isAdminMode?' <span style="font-size:11px;color:var(--purple);font-weight:400;">✏️ 클릭해서 바로 수정</span>':''}</div>${stepsHTML}`;
   }
   const hintChips=[];
-  for(let i=0;i<m.hint.length;i+=2){const cls=m.hint[i];const txt=m.hint[i+1]||'';hintChips.push(`<div class="block-chip ${cls}">${txt}</div>`);}
+  const hintArr=m.hint||[];
+  for(let i=0;i<hintArr.length;i+=2){const cls=hintArr[i];const txt=hintArr[i+1]||'';hintChips.push(`<div class="block-chip ${cls}">${txt}</div>`);}
+  const hasHint=hintChips.length>0;
   const starsHTML=[1,2,3].map(n=>`<div class="star-icon${starVal>=n?' lit':''}" onclick="rateStar(${id},${n})">⭐</div>`).join('');
   let memoVal=''; try{memoVal=localStorage.getItem(`memo_${userName}_${id}`)||'';}catch(e){}
   const completeBtnText=isDone?'✅ 완료! 잘했어요! 🏆':`🏆 미션 완료! (+${m.xp} XP)`;
@@ -1201,7 +1245,6 @@ function openMission(id){
     :missionImages[id]
     ?`<img src="${missionImages[id]}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">`
     :`<span style="font-size:100px;animation:${m.previewAnim} 1.8s ease-in-out infinite;display:inline-block">${m.emoji}</span>`;
-  const hasMemo=!!(customMemos[id]&&customMemos[id].trim());
   const adminToolbarHTML=isAdminMode?`
     <div class="admin-detail-toolbar" id="adminDetailToolbar_${id}">
       <div class="admin-toolbar-header">
@@ -1211,54 +1254,30 @@ function openMission(id){
       <div class="admin-toolbar-btns">
         <button class="admin-tb-img-btn" onclick="triggerDetailUpload(${id})">📷 이미지 업로드${missionImages[id]?' (변경)':''}</button>
         ${missionImages[id]?`<button class="admin-tb-img-del" onclick="deleteImageAndRefresh(${id})">🗑️ 이미지 삭제</button>`:''}
-        <button class="admin-tb-img-btn" onclick="triggerDetailVideoUpload(${id})" style="background:linear-gradient(135deg,rgba(14,165,233,0.15),rgba(139,92,246,0.10));border-color:rgba(14,165,233,0.4);">🎬 영상 업로드${missionVideos[id]?' (변경)':''}</button>
-        ${missionVideos[id]?`<button class="admin-tb-img-del" onclick="deleteVideoAndRefresh(${id})">🗑️ 영상 삭제</button>`:''}
-        <button class="admin-tb-memo-btn${hasMemo?' open':''}" id="detailMemoToggle_${id}" onclick="toggleDetailMemo(${id})">📝 미션 안내 편집${hasMemo?' ✓':''}</button>
-        <button class="admin-tb-memo-btn${entryLinks[id]?' open':''}" id="detailLinkToggle_${id}" onclick="toggleDetailLink(${id})" style="background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.30);color:var(--teal);">🔗 유튜브 링크${entryLinks[id]?' ✓':''}</button>
-      </div>
-      <div class="admin-detail-memo-panel${hasMemo?' open':''}" id="detailMemoPanel_${id}">
-        <div class="admin-detail-memo-label">📌 미션 안내 내용 편집</div>
-        <div class="admin-detail-memo-hint">💡 아래 형식으로 입력하면 자동으로 단계 카드로 표시돼요.<br><br><b>입력 형식:</b><br>1단계 제목<br>설명 내용<br><br>2단계 제목<br>설명 내용</div>
-        <textarea class="admin-detail-textarea" id="detailMemoTA_${id}" placeholder="예시:&#10;1단계 말하기 블록&#10;&quot;~라고 말하기&quot; 블록을 가져와요.&#10;&#10;2단계 대사 3개&#10;3가지 다른 대사를 차례로 연결해요.">${hasMemo?escapeHtml(customMemos[id]):''}</textarea>
-        <div class="admin-detail-memo-row">
-          <span class="admin-detail-memo-status" id="detailMemoSt_${id}"></span>
-          <button class="admin-detail-clear-btn" onclick="clearDetailMemo(${id})">🗑️ 초기화</button>
-          <button class="admin-detail-save-btn" onclick="saveDetailMemo(${id})">💾 저장하기</button>
-        </div>
-      </div>
-      <div class="admin-detail-memo-panel${entryLinks[id]?' open':''}" id="detailLinkPanel_${id}">
-        <div class="admin-detail-memo-label" style="color:var(--teal);">🔗 유튜브 링크 설정</div>
-        <div class="admin-detail-memo-hint">💡 유튜브 영상 링크를 붙여넣으세요. 미션 카드에 썸네일이 표시됩니다.</div>
-        <input type="url" class="admin-detail-textarea" id="detailLinkInput_${id}" style="min-height:auto;padding:10px 14px;" placeholder="https://youtu.be/... 또는 https://www.youtube.com/watch?v=..." value="${escapeHtml(entryLinks[id]||'')}">
-        <div class="admin-detail-memo-row">
-          <span class="admin-detail-memo-status" id="detailLinkSt_${id}" style="color:var(--teal);"></span>
-          <button class="admin-detail-clear-btn" onclick="clearDetailLink(${id})">🗑️ 초기화</button>
-          <button class="admin-detail-save-btn" style="background:linear-gradient(135deg,var(--teal),var(--blue));" onclick="saveDetailLink(${id})">💾 저장하기</button>
-        </div>
+       
+        <button class="admin-tb-img-btn" onclick="toggleMissionEdit(${id})" style="background:rgba(139,92,246,0.10);border-color:rgba(139,92,246,0.35);color:var(--purple);">✏️ 미션 편집</button>
       </div>
     </div>`:'';
   document.getElementById('detailMain').innerHTML=`
-    <button class="back-btn" onclick="backFromDetail()">← 미션 갤러리로</button>
+    <button class="back-btn" onclick="backFromDetail()"><span class="back-btn-arrow">←</span> 미션 갤러리로</button>
     ${adminToolbarHTML}
     <div class="detail-layout">
       <div class="detail-left">
-        <div class="detail-preview" style="background:${m.previewBg};cursor:${isAdminMode?'pointer':'default'};" ${isAdminMode?`onclick="triggerDetailUpload(${id})" title="클릭하면 이미지를 업로드할 수 있어요"`:''}>
+        <div class="detail-preview" style="background:${m.previewBg};">
           ${previewContent}
-          ${isAdminMode?`<div style="position:absolute;bottom:10px;right:12px;background:rgba(79,110,247,0.75);border-radius:20px;padding:5px 12px;font-family:'Nunito','Noto Sans KR',sans-serif;font-size:11px;color:#fff;pointer-events:none;z-index:2;">📷 이미지 업로드</div>`:''}
         </div>
         <div class="detail-info">
           <div class="detail-tag" style="color:${m.tagColor}">${m.tag}</div>
-          <div class="detail-title">${m.title}</div>
-          <div class="detail-desc">${m.desc}</div>
+          ${isAdminMode
+            ?`<div class="detail-title admin-editable" contenteditable="true" spellcheck="false" onblur="saveInlineField(${id},'title',this)">${m.title}</div><div class="detail-desc admin-editable" contenteditable="true" spellcheck="false" onblur="saveInlineField(${id},'desc',this)">${m.desc||''}</div>`
+            :`<div class="detail-title">${m.title}</div><div class="detail-desc">${m.desc||''}</div>`
+          }
         </div>
         <div class="hint-row">
-          <button class="hint-btn" onclick="toggleHint()">💜 힌트 보기</button>
-          <a class="scratch-link-btn" href="${entryLinks[id]||'https://scratch.mit.edu'}" target="_blank">🐱 스크래치 열기 ↗</a>
+          ${hasHint?`<button class="hint-btn" onclick="toggleHint()">💜 힌트 보기</button>`:''}
+          <a class="scratch-link-btn" href="${scratchSiteLinks[id]||'https://scratch.mit.edu'}" target="_blank">🐱 스크래치 열기 ↗</a>
         </div>
-        <div class="hint-popup" id="hintPopup">
-          <div class="hint-popup-title">💜 이 블록들을 써보세요!</div>
-          <div class="hint-block-visual">${hintChips.join('')}</div>
-        </div>
+        ${hasHint?`<div class="hint-popup" id="hintPopup"><div class="hint-popup-title">💜 이 블록들을 써보세요!</div><div class="hint-block-visual">${hintChips.join('')}</div></div>`:''}
         <div style="display:flex;gap:10px;margin-top:12px;">
           <div style="flex:1;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:12px 14px;">
             <div style="font-family:'Nunito','Noto Sans KR',sans-serif;font-size:12px;color:var(--text2);margin-bottom:8px;">🌟 오늘의 별점</div>
@@ -1285,13 +1304,19 @@ function openMission(id){
   sendHeight();
 }
 function backFromDetail(){
+  document.getElementById('adminView').classList.remove('active');
   document.getElementById('detailView').classList.remove('active');
   document.getElementById('galleryView').classList.add('active');
   currentMissionId=null;
   renderGallery();
   window.scrollTo({top:0,behavior:'instant'});
+  if(window!==window.top) window.parent.postMessage({type:'gallery-detail-state',open:false,subject:'scratch'},'*');
   sendHeight();
 }
+window.addEventListener('message',function(e){
+  if(!e.data) return;
+  if(e.data.type==='gallery-go-back' && currentMissionId!==null) backFromDetail();
+});
 
 // ══════════════════════════════════════════
 //  INTERACTIONS
@@ -1308,6 +1333,7 @@ function completeMission(id){
   const m=MISSIONS.find(x=>x.id===id); completedMissions[id]=true; totalXP+=m.xp; updateTopbar(); saveAll(); saveToCloud();
   const btn=document.getElementById('completeMissionBtn');
   btn.textContent='✅ 완료! 잘했어요! 🏆'; btn.classList.add('done-btn'); btn.onclick=null;
+  // 버튼의 실제 위치를 기준으로 폭죽 발사 (iframe 내부에서도 정확한 위치)
   const rect = btn ? btn.getBoundingClientRect() : null;
   const btnCY = rect ? rect.top + rect.height / 2 : null;
   launchConfetti(m.xp, btnCY);
@@ -1316,6 +1342,12 @@ function saveMissionMemo(id){
   const val=document.getElementById('memoArea').value;
   try{localStorage.setItem(`memo_${userName}_${id}`,val);}catch(e){}
   const st=document.getElementById('memoStatus'); st.textContent='저장됨 ✓'; setTimeout(()=>st.textContent='',2000);
+  // 선생님 Google Sheets에도 전송
+  if(APPS_SCRIPT_URL && userName && userName!=='학생'){
+    const m=MISSIONS.find(x=>x.id===id);
+    const title=m?m.title:'';
+    fetch(APPS_SCRIPT_URL+'?action=saveMemo&type=scratch&name='+encodeURIComponent(userName)+'&missionId='+id+'&missionTitle='+encodeURIComponent(title)+'&memo='+encodeURIComponent(val)).catch(()=>{});
+  }
 }
 
 // ══════════════════════════════════════════
@@ -1331,6 +1363,7 @@ function launchConfetti(xp, sourceCY){
   // 캔버스 생성 — 실제 화면(viewport) 기준으로 크기 설정
   const canvas=document.createElement('canvas');
   canvas.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;pointer-events:none;';
+  // iframe 임베드 시 window.innerHeight가 전체 문서 높이가 되는 문제 대응
   const vw = window.innerWidth;
   const vh = (window.visualViewport ? window.visualViewport.height : null)
               || Math.min(window.innerHeight, screen.availHeight || 1080);
@@ -1339,6 +1372,7 @@ function launchConfetti(xp, sourceCY){
   const ctx=canvas.getContext('2d');
   const colors=['#FF6B6B','#FFD43B','#51CF66','#339AF0','#CC5DE8','#FF922B','#F06595','#74C0FC','#A9E34B'];
   const cx=canvas.width/2;
+  // sourceCY: 버튼의 viewport 기준 y좌표 → 화면 내에 클램핑
   const cy = (sourceCY != null)
     ? Math.max(canvas.height * 0.1, Math.min(sourceCY, canvas.height * 0.85))
     : canvas.height * 0.45;
@@ -1362,7 +1396,7 @@ function launchConfetti(xp, sourceCY){
     });
     t++; if(t<dur) requestAnimationFrame(frame); else canvas.remove();
   })();
-  // XP 토스트
+  // XP 토스트 — 버튼 위치 기준으로 표시
   const toast=document.createElement('div');
   const toastTop = (sourceCY != null)
     ? Math.max(vh * 0.1, Math.min(sourceCY - 60, vh * 0.8))
@@ -1378,15 +1412,103 @@ function launchConfetti(xp, sourceCY){
 // ══════════════════════════════════════════
 //  ADMIN IMAGE / MEMO (이미지 업로드 기능)
 // ══════════════════════════════════════════
-let pendingUploadId=null; let missionImages={}; let customMemos={}; let customMissions={};
+let pendingUploadId=null; let missionImages={}; let customMemos={};
 let missionVideos={}; let pendingVideoUploadId=null;
 let entryLinks={};
+let scratchSiteLinks={};
+let customMissions={};
+let thumbMode={}; // {[id]: 'youtube'|'emoji'}
+
+// ══════════════════════════════════════════
+//  IndexedDB — 영상 저장 (MP4 등 대용량)
+// ══════════════════════════════════════════
+let videoDB=null;
+function initVideoDB(){
+  return new Promise((res,rej)=>{
+    if(videoDB){res(videoDB);return;}
+    const req=indexedDB.open('scratch_gallery_videos',1);
+    req.onupgradeneeded=e=>{e.target.result.createObjectStore('scratch_videos',{keyPath:'id'});};
+    req.onsuccess=e=>{videoDB=e.target.result;res(videoDB);};
+    req.onerror=e=>rej(e);
+  });
+}
+function saveVideoToDB(id,blob){
+  return initVideoDB().then(db=>new Promise((res,rej)=>{
+    const tx=db.transaction('scratch_videos','readwrite');
+    tx.objectStore('scratch_videos').put({id,blob});
+    tx.oncomplete=()=>res(); tx.onerror=e=>rej(e);
+  }));
+}
+function deleteVideoFromDB(id){
+  return initVideoDB().then(db=>new Promise((res,rej)=>{
+    const tx=db.transaction('scratch_videos','readwrite');
+    tx.objectStore('scratch_videos').delete(id);
+    tx.oncomplete=()=>res(); tx.onerror=e=>rej(e);
+  }));
+}
+function loadAllVideos(){
+  return initVideoDB().then(db=>new Promise(res=>{
+    const tx=db.transaction('scratch_videos','readonly');
+    const req=tx.objectStore('scratch_videos').getAll();
+    req.onsuccess=e=>{
+      Object.values(missionVideos).forEach(u=>URL.revokeObjectURL(u));
+      missionVideos={};
+      (e.target.result||[]).forEach(item=>{
+        missionVideos[item.id]=URL.createObjectURL(item.blob);
+      });
+      res();
+    };
+    req.onerror=()=>res();
+  })).catch(()=>{});
+}
+function triggerVideoUpload(id){ pendingVideoUploadId=id; const inp=document.getElementById('videoUploadInput'); inp.value=''; inp.click(); }
+function triggerDetailVideoUpload(id){ pendingVideoUploadId=id; document.getElementById('videoUploadInput').click(); }
+function handleVideoUpload(event){
+  const file=event.target.files[0]; if(!file||!pendingVideoUploadId) return;
+  const id=pendingVideoUploadId;
+  if(file.size>200*1024*1024) showToast('⚠️ 영상이 커요! 200MB 이하를 권장해요.');
+  saveVideoToDB(id,file).then(()=>{
+    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
+    missionVideos[id]=URL.createObjectURL(file);
+    updateAdminRow(id);
+    if(currentMissionId===id) openMission(id);
+    showToast(`🎬 Quest ${id} 영상 저장 완료!`);
+    pendingVideoUploadId=null;
+  });
+}
+function deleteVideo(id){
+  deleteVideoFromDB(id).then(()=>{
+    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
+    delete missionVideos[id];
+    updateAdminRow(id);
+    showToast(`🗑️ Quest ${id} 영상 삭제됨`);
+  });
+}
+function deleteVideoAndRefresh(id){
+  deleteVideoFromDB(id).then(()=>{
+    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
+    delete missionVideos[id];
+    updateAdminRow(id);
+    openMission(id);
+    showToast(`🗑️ Quest ${id} 영상 삭제됨`);
+  });
+}
+function loadMissionImages(){ try{const raw=localStorage.getItem('sg_admin_images');if(raw)missionImages=JSON.parse(raw);}catch(e){} }
+function saveMissionImages(){ try{localStorage.setItem('sg_admin_images',JSON.stringify(missionImages));}catch(e){showToast('⚠️ 저장 공간 부족!');} saveAllAdminToCloud(); }
+function loadCustomMemos(){ try{const raw=localStorage.getItem('sg_admin_memos');if(raw)customMemos=JSON.parse(raw);}catch(e){} }
+function saveCustomMemosToStorage(){ try{localStorage.setItem('sg_admin_memos',JSON.stringify(customMemos));}catch(e){} saveAllAdminToCloud(); }
+function loadEntryLinks(){ try{const raw=localStorage.getItem('sg_admin_links');if(raw)entryLinks=JSON.parse(raw);}catch(e){} }
+function saveEntryLinks(){ try{localStorage.setItem('sg_admin_links',JSON.stringify(entryLinks));}catch(e){} saveAllAdminToCloud(); }
+function loadScratchSiteLinks(){ try{const raw=localStorage.getItem('sg_admin_site_links');if(raw)scratchSiteLinks=JSON.parse(raw);}catch(e){} }
+function saveScratchSiteLinks(){ try{localStorage.setItem('sg_admin_site_links',JSON.stringify(scratchSiteLinks));}catch(e){} }
+function loadCustomMissions(){ try{const raw=localStorage.getItem('sg_admin_missions');if(raw)customMissions=JSON.parse(raw);}catch(e){} }
+function loadThumbMode(){ try{const raw=localStorage.getItem('sg_admin_thumbmode');if(raw)thumbMode=JSON.parse(raw);}catch(e){} }
+function saveThumbMode(){ try{localStorage.setItem('sg_admin_thumbmode',JSON.stringify(thumbMode));}catch(e){} }
 
 // ── 앱스 스크립트: 학생 진도 저장 URL ──
 
 // ── 구글 시트: 유튜브 링크 로드 ──
-const GSHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT7bsASbvPWUPy0623j99Aasbms_3xKmEnBkWCh5RzfBl1QULX_zmbuRAaalSOPB47Y0n4HDgcsZPYU/pub?gid=1931464993&single=true&output=csv';
-
+const GSHEET_CSV_URL = GSHEET_SCRATCH_CSV;
 // ── 클라우드 진도 불러오기 ──
 async function loadFromCloud(){
   if(!APPS_SCRIPT_URL || !userName || userName==='학생') return;
@@ -1447,98 +1569,35 @@ function loadFromGoogleSheets(){
     })
     .catch(e => console.log('ℹ️ 구글 시트 로드 실패:', e));
 }
-function loadEntryLinks(){ try{const raw=localStorage.getItem('sg_admin_links');if(raw)entryLinks=JSON.parse(raw);}catch(e){} }
-function saveEntryLinks(){ try{localStorage.setItem('sg_admin_links',JSON.stringify(entryLinks));}catch(e){} saveAllAdminToCloud(); }
-function getYoutubeId(url){
-  if(!url) return null;
-  const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&\n#]+)/);
-  return m?m[1]:null;
-}
-function getYoutubeThumbnail(url){
-  const id=getYoutubeId(url);
-  return id?`https://img.youtube.com/vi/${id}/maxresdefault.jpg`:null;
-}
 
-// ══════════════════════════════════════════
-//  IndexedDB — 영상 저장 (MP4 등 대용량)
-// ══════════════════════════════════════════
-let videoDB=null;
-function initVideoDB(){
-  return new Promise((res,rej)=>{
-    if(videoDB){res(videoDB);return;}
-    const req=indexedDB.open('scratch_gallery_videos',1);
-    req.onupgradeneeded=e=>{e.target.result.createObjectStore('videos',{keyPath:'id'});};
-    req.onsuccess=e=>{videoDB=e.target.result;res(videoDB);};
-    req.onerror=e=>rej(e);
-  });
+// ── GitHub Pages: scratch_data.json 로드 ──
+function loadFromJSON(){
+  return fetch('./scratch_data.json?t='+Date.now())
+    .then(r=>{ if(!r.ok) throw new Error('not found'); return r.json(); })
+    .then(data=>{
+      if(data.images) Object.keys(data.images).forEach(k=>{missionImages[parseInt(k)]=data.images[k];});
+      if(data.memos) Object.keys(data.memos).forEach(k=>{customMemos[parseInt(k)]=data.memos[k];});
+      if(data.links) Object.keys(data.links).forEach(k=>{entryLinks[parseInt(k)]=data.links[k];});
+      // missions: localStorage가 있으면 덮어쓰지 않음
+      if(data.missions && !localStorage.getItem('sg_admin_missions'))
+        Object.keys(data.missions).forEach(k=>{customMissions[parseInt(k)]=data.missions[k];});
+      console.log('✅ scratch_data.json 로드 완료');
+      return true;
+    })
+    .catch(()=>{ console.log('ℹ️ scratch_data.json 없음 — localStorage 사용'); return false; });
 }
-function saveVideoToDB(id,blob){
-  return initVideoDB().then(db=>new Promise((res,rej)=>{
-    const tx=db.transaction('videos','readwrite');
-    tx.objectStore('videos').put({id,blob});
-    tx.oncomplete=()=>res(); tx.onerror=e=>rej(e);
-  }));
+function saveCustomMissions(){ try{localStorage.setItem('sg_admin_missions',JSON.stringify(customMissions));}catch(e){} saveAllAdminToCloud(); syncMissionsToSheet('scratch'); }
+function syncMissionsToSheet(type){
+  if(!APPS_SCRIPT_URL) return;
+  try{
+    const url=APPS_SCRIPT_URL
+      +'?action=writeMissionsToSheet'
+      +'&type='+type
+      +'&missions='+encodeURIComponent(JSON.stringify(customMissions))
+      +'&t='+Date.now();
+    fetch(url).catch(()=>{});
+  }catch(e){ console.log('시트 동기화 실패:',e); }
 }
-function deleteVideoFromDB(id){
-  return initVideoDB().then(db=>new Promise((res,rej)=>{
-    const tx=db.transaction('videos','readwrite');
-    tx.objectStore('videos').delete(id);
-    tx.oncomplete=()=>res(); tx.onerror=e=>rej(e);
-  }));
-}
-function loadAllVideos(){
-  return initVideoDB().then(db=>new Promise(res=>{
-    const tx=db.transaction('videos','readonly');
-    const req=tx.objectStore('videos').getAll();
-    req.onsuccess=e=>{
-      Object.values(missionVideos).forEach(u=>URL.revokeObjectURL(u));
-      missionVideos={};
-      (e.target.result||[]).forEach(item=>{
-        missionVideos[item.id]=URL.createObjectURL(item.blob);
-      });
-      res();
-    };
-    req.onerror=()=>res();
-  })).catch(()=>{});
-}
-function triggerVideoUpload(id){ pendingVideoUploadId=id; const inp=document.getElementById('videoUploadInput'); inp.value=''; inp.click(); }
-function triggerDetailVideoUpload(id){ pendingVideoUploadId=id; document.getElementById('videoUploadInput').click(); }
-function handleVideoUpload(event){
-  const file=event.target.files[0]; if(!file||!pendingVideoUploadId) return;
-  const id=pendingVideoUploadId;
-  if(file.size>200*1024*1024) showToast('⚠️ 영상이 커요! 200MB 이하를 권장해요.');
-  saveVideoToDB(id,file).then(()=>{
-    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
-    missionVideos[id]=URL.createObjectURL(file);
-    updateAdminRow(id);
-    if(currentMissionId===id) openMission(id);
-    showToast(`🎬 Quest ${id} 영상 저장 완료!`);
-    pendingVideoUploadId=null;
-  });
-}
-function deleteVideo(id){
-  deleteVideoFromDB(id).then(()=>{
-    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
-    delete missionVideos[id];
-    updateAdminRow(id);
-    showToast(`🗑️ Quest ${id} 영상 삭제됨`);
-  });
-}
-function deleteVideoAndRefresh(id){
-  deleteVideoFromDB(id).then(()=>{
-    if(missionVideos[id]) URL.revokeObjectURL(missionVideos[id]);
-    delete missionVideos[id];
-    updateAdminRow(id);
-    openMission(id);
-    showToast(`🗑️ Quest ${id} 영상 삭제됨`);
-  });
-}
-function loadMissionImages(){ try{const raw=localStorage.getItem('sg_admin_images');if(raw)missionImages=JSON.parse(raw);}catch(e){} }
-function saveMissionImages(){ try{localStorage.setItem('sg_admin_images',JSON.stringify(missionImages));}catch(e){showToast('⚠️ 저장 공간 부족!');} saveAllAdminToCloud(); }
-function loadCustomMemos(){ try{const raw=localStorage.getItem('sg_admin_memos');if(raw)customMemos=JSON.parse(raw);}catch(e){} }
-function saveCustomMemosToStorage(){ try{localStorage.setItem('sg_admin_memos',JSON.stringify(customMemos));}catch(e){} saveAllAdminToCloud(); }
-function loadCustomMissions(){ try{const raw=localStorage.getItem('sg_admin_missions');if(raw)customMissions=JSON.parse(raw);}catch(e){} }
-function saveCustomMissions(){ try{localStorage.setItem('sg_admin_missions',JSON.stringify(customMissions));}catch(e){} saveAllAdminToCloud(); }
 async function loadAdminFromCloud(){
   if(!APPS_SCRIPT_URL) return;
   try{
@@ -1549,14 +1608,53 @@ async function loadAdminFromCloud(){
     if(data.images && data.images!=='{}') try{ missionImages=JSON.parse(data.images); changed=true; }catch(e){}
     if(data.memos  && data.memos !=='{}') try{ customMemos  =JSON.parse(data.memos);  changed=true; }catch(e){}
     if(data.links  && data.links !=='{}') try{ entryLinks   =JSON.parse(data.links);   changed=true; }catch(e){}
-    if(data.missions && data.missions!=='{}') try{ customMissions=JSON.parse(data.missions); changed=true; }catch(e){}
+    // missions: 관리자 화면은 로컬 미저장 편집을 보호, 학생 화면은 항상 최신 클라우드 값 반영
+    if(data.missions && data.missions!=='{}' && (!isAdminMode || !localStorage.getItem('sg_admin_missions'))){
+      try{ customMissions=JSON.parse(data.missions); try{localStorage.setItem('sg_admin_missions',data.missions);}catch(e){} changed=true; }catch(e){}
+    }
     if(changed){
       try{ localStorage.setItem('sg_admin_images',   data.images);   }catch(e){}
       try{ localStorage.setItem('sg_admin_memos',    data.memos);    }catch(e){}
       try{ localStorage.setItem('sg_admin_links',    data.links);    }catch(e){}
-      try{ localStorage.setItem('sg_admin_missions', data.missions); }catch(e){}
     }
   }catch(e){ console.log('관리자 데이터 로드 실패:', e); }
+}
+// 스프레드시트 시트3 동기화 후 강제 로드
+async function syncFromSheet(){
+  if(!APPS_SCRIPT_URL){
+    showToast('⚠️ Apps Script URL이 설정되지 않았어요. 관리자 설정을 확인하세요.'); return;
+  }
+  const btn = document.getElementById('sheetSyncBtn');
+  const barBtn = document.getElementById('adminBarSyncBtn');
+  const setBusy = v => {
+    if(btn){ btn.textContent = v ? '⏳ 불러오는 중...' : '🔄 시트에서 불러오기'; btn.disabled = v; }
+    if(barBtn){ barBtn.textContent = v ? '⏳...' : '🔄 시트 동기화'; barBtn.disabled = v; }
+  };
+  setBusy(true);
+  try{
+    try{ localStorage.removeItem('sg_admin_missions'); }catch(e){}
+    const res = await fetch(APPS_SCRIPT_URL+'?action=readAdmin&type=scratch&t='+Date.now());
+    const data = await res.json();
+    if(!data.found){ showToast('⚠️ 관리자 설정을 찾을 수 없어요. 스프레드시트에서 먼저 [🔄 스크래치 미션 단계 동기화]를 실행하세요.'); return; }
+    let synced = [];
+    if(data.links && data.links!=='{}'){
+      try{ entryLinks=JSON.parse(data.links); try{localStorage.setItem('sg_admin_links',data.links);}catch(e){} synced.push('링크'); }catch(e){}
+    }
+    if(data.missions && data.missions!=='{}'){
+      try{ customMissions=JSON.parse(data.missions); try{localStorage.setItem('sg_admin_missions',data.missions);}catch(e){} synced.push('미션 단계'); }catch(e){}
+    }
+    if(synced.length > 0){
+      openGallery();
+      showToast('✅ ' + synced.join(' + ') + ' 불러오기 완료!');
+    } else {
+      showToast('⚠️ 시트에 아직 데이터가 없어요. 스프레드시트 [🎓 코딩학원] 메뉴에서 동기화를 먼저 실행하세요.');
+    }
+  }catch(e){
+    showToast('⚠️ 불러오기 실패: 인터넷 연결이나 URL을 확인하세요.');
+    console.log('syncFromSheet 오류:', e);
+  } finally {
+    setBusy(false);
+  }
 }
 async function saveAllAdminToCloud(){
   if(!APPS_SCRIPT_URL) return;
@@ -1572,24 +1670,25 @@ async function saveAllAdminToCloud(){
     fetch(url);
   }catch(e){ console.log('관리자 데이터 저장 실패:', e); }
 }
+function getYoutubeId(url){
+  if(!url) return null;
+  const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([^?&\n#]+)/);
+  return m?m[1]:null;
+}
+function getYoutubeThumbnail(url){
+  const id=getYoutubeId(url);
+  return id?`https://img.youtube.com/vi/${id}/maxresdefault.jpg`:null;
+}
 function getMissionData(id){
   const base=MISSIONS.find(m=>m.id===id)||{};
   const custom=customMissions[id]||{};
-  return Object.assign({},base,custom);
-}
-// ── GitHub Pages: scratch_data.json 로드 ──
-function loadFromJSON(){
-  return fetch('./scratch_data.json?t='+Date.now())
-    .then(r=>{ if(!r.ok) throw new Error('not found'); return r.json(); })
-    .then(data=>{
-      if(data.images) Object.keys(data.images).forEach(k=>{missionImages[parseInt(k)]=data.images[k];});
-      if(data.memos) Object.keys(data.memos).forEach(k=>{customMemos[parseInt(k)]=data.memos[k];});
-      if(data.links) Object.keys(data.links).forEach(k=>{entryLinks[parseInt(k)]=data.links[k];});
-      if(data.missions) Object.keys(data.missions).forEach(k=>{customMissions[parseInt(k)]=data.missions[k];});
-      console.log('✅ scratch_data.json 로드 완료');
-      return true;
-    })
-    .catch(()=>{ console.log('ℹ️ scratch_data.json 없음 — localStorage 사용'); return false; });
+  const merged=Object.assign({},base,custom);
+  // 시트에서 아직 실제 내용이 안 들어온 카드는 예전 가상 텍스트 대신 빈 값으로 보여줌.
+  // 이모지/색상/챕터/XP 등 구조 데이터는 base 값을 그대로 써서 카드가 휑해 보이지 않게 함.
+  if(custom.title===undefined) merged.title='';
+  if(custom.desc===undefined) merged.desc='';
+  if(custom.steps===undefined) merged.steps=[];
+  return merged;
 }
 
 function toggleAdminMenu(){
@@ -1616,9 +1715,10 @@ function processBulkVideoFiles(files){
   log.innerHTML='';
   let pending=files.length; let done=0;
   Array.from(files).forEach(file=>{
+    // extract mission number from filename
     const name=file.name;
-    const mm=name.match(/(\d+)/);
-    const id=mm?parseInt(mm[1]):null;
+    const m=name.match(/(\d+)/);
+    const id=m?parseInt(m[1]):null;
     if(!id||id<1||id>30){
       log.innerHTML+=`<div style="color:var(--red)">⚠️ ${name} — 미션 번호를 찾을 수 없어요 (1~30)</div>`;
       pending--; if(pending===0) log.innerHTML+=`<div style="color:var(--teal);margin-top:8px;font-weight:700;">완료! ✓ ${done}개 저장됨</div>`;
@@ -1636,6 +1736,7 @@ function processBulkVideoFiles(files){
     });
   });
 }
+
 function goAdminGallery(){
   document.getElementById('adminView').classList.remove('active');
   document.getElementById('detailView').classList.remove('active');
@@ -1661,6 +1762,7 @@ document.addEventListener('click',function(e){
   if(wrap&&!wrap.contains(e.target)) closeAdminMenu();
 });
 function openAdminLogin(){
+  if(document.body.classList.contains('embedded')) window.scrollTo(0,0);
   document.getElementById('adminPwInput').value='';
   document.getElementById('adminPwInput').classList.remove('shake');
   document.getElementById('adminPwOverlay').classList.add('visible');
@@ -1688,26 +1790,31 @@ function hideAdminBar(){
 function openAdmin(){
   isAdminMode=true;
   localStorage.setItem('학습홈_admin','1');
-  saveAllAdminToCloud();
+  // 로그인만 했을 뿐인데 여기서 클라우드에 업로드하면, 아직 최신 데이터를 못 받아온 상태의
+  // 브라우저 캐시(customMissions 등)로 방금 시트에서 동기화한 내용을 덮어써버리는 사고가 남.
+  // 실제 저장은 각 편집 함수(saveCustomMissions 등)에서 개별적으로 처리하므로 여기선 업로드하지 않음.
   const badge=document.getElementById('adminBadge');
   const btn=document.getElementById('adminTriggerBtn');
   if(badge) badge.style.display='inline-flex';
   if(btn){ btn.style.color='#DC2626'; btn.title='관리자 메뉴'; }
   showAdminBar();
-  document.getElementById('dashView').classList.remove('active');
-  document.getElementById('galleryView').classList.remove('active');
-  document.getElementById('detailView').classList.remove('active');
+  const dv=document.getElementById('dashView'); if(dv) dv.classList.remove('active');
+  const gv=document.getElementById('galleryView'); if(gv) gv.classList.remove('active');
+  const dtv=document.getElementById('detailView'); if(dtv) dtv.classList.remove('active');
   document.getElementById('adminView').classList.add('active');
   renderAdminList(); window.scrollTo({top:0,behavior:'instant'});
 }
 function restoreAdminUI(){
   isAdminMode=true;
-  setTimeout(saveAllAdminToCloud, 2000);
+  // 페이지를 열 때마다 2초 뒤 자동으로 클라우드 업로드하던 코드 제거함:
+  // 아직 서버 최신값을 못 받아온 시점의 로컬 캐시로 방금 시트에서 동기화한 내용을 덮어써버리는
+  // 원인이었음(관리자 계정으로 새로고침할 때마다 반복 발생). 실제 저장은 각 편집 함수에서 처리.
   const badge=document.getElementById('adminBadge');
   const btn=document.getElementById('adminTriggerBtn');
   if(badge) badge.style.display='inline-flex';
   if(btn){ btn.style.color='#DC2626'; btn.title='관리자 메뉴'; }
   showAdminBar();
+  if(currentMissionId) openMission(currentMissionId);
 }
 function closeAdmin(){
   isAdminMode=false;
@@ -1728,10 +1835,9 @@ function renderAdminList(){
     const container=document.getElementById('adminList_'+ch); if(!container) return;
     container.innerHTML='';
     MISSIONS.map(m=>getMissionData(m.id)).filter(m=>m.chapter===ch).forEach(m=>{
-      const hasImg=!!missionImages[m.id]; const hasVid=!!missionVideos[m.id]; const hasMemo=!!(customMemos[m.id]&&customMemos[m.id].trim());
+      const hasImg=!!missionImages[m.id]; const hasVid=!!missionVideos[m.id];
       const row=document.createElement('div');
       row.className='admin-mission-row'+((hasImg||hasVid)?' has-img':''); row.id='adminRow'+m.id;
-      if(hasMemo) row.style.borderColor='rgba(74,158,255,0.45)';
       row.innerHTML=`<div class="admin-row-top">
         <div class="admin-row-main">
           <div class="admin-thumb-wrap" id="adminThumb${m.id}">${hasVid?`<video src="${missionVideos[m.id]}" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:8px;"></video>`:hasImg?`<img src="${missionImages[m.id]}" alt="">`:` <span style="font-size:26px">${m.emoji}</span>`}</div>
@@ -1743,29 +1849,9 @@ function renderAdminList(){
           </div>
         </div>
         <div class="admin-row-btns">
-          <button class="admin-upload-btn" onclick="openMissionEdit(${m.id})" style="background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3);color:var(--purple);">✏️ 미션 편집</button>
-          <button class="admin-upload-btn" onclick="triggerUpload(${m.id})">📷 이미지 업로드</button>
-          <button class="admin-del-btn ${hasImg?'':'hidden'}" id="adminDelBtn${m.id}" onclick="deleteImage(${m.id})" title="삭제">✕</button>
-          <button class="admin-upload-btn" onclick="triggerVideoUpload(${m.id})" style="background:rgba(14,165,233,0.1);border-color:rgba(14,165,233,0.3);">🎬 영상 업로드</button>
-          <button class="admin-del-btn ${hasVid?'':'hidden'}" id="adminVidDelBtn${m.id}" onclick="deleteVideo(${m.id})" title="영상삭제">✕영상</button>
-          <button class="admin-memo-toggle ${hasMemo?'open':''}" id="memoToggleBtn_${m.id}" onclick="toggleInlineMemo(${m.id})">📝 메모 편집</button>
-          <button class="admin-memo-toggle ${entryLinks[m.id]?'open':''}" id="linkToggleBtn_${m.id}" onclick="toggleInlineLink(${m.id})" style="background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.30);color:var(--teal);">🔗 스크래치 링크${entryLinks[m.id]?' ✓':''}</button>
-        </div></div>
-      <div class="admin-inline-memo ${hasMemo?'open':''}" id="inlineMemo_${m.id}">
-        <div class="admin-inline-memo-label">📌 Quest ${m.id} — ${m.title} 미션 안내 메모</div>
-        <textarea class="admin-inline-textarea" id="inlineTA_${m.id}" placeholder="예시:&#10;1단계 말하기 블록&#10;&quot;~라고 말하기&quot; 블록을 가져와요.&#10;&#10;2단계 대사 3개&#10;3가지 다른 대사를 차례로 연결해요.&#10;&#10;※ &quot;n단계 제목&quot; 형식으로 입력하면 단계 카드로 자동 변환됩니다.">${hasMemo?escapeHtml(customMemos[m.id]):''}</textarea>
-        <div class="admin-inline-row">
-          <span class="admin-inline-status" id="inlineSt_${m.id}"></span>
-          <button class="admin-inline-clear-btn" onclick="clearInlineMemo(${m.id})">🗑️ 초기화</button>
-          <button class="admin-inline-save-btn" onclick="saveInlineMemo(${m.id})">💾 저장하기</button>
-        </div></div>
-      <div class="admin-inline-memo ${entryLinks[m.id]?'open':''}" id="inlineLink_${m.id}" style="border-top-color:rgba(14,165,233,0.2);background:rgba(14,165,233,0.03);">
-        <div class="admin-inline-memo-label" style="color:var(--teal);">🔗 Quest ${m.id} — 스크래치 프로젝트 링크</div>
-        <input type="url" class="admin-inline-textarea" id="inlineLinkInput_${m.id}" style="min-height:auto;padding:10px 14px;border-color:rgba(14,165,233,0.25);" placeholder="https://scratch.mit.edu/projects/..." value="${escapeHtml(entryLinks[m.id]||'')}">
-        <div class="admin-inline-row">
-          <span class="admin-inline-status" id="inlineLinkSt_${m.id}" style="color:var(--teal);"></span>
-          <button class="admin-inline-clear-btn" onclick="clearInlineLink(${m.id})">🗑️ 초기화</button>
-          <button class="admin-inline-save-btn" style="background:linear-gradient(135deg,var(--teal),var(--blue));" onclick="saveInlineLink(${m.id})">💾 저장하기</button>
+          <button class="admin-upload-btn" onclick="toggleMissionEdit(${m.id})" style="background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.3);color:var(--purple);">✏️ 편집</button>
+          <button class="admin-del-btn hidden" id="adminDelBtn${m.id}" style="display:none;"></button>
+          <button class="admin-del-btn hidden" id="adminVidDelBtn${m.id}" style="display:none;"></button>
         </div></div>`;
       container.appendChild(row);
     });
@@ -1807,60 +1893,195 @@ function updateAdminRow(id){
   if(status){status.className='admin-img-status '+(hasImg?'ok':'empty');status.textContent=hasImg?'✅ 이미지 등록됨':'📷 이미지 없음';}
   const vidStatus=document.getElementById('adminVidSt'+id);
   if(vidStatus){vidStatus.className='admin-img-status '+(hasVid?'ok':'empty');vidStatus.textContent=hasVid?'✅ 영상 등록됨':'🎬 영상 없음';}
-  const delBtn=document.getElementById('adminDelBtn'+id);
-  if(delBtn) delBtn.className='admin-del-btn'+(hasImg?'':' hidden');
-  const vidDelBtn=document.getElementById('adminVidDelBtn'+id);
-  if(vidDelBtn) vidDelBtn.className='admin-del-btn'+(hasVid?'':' hidden');
+  if(editingMissionId===id) refreshEditMediaPreview(id);
 }
 
 function deleteImage(id){ delete missionImages[id]; saveMissionImages(); updateAdminRow(id); showToast(`🗑️ Quest ${id} 이미지 삭제됨`); }
 function deleteImageAndRefresh(id){ deleteImage(id); openMission(id); }
 
 // ── DETAIL PAGE ADMIN FUNCTIONS ──
-function toggleDetailMemo(id){
-  const panel=document.getElementById('detailMemoPanel_'+id);
-  const btn=document.getElementById('detailMemoToggle_'+id);
+
+function toggleDetailLink(id){
+  const panel=document.getElementById('detailLinkPanel_'+id);
+  const btn=document.getElementById('detailLinkToggle_'+id);
   if(!panel) return;
-  const isOpen=panel.classList.toggle('open');
-  btn.classList.toggle('open',isOpen);
-  if(isOpen){
-    const ta=document.getElementById('detailMemoTA_'+id);
-    const saved=customMemos[id];
-    if(!ta.value&&saved) ta.value=saved;
-    panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  const isOpen=panel.classList.contains('open');
+  panel.classList.toggle('open',!isOpen);
+  if(btn) btn.classList.toggle('open',!isOpen);
+}
+function saveDetailLink(id){
+  const val=(document.getElementById('detailLinkInput_'+id)||{}).value||'';
+  entryLinks[id]=val.trim();
+  if(!val.trim()) delete entryLinks[id];
+  saveEntryLinks();
+  const st=document.getElementById('detailLinkSt_'+id); if(st){st.textContent='저장됨 ✓';setTimeout(()=>st.textContent='',2000);}
+  showToast(`🔗 Quest ${id} 링크 저장 완료!`);
+  if(currentMissionId===id) openMission(id);
+}
+function clearDetailLink(id){
+  delete entryLinks[id];
+  saveEntryLinks();
+  if(currentMissionId===id) openMission(id);
+  showToast(`🗑️ Quest ${id} 링크 초기화됨`);
+}
+
+// ══════════════════════════════════════════
+//  미션 편집
+// ══════════════════════════════════════════
+let editingMissionId=null;
+function openMissionEdit(id){
+  if(document.body.classList.contains('embedded')) window.scrollTo(0,0);
+  document.body.style.overflow='hidden';
+  editingMissionId=id;
+  const base=MISSIONS.find(x=>x.id===id)||{};
+  const custom=customMissions[id]||{};
+  const hasCustom=Object.keys(custom).length>0;
+  const _ov=document.getElementById('missionEditOverlay');
+  _ov.style.display='flex';
+  _ov.dataset.open='1';
+  document.getElementById('editMissionNum').textContent='QUEST '+id+(hasCustom?' ✅':' (미편집)');
+  document.getElementById('editEmoji').value=hasCustom?(custom.emoji||base.emoji||''):(base.emoji||'');
+  ['editEmoji','editTitle','editDesc','editYoutubeLink'].forEach(eid=>{const el=document.getElementById(eid);if(el){el.onfocus=()=>el.style.borderColor='var(--purple)';el.onblur=()=>el.style.borderColor='var(--border)';}});
+  document.getElementById('editTitle').value=hasCustom?(custom.title||''):(base.title||'');
+  document.getElementById('editDesc').value=hasCustom?(custom.desc||''):'';
+  document.getElementById('editChapter').value=(custom.chapter||base.chapter||'ch1');
+  document.getElementById('editDiff').value=String(custom.diff||base.diff||1);
+  document.getElementById('editSaveStatus').textContent=hasCustom?'':'💡 아직 편집하지 않은 미션이에요. 내용을 입력하고 저장하세요.';
+  renderEditSteps(custom.steps||base.steps||[]);
+  document.getElementById('bulkStepTA').value='';
+  document.getElementById('editYoutubeLink').value=entryLinks[id]||'';
+  setTimeout(()=>setThumbModeUI(thumbMode[id]||'youtube'),0);
+  renderEditHints((custom.hint||base.hint)||[]);
+  refreshEditMediaPreview(id);
+}
+function refreshEditMediaPreview(id){
+  const hasImg=!!missionImages[id]; const hasVid=!!missionVideos[id];
+  const m=MISSIONS.find(x=>x.id===id)||{};
+  const preview=document.getElementById('editImgPreview');
+  if(preview){
+    if(hasVid) preview.innerHTML=`<video src="${missionVideos[id]}" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></video>`;
+    else if(hasImg) preview.innerHTML=`<img src="${missionImages[id]}" style="width:100%;height:100%;object-fit:cover;">`;
+    else preview.textContent=m.emoji||'📷';
+  }
+  const imgDel=document.getElementById('editImgDelBtn'); if(imgDel) imgDel.style.display=hasImg?'':'none';
+  const vidSt=document.getElementById('editVidStatus'); if(vidSt) vidSt.textContent=hasVid?'✅ 영상 등록됨':'🎬 없음';
+  const vidDel=document.getElementById('editVidDelBtn'); if(vidDel) vidDel.style.display=hasVid?'':'none';
+}
+function deleteImageFromEdit(){ if(!editingMissionId) return; deleteImage(editingMissionId); refreshEditMediaPreview(editingMissionId); }
+function deleteVideoFromEdit(){ if(!editingMissionId) return; deleteVideo(editingMissionId); setTimeout(()=>refreshEditMediaPreview(editingMissionId),100); }
+function renderEditSteps(steps){
+  const wrap=document.getElementById('editStepsWrap'); wrap.innerHTML='';
+  const list=steps.slice(0,5);
+  while(list.length<5) list.push({title:'',desc:''});
+  list.forEach((s,i)=>{
+    const div=document.createElement('div');
+    div.style.cssText='background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;';
+    div.innerHTML=`<div style="font-size:11px;color:var(--text3);margin-bottom:5px;">${i+1}단계</div>
+      <input id="es_title_${i}" value="${(s.title||'').replace(/"/g,'&quot;')}" placeholder="단계 제목 (예: 🐱 오브젝트 추가하기)" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:6px 10px;outline:none;margin-bottom:5px;font-family:'Noto Sans KR',sans-serif;">
+      <input id="es_desc_${i}" value="${(s.desc||'').replace(/"/g,'&quot;')}" placeholder="단계 설명" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:6px 10px;outline:none;font-family:'Noto Sans KR',sans-serif;">`;
+    wrap.appendChild(div);
+  });
+}
+function clearAllHints(){
+  for(let i=0;i<3;i++){
+    const sel=document.getElementById('eh_cat_'+i); if(sel) sel.value='';
+    const inp=document.getElementById('eh_txt_'+i); if(inp) inp.value='';
   }
 }
-function saveDetailMemo(id){
-  const text=document.getElementById('detailMemoTA_'+id).value;
-  customMemos[id]=text; saveCustomMemosToStorage();
-  const st=document.getElementById('detailMemoSt_'+id);
-  st.textContent='✓ 저장됨!';
-  const btn=document.getElementById('detailMemoToggle_'+id);
-  if(btn){ btn.textContent='📝 미션 안내 편집'+(text.trim()?' ✓':''); btn.classList.toggle('open',true); }
-  showToast(`✅ Quest ${id} 미션 안내 저장 완료!`);
-  setTimeout(()=>{ if(st) st.textContent=''; },2500);
-  const rightCards=document.querySelectorAll('.detail-right-card');
-  if(rightCards.length>0){
-    const adminMemoResult=getAdminMemoHTML(id);
-    if(adminMemoResult){
-      const label=adminMemoResult.isSteps?'📋 미션 단계':'📋 미션 안내';
-      const firstCard=rightCards[0];
-      firstCard.innerHTML='<div class="section-title-small">'+label+'</div>'+adminMemoResult.html;
+function setThumbModeUI(mode){
+  const ytBtn=document.getElementById('thumbModeYt');
+  const emBtn=document.getElementById('thumbModeEmoji');
+  if(!ytBtn||!emBtn) return;
+  if(mode==='youtube'){
+    ytBtn.style.cssText='flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:\'Noto Sans KR\',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid rgba(255,0,0,0.6);background:rgba(255,0,0,0.12);color:#c00;';
+    emBtn.style.cssText='flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:\'Noto Sans KR\',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid var(--border);background:var(--bg2);color:var(--text3);';
+  } else {
+    emBtn.style.cssText='flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:\'Noto Sans KR\',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid rgba(79,110,247,0.5);background:rgba(79,110,247,0.1);color:var(--blue);';
+    ytBtn.style.cssText='flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:\'Noto Sans KR\',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.06);color:#c00;';
+  }
+  ytBtn.dataset.active=(mode==='youtube'?'1':'0');
+  emBtn.dataset.active=(mode==='emoji'?'1':'0');
+}
+function closeMissionEdit(){
+  const ov=document.getElementById('missionEditOverlay');
+  ov.style.display='none';
+  ov.dataset.open='0';
+  editingMissionId=null;
+  document.body.style.overflow='';
+}
+function toggleMissionEdit(id){
+  const overlay=document.getElementById('missionEditOverlay');
+  if(overlay.dataset.open==='1'&&editingMissionId===id){closeMissionEdit();}
+  else{openMissionEdit(id);}
+}
+function saveMissionEdit(){
+  const id=editingMissionId; if(!id) return;
+  const steps=[];
+  for(let i=0;i<5;i++){
+    const t=(document.getElementById('es_title_'+i)||{}).value||'';
+    const d=(document.getElementById('es_desc_'+i)||{}).value||'';
+    if(t||d) steps.push({title:t,desc:d});
+  }
+  const hintArr=[];
+  for(let i=0;i<3;i++){
+    const cat=(document.getElementById('eh_cat_'+i)||{}).value||'';
+    const txt=((document.getElementById('eh_txt_'+i)||{}).value||'').trim();
+    if(cat&&txt){hintArr.push(cat,txt);}
+  }
+  customMissions[id]={
+    emoji:document.getElementById('editEmoji').value||undefined,
+    title:document.getElementById('editTitle').value||undefined,
+    desc:document.getElementById('editDesc').value||undefined,
+    chapter:document.getElementById('editChapter').value||undefined,
+    diff:parseInt(document.getElementById('editDiff').value)||undefined,
+    steps:steps.length?steps:undefined,
+    hint:hintArr
+  };
+  Object.keys(customMissions[id]).forEach(k=>{ if(customMissions[id][k]===undefined) delete customMissions[id][k]; });
+  saveCustomMissions();
+  saveCustomMemosToStorage();
+  const ytVal=document.getElementById('editYoutubeLink').value.trim();
+  if(ytVal){entryLinks[id]=ytVal;}else{delete entryLinks[id];}
+  saveEntryLinks();
+  // 썸네일 모드 저장
+  const emBtn=document.getElementById('thumbModeEmoji');
+  if(emBtn&&emBtn.dataset.active==='1'){thumbMode[id]='emoji';}else{delete thumbMode[id];}
+  saveThumbMode();
+  renderAdminList();
+  if(currentMissionId===id) openMission(id);
+  showToast(`✏️ Quest ${id} 저장 완료!`);
+  setTimeout(()=>closeMissionEdit(), 600);
+}
+function resetMissionEdit(){
+  if(!editingMissionId) return;
+  if(!confirm('기본값으로 되돌릴까요?')) return;
+  delete customMissions[editingMissionId];
+  saveCustomMissions(); renderAdminList();
+  openMissionEdit(editingMissionId);
+  showToast('↩️ 기본값으로 초기화됨');
+}
+function parseAndFillSteps(){
+  const text=document.getElementById('bulkStepTA').value;
+  if(!text.trim()){showToast('⚠️ 텍스트를 입력하세요');return;}
+  const lines=text.trim().split(/\n/);
+  const steps=[];
+  let cur=null; let descLines=[];
+  for(const line of lines){
+    // "1단계 — 제목", "1단계: 제목", "1단계. 제목", "1단계 제목" 모두 인식
+    const m=line.match(/^(\d+)단계[\s—\-–:.]*(.+)/);
+    if(m){
+      if(cur) steps.push({title:cur.title,desc:descLines.join(' ').trim()});
+      descLines=[];
+      cur={title:m[2].trim()};
+    } else if(cur&&line.trim()){
+      descLines.push(line.trim());
     }
   }
-  updateAdminRow(id);
-}
-function clearDetailMemo(id){
-  const m=MISSIONS.find(x=>x.id===id);
-  if(!confirm(`Quest ${id} — ${m.title}\n미션 안내를 초기화할까요?`)) return;
-  delete customMemos[id]; saveCustomMemosToStorage();
-  const ta=document.getElementById('detailMemoTA_'+id);
-  if(ta) ta.value='';
-  const st=document.getElementById('detailMemoSt_'+id); if(st) st.textContent='초기화됨';
-  const btn=document.getElementById('detailMemoToggle_'+id); if(btn) btn.textContent='📝 미션 안내 편집';
-  showToast(`🗑️ Quest ${id} 미션 안내 초기화`);
-  setTimeout(()=>{ if(st) st.textContent=''; },2000);
-  updateAdminRow(id);
+  if(cur) steps.push({title:cur.title,desc:descLines.join(' ').trim()});
+  if(!steps.length){showToast('⚠️ "N단계 — 제목" 형식을 찾지 못했어요');return;}
+  renderEditSteps(steps.slice(0,5));
+  document.getElementById('bulkStepTA').value='';
+  showToast(`✅ ${steps.length}개 단계 자동 입력 완료!`);
 }
 function exportAll(){
   const count=Object.keys(missionImages).length+Object.keys(customMemos).length;
@@ -1916,14 +2137,14 @@ function saveInlineLink(id){
   if(val.trim()) entryLinks[id]=val.trim(); else delete entryLinks[id];
   saveEntryLinks();
   const btn=document.getElementById('linkToggleBtn_'+id);
-  if(btn) btn.textContent='🔗 스크래치 링크'+(entryLinks[id]?' ✓':'');
+  if(btn) btn.textContent='🔗 유튜브 링크'+(entryLinks[id]?' ✓':'');
   const st=document.getElementById('inlineLinkSt_'+id); if(st){st.textContent='저장됨 ✓';setTimeout(()=>st.textContent='',2000);}
   showToast(`🔗 Quest ${id} 링크 저장!`);
 }
 function clearInlineLink(id){
   delete entryLinks[id]; saveEntryLinks();
   const inp=document.getElementById('inlineLinkInput_'+id); if(inp) inp.value='';
-  const btn=document.getElementById('linkToggleBtn_'+id); if(btn) btn.textContent='🔗 스크래치 링크';
+  const btn=document.getElementById('linkToggleBtn_'+id); if(btn) btn.textContent='🔗 유튜브 링크';
   showToast(`🗑️ Quest ${id} 링크 삭제됨`);
 }
 function toggleInlineMemo(id){
@@ -1946,102 +2167,6 @@ function clearInlineMemo(id){
   document.getElementById('inlineTA_'+id).value=m.steps.map((s,i)=>`${i+1}단계: ${s.title}\n${s.desc}`).join('\n\n');
   document.getElementById('inlineSt_'+id).textContent='초기화됨'; showToast(`🗑️ Quest ${id} 메모 초기화`);
   setTimeout(()=>{document.getElementById('inlineSt_'+id).textContent='';},2000);
-}
-// ══════════════════════════════════════════
-//  미션 편집
-// ══════════════════════════════════════════
-let editingMissionId=null;
-function openMissionEdit(id){
-  if(document.body.classList.contains('embedded')) window.scrollTo(0,0);
-  editingMissionId=id;
-  const base=MISSIONS.find(x=>x.id===id)||{};
-  const custom=customMissions[id]||{};
-  const hasCustom=Object.keys(custom).length>0;
-  document.getElementById('missionEditOverlay').style.display='flex';
-  document.getElementById('editMissionNum').textContent='QUEST '+id+(hasCustom?' ✅':' (미편집)');
-  document.getElementById('editEmoji').value=hasCustom?(custom.emoji||base.emoji||''):(base.emoji||'');
-  ['editEmoji','editTitle','editDesc'].forEach(eid=>{const el=document.getElementById(eid);if(el){el.onfocus=()=>el.style.borderColor='var(--purple)';el.onblur=()=>el.style.borderColor='var(--border)';}});
-  document.getElementById('editTitle').value=hasCustom?(custom.title||''):(base.title||'');
-  document.getElementById('editDesc').value=hasCustom?(custom.desc||''):'';
-  document.getElementById('editChapter').value=(custom.chapter||base.chapter||'ch1');
-  document.getElementById('editDiff').value=String(custom.diff||base.diff||1);
-  document.getElementById('editSaveStatus').textContent=hasCustom?'':'💡 아직 편집하지 않은 미션이에요. 내용을 입력하고 저장하세요.';
-  renderEditSteps(hasCustom?(custom.steps||[]):[]);
-}
-function renderEditSteps(steps){
-  const wrap=document.getElementById('editStepsWrap'); wrap.innerHTML='';
-  const list=steps.slice(0,5);
-  while(list.length<5) list.push({title:'',desc:''});
-  list.forEach((s,i)=>{
-    const div=document.createElement('div');
-    div.style.cssText='background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;';
-    div.innerHTML=`<div style="font-size:11px;color:var(--text3);margin-bottom:5px;">${i+1}단계</div>
-      <input id="es_title_${i}" value="${(s.title||'').replace(/"/g,'&quot;')}" placeholder="단계 제목 (예: 🐱 스프라이트 추가하기)" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:6px 10px;outline:none;margin-bottom:5px;font-family:'Noto Sans KR',sans-serif;">
-      <input id="es_desc_${i}" value="${(s.desc||'').replace(/"/g,'&quot;')}" placeholder="단계 설명" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;padding:6px 10px;outline:none;font-family:'Noto Sans KR',sans-serif;">`;
-    wrap.appendChild(div);
-  });
-}
-function closeMissionEdit(){
-  document.getElementById('missionEditOverlay').style.display='none';
-  editingMissionId=null;
-}
-function saveMissionEdit(){
-  const id=editingMissionId; if(!id) return;
-  const steps=[];
-  for(let i=0;i<5;i++){
-    const t=(document.getElementById('es_title_'+i)||{}).value||'';
-    const d=(document.getElementById('es_desc_'+i)||{}).value||'';
-    if(t||d) steps.push({title:t,desc:d});
-  }
-  customMissions[id]={
-    emoji:document.getElementById('editEmoji').value||undefined,
-    title:document.getElementById('editTitle').value||undefined,
-    desc:document.getElementById('editDesc').value||undefined,
-    chapter:document.getElementById('editChapter').value||undefined,
-    diff:parseInt(document.getElementById('editDiff').value)||undefined,
-    steps:steps.length?steps:undefined
-  };
-  Object.keys(customMissions[id]).forEach(k=>{ if(customMissions[id][k]===undefined) delete customMissions[id][k]; });
-  saveCustomMissions(); renderAdminList();
-  if(currentMissionId===id) openMission(id);
-  showToast(`✏️ Quest ${id} 미션 편집 저장!`);
-  setTimeout(()=>closeMissionEdit(), 600);
-}
-function resetMissionEdit(){
-  if(!editingMissionId) return;
-  if(!confirm('기본값으로 되돌릴까요?')) return;
-  delete customMissions[editingMissionId];
-  saveCustomMissions(); renderAdminList();
-  openMissionEdit(editingMissionId);
-  showToast('↩️ 기본값으로 초기화됨');
-}
-function toggleBulkStepInput(){
-  const wrap=document.getElementById('bulkStepInputWrap');
-  const isOpen=wrap.style.display!=='none';
-  wrap.style.display=isOpen?'none':'block';
-}
-function parseAndFillSteps(){
-  const text=document.getElementById('bulkStepTA').value;
-  if(!text.trim()){showToast('⚠️ 텍스트를 입력하세요');return;}
-  const lines=text.trim().split(/\n/);
-  const steps=[];
-  let cur=null; let descLines=[];
-  for(const line of lines){
-    const m=line.match(/^(\d+)단계[\s—\-–:.]*(.+)/);
-    if(m){
-      if(cur) steps.push({title:cur.title,desc:descLines.join(' ').trim()});
-      descLines=[];
-      cur={title:m[2].trim()};
-    } else if(cur&&line.trim()){
-      descLines.push(line.trim());
-    }
-  }
-  if(cur) steps.push({title:cur.title,desc:descLines.join(' ').trim()});
-  if(!steps.length){showToast('⚠️ "N단계 — 제목" 형식을 찾지 못했어요');return;}
-  renderEditSteps(steps.slice(0,5));
-  document.getElementById('bulkStepInputWrap').style.display='none';
-  document.getElementById('bulkStepTA').value='';
-  showToast(`✅ ${steps.length}개 단계 자동 입력 완료!`);
 }
 function parseStepsFromMemo(memo){
   const lines=memo.trim().split(/\n/);
@@ -2067,33 +2192,33 @@ function getAdminMemoHTML(id){
   }
   return {isSteps:false,html:`<div style="background:var(--bg2);border:1.5px solid var(--border);border-radius:16px;padding:20px 24px;font-family:'Noto Sans KR',sans-serif;font-size:16px;color:var(--text);line-height:2.0;white-space:pre-wrap;">${escapeHtml(memo)}</div>`};
 }
-function toggleDetailLink(id){
-  const panel=document.getElementById('detailLinkPanel_'+id);
-  const btn=document.getElementById('detailLinkToggle_'+id);
-  if(!panel) return;
-  const isOpen=panel.classList.contains('open');
-  panel.classList.toggle('open',!isOpen);
-  if(btn) btn.classList.toggle('open',!isOpen);
-}
-function saveDetailLink(id){
-  const val=(document.getElementById('detailLinkInput_'+id)||{}).value||'';
-  entryLinks[id]=val.trim();
-  if(!val.trim()) delete entryLinks[id];
-  saveEntryLinks();
-  const st=document.getElementById('detailLinkSt_'+id); if(st){st.textContent='저장됨 ✓';setTimeout(()=>st.textContent='',2000);}
-  showToast(`🔗 Quest ${id} 링크 저장 완료!`);
-  if(currentMissionId===id) openMission(id);
-}
-function clearDetailLink(id){
-  delete entryLinks[id]; saveEntryLinks();
-  const inp=document.getElementById('detailLinkInput_'+id); if(inp) inp.value='';
-  showToast(`🗑️ Quest ${id} 링크 삭제됨`);
-  if(currentMissionId===id) openMission(id);
-}
 function escapeHtml(str){ return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 // ==============================
 //  TOAST & CONFETTI
+function saveInlineField(id,field,el){
+  const val=el.innerText.trim();
+  if(!val) return;
+  if(!customMissions[id]) customMissions[id]={};
+  const base=MISSIONS.find(x=>x.id===id)||{};
+  if(val!==(base[field]||'')) customMissions[id][field]=val;
+  else delete customMissions[id][field];
+  if(Object.keys(customMissions[id]).length===0) delete customMissions[id];
+  saveCustomMissions(); updateAdminRow(id);
+  showToast('✏️ 저장됨');
+}
+function saveInlineStep(id,si,field,el){
+  const val=el.innerText.trim();
+  const base=MISSIONS.find(x=>x.id===id)||{};
+  if(!customMissions[id]) customMissions[id]={};
+  if(!customMissions[id].steps){
+    const src=base.steps||[];
+    customMissions[id].steps=src.map(s=>({title:s.title||'',desc:s.desc||''}));
+  }
+  if(customMissions[id].steps[si]) customMissions[id].steps[si][field]=val;
+  saveCustomMissions();
+  showToast(`✏️ ${si+1}단계 저장됨`);
+}
 // ==============================
 let toastTimer=null;
 function showToast(msg){
@@ -2134,7 +2259,7 @@ function initApp(){
     const topbar = document.querySelector('#app > .topbar');
     if (topbar) topbar.style.display = 'none';
   }
-  loadMissionImages(); loadCustomMemos(); loadEntryLinks(); loadCustomMissions();
+  loadMissionImages(); loadCustomMemos(); loadEntryLinks(); loadScratchSiteLinks(); loadCustomMissions(); loadThumbMode();
   // 관리자 세션 복원 (다른 페이지에서 로그인한 경우)
   if(localStorage.getItem('학습홈_admin')==='1') restoreAdminUI();
   // 로컬 데이터로 즉시 화면 표시
@@ -2151,7 +2276,8 @@ function initApp(){
     await loadAdminFromCloud();
     await loadFromCloud();
     updateTopbar();
-    openGallery();
+    // 미션 상세보기 중이면 갤러리로 강제 이동하지 않음
+    if(!currentMissionId) openGallery();
     setTimeout(sendHeight, 100);
   });
   const pwInput = document.getElementById('adminPwInput');
@@ -2187,52 +2313,140 @@ if(document.readyState==='loading'){
 }
 </script>
 
-<!-- 미션 편집 모달 -->
-<div id="missionEditOverlay" style="display:none;position:fixed;inset:0;z-index:9600;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);align-items:flex-start;justify-content:center;padding-top:40px;overflow-y:auto;">
-  <div style="background:var(--card);border:1.5px solid rgba(139,92,246,0.35);border-radius:24px;padding:28px;width:90%;max-width:560px;margin-bottom:40px;box-shadow:0 24px 60px rgba(0,0,0,0.5);">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+<!-- 미션 편집 모달 (통합) -->
+<div id="missionEditOverlay" onclick="if(event.target===this)closeMissionEdit()" style="display:none;position:fixed;inset:0;z-index:9600;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:var(--card);border:1.5px solid rgba(139,92,246,0.35);border-radius:24px;padding:24px 28px;width:95%;max-width:960px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(0,0,0,0.5);">
+    <!-- 헤더 -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-shrink:0;">
       <div style="font-family:'Nunito','Noto Sans KR',sans-serif;font-size:18px;font-weight:800;color:var(--purple);">✏️ 미션 편집 <span id="editMissionNum" style="font-size:13px;color:var(--text3);font-weight:400;"></span></div>
       <button onclick="closeMissionEdit()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);">✕</button>
     </div>
-    <div style="display:grid;grid-template-columns:80px 1fr;gap:10px;margin-bottom:12px;">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">이모지</div>
-        <input id="editEmoji" type="text" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:24px;padding:8px;text-align:center;outline:none;">
+    <!-- 2컬럼 본문 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;overflow-y:auto;flex:1;min-height:0;">
+      <!-- 왼쪽: 기본정보 -->
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:grid;grid-template-columns:72px 1fr;gap:10px;">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">이모지</div>
+            <input id="editEmoji" type="text" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:22px;padding:8px;text-align:center;outline:none;">
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">미션 제목</div>
+            <input id="editTitle" type="text" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;padding:9px 12px;outline:none;font-family:'Noto Sans KR',sans-serif;">
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">미션 설명</div>
+          <textarea id="editDesc" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 12px;outline:none;resize:none;height:72px;font-family:'Noto Sans KR',sans-serif;line-height:1.6;"></textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">단계 (챕터)</div>
+            <select id="editChapter" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 10px;outline:none;">
+              <option value="ch1">🌱 1단계 — 기초</option>
+              <option value="ch2">⚡ 2단계 — 중급</option>
+              <option value="ch3">🔥 3단계 — 고급</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">난이도</div>
+            <select id="editDiff" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 10px;outline:none;">
+              <option value="1">⭐ 쉬움</option>
+              <option value="2">⭐⭐ 보통</option>
+              <option value="3">⭐⭐⭐ 어려움</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:6px;letter-spacing:0.06em;">📷 이미지 / 🎬 영상</div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div id="editImgPreview" style="width:56px;height:56px;border-radius:10px;background:var(--bg2);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:24px;flex-shrink:0;"></div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;gap:5px;">
+                <button onclick="triggerUpload(editingMissionId)" style="padding:5px 10px;border-radius:7px;font-size:11px;font-family:'Noto Sans KR',sans-serif;background:rgba(79,110,247,0.1);border:1.5px solid rgba(79,110,247,0.3);color:var(--blue);cursor:pointer;">📷 이미지</button>
+                <button id="editImgDelBtn" onclick="deleteImageFromEdit()" style="padding:5px 10px;border-radius:7px;font-size:11px;font-family:'Noto Sans KR',sans-serif;background:rgba(239,68,68,0.08);border:1.5px solid rgba(239,68,68,0.25);color:var(--red);cursor:pointer;display:none;">✕</button>
+              </div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <button onclick="triggerVideoUpload(editingMissionId)" style="padding:5px 10px;border-radius:7px;font-size:11px;font-family:'Noto Sans KR',sans-serif;background:rgba(14,165,233,0.1);border:1.5px solid rgba(14,165,233,0.3);color:var(--teal);cursor:pointer;">🎬 영상</button>
+                <span id="editVidStatus" style="font-size:11px;color:var(--text3);"></span>
+                <button id="editVidDelBtn" onclick="deleteVideoFromEdit()" style="padding:5px 10px;border-radius:7px;font-size:11px;font-family:'Noto Sans KR',sans-serif;background:rgba(239,68,68,0.08);border:1.5px solid rgba(239,68,68,0.25);color:var(--red);cursor:pointer;display:none;">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">🔗 유튜브 링크</div>
+          <input id="editYoutubeLink" type="url" placeholder="https://youtu.be/..." style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 12px;outline:none;font-family:'Noto Sans KR',sans-serif;">
+          <div style="margin-top:8px;">
+            <div style="font-size:11px;color:var(--text3);margin-bottom:5px;">🖼️ 카드 썸네일 표시</div>
+            <div style="display:flex;gap:6px;">
+              <button id="thumbModeYt" onclick="setThumbModeUI('youtube')" style="flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid rgba(255,0,0,0.3);background:rgba(255,0,0,0.06);color:#c00;">▶ 유튜브 썸네일</button>
+              <button id="thumbModeEmoji" onclick="setThumbModeUI('emoji')" style="flex:1;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:'Noto Sans KR',sans-serif;cursor:pointer;transition:all 0.15s;border:1.5px solid var(--border);background:var(--bg2);color:var(--text2);">✨ 이모지 애니메이션</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+            <div style="font-size:11px;font-weight:700;color:var(--text2);letter-spacing:0.06em;">💜 힌트 블록 (최대 3개)</div>
+            <button onclick="clearAllHints()" style="font-size:11px;font-family:'Noto Sans KR',sans-serif;background:none;border:1px solid rgba(239,68,68,0.3);border-radius:6px;color:var(--red);padding:3px 8px;cursor:pointer;">🗑️ 전체 삭제</button>
+          </div>
+          <div id="editHintWrap" style="display:flex;flex-direction:column;gap:6px;"></div>
+        </div>
       </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">미션 제목</div>
-        <input id="editTitle" type="text" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;padding:9px 12px;outline:none;font-family:'Noto Sans KR',sans-serif;">
+      <!-- 오른쪽: 단계 입력 -->
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(107,71,237,0.04);border:1.5px solid rgba(107,71,237,0.2);border-radius:12px;padding:12px;">
+          <div style="font-size:11px;color:var(--text3);margin-bottom:7px;line-height:1.6;">💡 <code style="background:var(--bg3);padding:1px 5px;border-radius:4px;font-size:11px;">1단계 제목</code> 다음 줄에 설명을 입력하면 자동으로 채워집니다.</div>
+          <div id="bulkStepInputWrap">
+            <textarea id="bulkStepTA" style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 12px;outline:none;resize:none;height:110px;font-family:'Noto Sans KR',sans-serif;line-height:1.7;" placeholder="1단계 스프라이트 추가하기&#10;스프라이트 고르기 버튼을 눌러 고양이를 무대에 올려요.&#10;&#10;2단계 이동 블록 연결&#10;이동하기 블록을 시작하기에 연결해요."></textarea>
+            <div style="display:flex;gap:8px;margin-top:7px;">
+              <button onclick="parseAndFillSteps()" style="flex:1;padding:8px;border-radius:50px;font-size:13px;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:linear-gradient(135deg,var(--purple),var(--blue));border:none;color:#fff;cursor:pointer;">✨ 자동 채우기</button>
+              <button onclick="document.getElementById('bulkStepTA').value=''" style="padding:8px 14px;border-radius:50px;font-size:12px;font-family:'Noto Sans KR',sans-serif;background:none;border:1.5px solid var(--border);color:var(--text3);cursor:pointer;">지우기</button>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--text2);letter-spacing:0.06em;">단계별 설명 (최대 5단계)</div>
+        <div id="editStepsWrap" style="display:flex;flex-direction:column;gap:8px;"></div>
       </div>
     </div>
-    <div style="margin-bottom:12px;">
-      <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">미션 설명</div>
-      <textarea id="editDesc" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;padding:9px 12px;outline:none;resize:vertical;min-height:60px;font-family:'Noto Sans KR',sans-serif;line-height:1.6;"></textarea>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">단계 (챕터)</div>
-        <select id="editChapter" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;padding:9px 12px;outline:none;">
-          <option value="ch1">🌱 1단계 — 기초</option>
-          <option value="ch2">⚡ 2단계 — 중급</option>
-          <option value="ch3">🔥 3단계 — 고급</option>
-        </select>
+    <!-- 하단 버튼 -->
+    <div style="flex-shrink:0;margin-top:16px;border-top:1.5px solid var(--border);padding-top:14px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button onclick="saveMissionEdit()" style="flex:3;padding:12px;border-radius:50px;font-size:15px;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:linear-gradient(135deg,var(--purple),var(--blue));border:none;color:#fff;cursor:pointer;">💾 저장하기</button>
+        <button onclick="resetMissionEdit()" style="flex:1;padding:12px;border-radius:50px;font-size:13px;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:rgba(255,87,87,0.1);border:1.5px solid rgba(255,87,87,0.3);color:var(--red);cursor:pointer;">↩️ 초기화</button>
       </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px;letter-spacing:0.06em;">난이도</div>
-        <select id="editDiff" style="width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;padding:9px 12px;outline:none;">
-          <option value="1">⭐ 쉬움</option>
-          <option value="2">⭐⭐ 보통</option>
-          <option value="3">⭐⭐⭐ 어려움</option>
-        </select>
-      </div>
+      <div id="editSaveStatus" style="text-align:center;font-size:13px;color:var(--teal);margin-top:8px;min-height:18px;"></div>
     </div>
-    <div style="margin-bottom:10px;">
-      <button onclick="toggleBulkStepInput()" style="width:100%;padding:9px 14px;border-radius:10px;font-size:13px;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:rgba(107,71,237,0.08);border:1.5px dashed rgba(107,71,237,0.35);color:var(--purple);cursor:pointer;text-align:left;">📋 한 번에 붙여넣기 <span style="font-size:11px;font-weight:400;color:var(--text3);">▼ 펼치기</span></button>
-      <div id="bulkStepInputWrap" style="display:none;margin-top:8px;background:rgba(107,71,237,0.04);border:1.5px solid rgba(107,71,237,0.2);border-radius:12px;padding:12px;">
-        <div style="font-size:12px;color:var(--text3);margin-bottom:8px;line-height:1.6;">💡 아래 형식으로 붙여넣으면 단계 칸에 자동으로 채워집니다.<br>
-          <code style="background:var(--bg3);padding:1px 5px;border-radius:4px;font-size:11px;">1단계 — 제목</code> 또는
-          <code style="background:var(--bg3);padding:1px 5px;border-radius:4px;font-size:11px;">1단계: 제목</code> 으로 시작하면 돼요.</div>
-        <textarea id="bulkStepTA" style="width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13px;padding:9px 12px;outline:none;resize:vertical;min-height:120px;font-family:'Noto Sans KR',sans-serif;line-height:1.7;" placeholder="1단계 — 스프라이트 추가하기&#10;스프라이트 추가 버튼을 눌러 고양이를 무대에 올려요.&#10;&#10;2단계 — 이동 블록 연결&#10;이동하기 블록을 시작하기 클릭 이벤트에 연결해요.&#10;&#10;3단계 — 반복하기로 계속 움직이기&#10;계속 반복하기 블록 안에 이동 블록을 넣어요."></textarea>
-        <div style="display:flex;gap:8px;margin-top:8px;">
-          <button onclick="parseAndFillSteps()" style="flex:1;padding:9px;border-radius:50px;font-size:14px;font-weight:700;font-family:'Noto Sans KR',sans-serif;background:linear-gradient(135deg,var(--purple),var(--blue));border:none;color:#fff;cursor:pointer;">✨ 자동 채우기</button>
-          <button onclick="document.getElementById('bulkStepTA').value=''" style="padding:9px 14px;border-radius:50px;font-size:13px;font-family:'Noto Sans KR',sans-serif;background:none;border:1.5px solid var(--border);color:v                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  </div>
+</div>
+
+
+<!-- 일괄 영상 업로드 오버레이 -->
+<div id="bulkVideoOverlay" style="display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:var(--card);border:1.5px solid rgba(74,158,255,0.3);border-radius:24px;padding:28px;max-width:520px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,0.5);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <div style="font-family:'Nunito','Noto Sans KR',sans-serif;font-size:18px;font-weight:800;color:var(--blue);">🎬 동영상 일괄 업로드</div>
+      <button onclick="closeBulkVideoOverlay()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text3);">✕</button>
+    </div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px;">
+      파일 이름에 미션 번호가 포함되면 자동으로 배정돼요.<br>
+      예: <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;">01.mp4</code>
+      <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;">quest1.mp4</code>
+      <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;">미션01.mp4</code>
+    </div>
+    <div id="bulkVideoDrop"
+      ondrop="handleBulkVideoDrop(event)"
+      ondragover="event.preventDefault();this.classList.add('drag-over')"
+      ondragleave="this.classList.remove('drag-over')"
+      onclick="document.getElementById('bulkVideoFileInput').click()"
+      style="border:2px dashed rgba(74,158,255,0.4);border-radius:16px;padding:32px;text-align:center;cursor:pointer;transition:all 0.2s;background:rgba(74,158,255,0.04);">
+      <div style="font-size:36px;margin-bottom:10px;">🎬</div>
+      <div style="font-family:'Nunito','Noto Sans KR',sans-serif;font-size:15px;color:var(--text2);">파일을 드래그하거나 클릭해서 선택</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:6px;">MP4, WebM, MOV 등 · 여러 파일 동시 선택 가능</div>
+    </div>
+    <input type="file" id="bulkVideoFileInput" accept="video/*" multiple style="display:none" onchange="processBulkVideoFiles(this.files);this.value=''">
+    <div id="bulkVideoLog" style="max-height:200px;overflow-y:auto;margin-top:14px;font-size:13px;line-height:1.8;background:var(--bg2);border-radius:10px;padding:10px 14px;display:none;"></div>
+  </div>
+</div>
+</body>
+</html>
