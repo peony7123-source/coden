@@ -349,7 +349,7 @@
 <script>
 const SESSION_LABELS = {
   1:"1차시", 2:"2차시", 3:"3차시", 4:"4차시", 5:"5차시",
-  6:"6차시", 7:"7차시", 8:"8차시", 9:"9차시", 10:"10차시"
+  6:"6차시", 7:"7차시", 7.5:"미니 프로젝트", 8:"8차시", 9:"9차시", 10:"10차시"
 };
 
 const UNITS = [
@@ -1144,6 +1144,40 @@ t.mainloop()`,
     { q:"`range(5)`는 몇 번 반복한다는 뜻인가요?", choices:["4번","5번","6번","10번"], answer:1 },
     { q:"반복문 안에 또 반복문을 넣는 것을 무엇이라고 부르나요?", choices:["이중 조건문","중첩 반복문","재귀 함수","이벤트문"], answer:1 }
   ],
+  next:["지금까지 배운 것들을 모아 미니 프로젝트로 캡틴 아메리카 방패를 만들어봐요.","그다음엔 반복해서 쓰는 코드를 묶어서 이름 붙이는 `함수`를 배워요."]
+},
+{
+  slug:"07-1-mini-project-shield", session:7.5, icon:"🛡️",
+  title:"미니 프로젝트 - 캡틴 아메리카 방패 만들기",
+  prevReview:["`circle()`로 원을 그리고 `fillcolor()`로 색을 채웠어요.","`for` 반복문으로 같은 동작을 짧게 반복했어요."],
+  learn:["원 4개로 방패 밑판 그리기","반복문으로 뾰족한 별 그리기"],
+  note:["오늘은 새로운 함수를 배우지 않아요.","지금까지 배운 것만으로 캡틴 아메리카 방패를 완성해봐요.","정답 코드는 없어요! 조건과 힌트를 보고 스스로 만들어보세요."],
+  concept:{ title:"오늘 만들 것",
+    explain:["방패는 두 부분으로 이루어져 있어요.","1. 크기가 다른 원 4개가 중심을 맞춰 겹쳐진 모양 (빨강 → 흰색 → 빨강 → 파랑, 바깥쪽부터 순서대로)","2. 파란 원 한가운데에 있는 흰색 별"],
+    shot:"빨강·흰색·빨강·파랑 원이 겹겹이 채워지고, 가운데 파란 원 위에 흰색 별이 그려진 캡틴 아메리카 방패.",
+    img: turtleScene({ w:340, h:340, pad:20, fills:[{cx:0,cy:0,r:150,color:"#e5383b"},{cx:0,cy:0,r:120,color:"#ffffff"},{cx:0,cy:0,r:90,color:"#e5383b"},{cx:0,cy:0,r:60,color:"#1d63d1"},{points:[[12,12],[52,12],[19.6,-11.5],[32,-49.6],[-0.4,-26],[-32.7,-49.6],[-20.4,-11.5],[-52.7,12],[-12.7,12],[-0.4,50],[12,12]],color:"#ffffff"}] })
+  },
+  steps:[
+    { title:"원 4개로 방패 밑판 그리기",
+      explain:["**조건**","1. 원 4개를 순서대로 그려요. 반지름은 150 → 120 → 90 → 60, 색은 빨강 → 흰색 → 빨강 → 파랑이에요.","2. 원 4개의 중심이 같은 자리에 있어야 방패 모양이 돼요."],
+      shot:"빨강·흰색·빨강·파랑 원 4개가 중심을 맞춰 겹쳐진 방패 밑판.",
+      img: turtleScene({ fills:[{cx:0,cy:0,r:150,color:"#e5383b"},{cx:0,cy:0,r:120,color:"#ffffff"},{cx:0,cy:0,r:90,color:"#e5383b"},{cx:0,cy:0,r:60,color:"#1d63d1"}] }),
+      hints:["원은 시작 지점 기준 왼쪽(위쪽)에 그려져요.","그래서 원 중심을 (0, 0)에 맞추려면, 시작 위치를 아래쪽으로 반지름만큼 옮긴 뒤 그리면 돼요."]
+    },
+    { title:"파란 원 위에 별 그리기",
+      explain:["지금까지 그린 별(5차시)은 선 5개만 그어서 만드는 별이었어요. 이번엔 뾰족한 꼭짓점이 있는 진짜 별 모양을 그려볼 거예요.","**조건**","1. 144도, 72도를 번갈아가며 회전하면서 별을 그려요. 5번 반복해요. (7차시에서 배운 반복문을 활용해보세요!)","2. 그린 모양 안쪽이 채워지도록 해요.","3. 별이 파란 원 가운데에 오도록 시작 위치를 여러 번 시도하며 맞춰보세요.","4. 다 그렸으면 거북이 모양은 숨겨요."],
+      shot:"별의 한 변(길이 100)을 그린 뒤, 오른쪽으로 144도, 다시 왼쪽으로 72도 꺾는 것을 5번 반복하면 별이 완성돼요.",
+      img: turtleScene({ fills:[{cx:0,cy:0,r:150,color:"#e5383b"},{cx:0,cy:0,r:120,color:"#ffffff"},{cx:0,cy:0,r:90,color:"#e5383b"},{cx:0,cy:0,r:60,color:"#1d63d1"},{points:[[12,12],[52,12],[19.6,-11.5],[32,-49.6],[-0.4,-26],[-32.7,-49.6],[-20.4,-11.5],[-52.7,12],[-12.7,12],[-0.4,50],[12,12]],color:"#ffffff"}] })
+    }
+  ],
+  challenge:{
+    tasks:[
+      { task:`**나만의 방패 만들기**
+- 원 색을 다른 조합으로 바꿔보세요. (예: 초록·검정·초록·보라)
+- 원 크기를 다르게 조절해서 더 크거나 작은 방패를 만들어보세요.
+- 별 대신 다른 모양(하트, 도형 등)을 가운데에 넣어보세요.` }
+    ]
+  },
   next:["반복해서 쓰는 코드를 묶어서 이름 붙이는 `함수`를 배워요.","함수를 만들어서 집과 눈송이를 그려봐요."]
 },
 {
@@ -1249,19 +1283,47 @@ mainloop()`,
             {points:[[338.6,80],[311.2,87.3],[281.6,58.7],[240.6,69.6],[242.9,105.6],[224.3,117.9],[213.3,77],[173.7,65.6],[149,28.3],[108,39.3],[100.7,12],[136.7,9.6],[139.4,-35],[176.7,-59.6],[160.7,-92],[188,-99.3],[199,-58.3],[243.7,-55.6],[273.3,-27],[314.3,-37.9],[312.9,-15.6],[280.6,0.4],[291.6,41.3],[331.2,52.7]],color:"#ffffff",strokeWidth:0}
           ] }) }
       ]
+    },
+    { title:"매개변수 - 함수에 값 전달하기",
+      explain:["함수 이름 뒤 괄호 안에 이름을 넣으면, 함수를 부를 때 원하는 값을 전달할 수 있어요.","이 이름을 **매개변수**라고 해요. 전달한 값은 함수 안에서 변수처럼 쓰여요."],
+      shot:"서로 다른 위치에 거북이 도장이 3개 찍혀요.",
+      img: turtleScene({ turtles:[{x:-100,y:0,heading:0,scale:0.8},{x:0,y:100,heading:0,scale:0.8},{x:100,y:-50,heading:0,scale:0.8}], texts:[{x:-100,y:-22,text:"(-100, 0)",size:11,color:"#7c948a",bold:true},{x:0,y:78,text:"(0, 100)",size:11,color:"#7c948a",bold:true},{x:100,y:-72,text:"(100, -50)",size:11,color:"#7c948a",bold:true}] }),
+      code:`import turtle as t
+
+t.shape("turtle")
+
+# stamp_at(x, y): 원하는 위치(x, y)에 도장을 찍는 함수
+def stamp_at(x, y):
+    t.up()
+    t.goto(x, y)
+    t.down()
+    t.stamp()
+
+stamp_at(-100, 0)
+stamp_at(0, 100)
+stamp_at(100, -50)
+
+t.mainloop()`,
+      tryit:["`stamp_at()`을 부를 때 숫자를 바꿔서 도장 위치가 바뀌는지 확인해보세요.","`stamp_at()`을 한 번 더 불러서 도장을 4개로 늘려보세요."],
+      minis:[
+        { title:"크기를 전달받는 눈송이 함수 만들기", desc:"STEP 2에서 만든 `snow()` 함수를 `snow(size)`로 바꿔서, `size` 매개변수로 눈송이 크기를 정하도록 만들어보세요. `snow(5)`와 `snow(15)`를 서로 다른 위치에서 불러서, 크기가 다른 눈송이 두 개를 그려보세요.", shot:"작은 눈송이와 큰 눈송이가 서로 다른 위치에 그려져요.",
+          img: turtleScene({ bgFill:"#87ceeb", lines:[{x1:-150,y1:0,x2:-110,y2:0,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-115.4,y2:20,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-130,y2:34.6,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-150,y2:40,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-170,y2:34.6,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-184.6,y2:20,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-190,y2:0,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-184.6,y2:-20,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-170,y2:-34.6,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-150,y2:-40,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-130,y2:-34.6,color:"#ffffff",width:4},{x1:-150,y1:0,x2:-115.4,y2:-20,color:"#ffffff",width:4},{x1:150,y1:0,x2:250,y2:0,color:"#ffffff",width:4},{x1:150,y1:0,x2:236.6,y2:50,color:"#ffffff",width:4},{x1:150,y1:0,x2:200,y2:86.6,color:"#ffffff",width:4},{x1:150,y1:0,x2:150,y2:100,color:"#ffffff",width:4},{x1:150,y1:0,x2:100,y2:86.6,color:"#ffffff",width:4},{x1:150,y1:0,x2:63.4,y2:50,color:"#ffffff",width:4},{x1:150,y1:0,x2:50,y2:0,color:"#ffffff",width:4},{x1:150,y1:0,x2:63.4,y2:-50,color:"#ffffff",width:4},{x1:150,y1:0,x2:100,y2:-86.6,color:"#ffffff",width:4},{x1:150,y1:0,x2:150,y2:-100,color:"#ffffff",width:4},{x1:150,y1:0,x2:200,y2:-86.6,color:"#ffffff",width:4},{x1:150,y1:0,x2:236.6,y2:-50,color:"#ffffff",width:4}] }) }
+      ]
     }
   ],
   funcTable:[
     {name:"def 이름():", desc:"함수 만들기", usage:"def draw_house():"},
-    {name:"이름()", desc:"만든 함수 부르기(호출)", usage:"draw_house()"}
+    {name:"이름()", desc:"만든 함수 부르기(호출)", usage:"draw_house()"},
+    {name:"def 이름(매개변수):", desc:"값을 전달받는 함수 만들기", usage:"def stamp_at(x, y):"},
+    {name:"이름(값)", desc:"값을 전달해서 함수 부르기", usage:"stamp_at(-100, 0)"}
   ],
   mission:{
     tasks:[
-      { task:`**도형 그리는 함수 만들기**
-- \`draw_square()\`라는 이름의 함수를 만들어요.
-- 함수 안에는 \`for\` 반복문으로 정사각형을 그리는 코드를 넣어요.
-- 함수를 두 번 불러서 사각형 두 개를 그려요. (사이에 \`fd(150)\`을 넣어 떨어뜨려요)`, shot:"정사각형 두 개가 나란히 그려져요.",
-        img: turtleScene({ lines:[{x1:0,y1:0,x2:100,y2:0,color:"#27392f",width:3},{x1:100,y1:0,x2:100,y2:100,color:"#27392f",width:3},{x1:100,y1:100,x2:0,y2:100,color:"#27392f",width:3},{x1:0,y1:100,x2:0,y2:0,color:"#27392f",width:3},{x1:0,y1:0,x2:150,y2:0,color:"#27392f",width:3},{x1:150,y1:0,x2:250,y2:0,color:"#27392f",width:3},{x1:250,y1:0,x2:250,y2:100,color:"#27392f",width:3},{x1:250,y1:100,x2:150,y2:100,color:"#27392f",width:3},{x1:150,y1:100,x2:150,y2:0,color:"#27392f",width:3}] }), bonus:"좋아하는 모양(별, 육각형 등)을 그리는 나만의 함수도 만들어서 3번 불러보세요." }
+      { task:`**눈사람 그리는 함수 만들기**
+- \`snowman(x, y)\`라는 이름의 함수를 만들어요. \`x, y\`는 눈사람이 그려질 위치예요.
+- 함수 안에는 원 2개(머리, 몸통)와 팔 역할을 하는 선을 그리는 코드를 넣어요.
+- \`snowman()\`을 서로 다른 좌표로 3번 불러서 눈사람 3개를 그려요.`, shot:"서로 다른 위치에 눈사람이 3개 그려져요.",
+        img: turtleScene({ bgFill:"#87ceeb", fills:[{cx:-100,cy:-35,r:35,color:"#ffffff",stroke:"#27392f",strokeWidth:2},{cx:-100,cy:20,r:20,color:"#ffffff",stroke:"#27392f",strokeWidth:2},{cx:0,cy:15,r:35,color:"#ffffff",stroke:"#27392f",strokeWidth:2},{cx:0,cy:70,r:20,color:"#ffffff",stroke:"#27392f",strokeWidth:2},{cx:100,cy:-55,r:35,color:"#ffffff",stroke:"#27392f",strokeWidth:2},{cx:100,cy:0,r:20,color:"#ffffff",stroke:"#27392f",strokeWidth:2}], lines:[{x1:-100,y1:-25,x2:-135.4,y2:10.4,color:"#27392f",width:3},{x1:-100,y1:-25,x2:-56.7,y2:0,color:"#27392f",width:3},{x1:0,y1:25,x2:-35.4,y2:60.4,color:"#27392f",width:3},{x1:0,y1:25,x2:43.3,y2:50,color:"#27392f",width:3},{x1:100,y1:-45,x2:64.6,y2:-9.6,color:"#27392f",width:3},{x1:100,y1:-45,x2:143.3,y2:-20,color:"#27392f",width:3}] }), bonus:"팔의 길이나 머리·몸통 크기를 바꿔서 나만의 눈사람을 꾸며보세요." }
     ]
   },
   quiz:[
@@ -3089,6 +3151,11 @@ function showDetail(idx){
         + '<div class="code-label">🐍 코드 입력하기' + (s.code3Label ? ' — ' + escapeHtml(s.code3Label) : ' (3)') + '</div>'
         + '<pre class="code-block"><code>' + highlightPy(s.code3) + '</code></pre>'
         + '</div>';
+    }
+    if(s.hints && s.hints.length){
+      html += '<div><button class="hint-btn" onclick="toggleHint(this)">💡 힌트 보기</button><div class="mission-hint">'
+        + s.hints.map(function(p){ return '<p>' + mdBold(p) + '</p>'; }).join('')
+        + '</div></div>';
     }
     if(s.tryit && s.tryit.length){
       html += '<div class="points-card"><div class="points-label">✏️ 직접 수정하기</div><ol>';
